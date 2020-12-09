@@ -1,4 +1,3 @@
-title: Welcome to my portfolio!
 
 ## Welcome to GitHub Pages
 
