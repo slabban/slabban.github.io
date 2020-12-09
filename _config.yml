@@ -1,12 +1,12 @@
 
-title: John Doe # your name (or website title) here
+title: Samer Labban # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+  Autonomous & ADAS Control Algorithm Developer 
   <br><br>
-  Second description 
+  President of the Autonomous Vehicles Club at Oakland University
   <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/samer-labban-7b932372/">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
