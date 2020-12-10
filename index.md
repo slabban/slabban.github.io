@@ -6,12 +6,29 @@ All that has made me who I am as Engineer is highlighted here.
 * _Camera-LIDAR Fusion and State Estimation of LIDAR_
 * _Point Cloud Processing on Cepton LIDAR_
 * _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
-* _Lane keeping and Obstacle Avoidance using the Pixy2 and an Infrared Sensor_
+* _Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_
 * _Innovative Billboards Quarter Scale Prototype_
-* _Heated Sidewalk Optimization on Visual Basic [VBA]_
+* _Heated Sidewalk Optimization_
 
 
 ### Camera-LIDAR Fusion and State Estimation of LIDAR
+
+
+
+
+
+
+- - - -
+
+### Point Cloud Processing on Cepton Vista 3D LIDAR
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/fvGX2Kw34n0 "")
+
+The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS and the results were visualized in Rviz.
+
+Point cloud processing for 3D LIDARs is a huge deal as these sensors are data intensive, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LIDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
+
+The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
