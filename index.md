@@ -14,7 +14,7 @@ All that has made me who I am as Engineer is highlighted here.
 ### Camera-LIDAR Fusion and State Estimation of LIDAR
 
 
-
+<img src="/images/gazebo_simulation.png?raw=true" />
 
 
 
