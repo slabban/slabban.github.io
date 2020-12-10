@@ -1,8 +1,17 @@
 
-## Welcome to My Portfolio!
+# Welcome to My Portfolio!
+All that has made me who I am as Engineer is highlighted here.
+
+#### For your ease of perusing, I've listed my projects as follows:
+* _Camera-LIDAR Fusion and State Estimation of LIDAR_
+* _Point Cloud Processing on Cepton LIDAR_
+* _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
+* _Lane keeping and Obstacle Avoidance using the Pixy2 and an Infrared Sensor_
+* _Innovative Billboards Quarter Scale Prototype_
+* _Heated Sidewalk Optimization on Visual Basic [VBA]_
 
 
-### Markdown
+### Camera-LIDAR Fusion and State Estimation of LIDAR
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
