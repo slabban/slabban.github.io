@@ -22,7 +22,7 @@ All that has made me who I am as Engineer is highlighted here.
 
 ### Point Cloud Processing on Cepton Vista 3D LIDAR
 
-[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/fvGX2Kw34n0 "")
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "")
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS and the results were visualized in Rviz.
 
