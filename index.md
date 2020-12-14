@@ -9,7 +9,9 @@ All that has made me who I am as Engineer is highlighted here.
 
 * _Camera-LIDAR Fusion and State Estimation of LIDAR_
 * _Point Cloud Processing on Cepton LIDAR_
+
 [_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
+
 * _Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_
 * _Innovative Billboards Quarter Scale Prototype_
 
@@ -34,8 +36,8 @@ Point cloud processing for 3D LIDARs is a huge deal as these sensors are data in
 The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
 
 - - - -
-
-### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera section_title<a name="Audibot_ACC"></a>
+<a name="Audibot_ACC"></a>
+### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera 
 
 [![Adaptive Cruise Control](https://res.cloudinary.com/marcomontalbano/image/upload/v1607909247/video_to_markdown/images/youtube--p0SfGsaEiwc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/p0SfGsaEiwc "Adaptive Cruise Control")
 
