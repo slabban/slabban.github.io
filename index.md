@@ -3,6 +3,7 @@
 All that has made me who I am as Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
+[Camera-LIDAR Fusion and State Estimation of LIDAR](#Camera-LIDAR "Goto Camera-LIDAR Fusion and State Estimation of LIDAR")
 * _Camera-LIDAR Fusion and State Estimation of LIDAR_
 * _Point Cloud Processing on Cepton LIDAR_
 * _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
