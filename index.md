@@ -8,7 +8,6 @@ All that has made me who I am as Engineer is highlighted here.
 * _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
 * _Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_
 * _Innovative Billboards Quarter Scale Prototype_
-* _Heated Sidewalk Optimization_
 
 
 ### Camera-LIDAR Fusion and State Estimation of LIDAR
@@ -24,7 +23,7 @@ All that has made me who I am as Engineer is highlighted here.
 
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
-The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS and the results were visualized in Rviz.
+The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS (Robot Operating System) and the results were visualized in Rviz.
 
 Point cloud processing for 3D LIDARs is a huge deal as these sensors are data intensive, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LIDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
 
@@ -34,7 +33,13 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 ### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera
 
+[![Adaptive Cruise Control](https://res.cloudinary.com/marcomontalbano/image/upload/v1607909247/video_to_markdown/images/youtube--p0SfGsaEiwc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/p0SfGsaEiwc "Adaptive Cruise Control")
+
+The project that sparked a passion! As part of the introduction to ROS (Robot Operating System) course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control system that used individual feedback from an array of GNSS/GPS, LIDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming vehicle, while maintaining a vehicle separation distance set by the driver.
+
 <img src="/images/ACC_Audibot.png?raw=true" />
+
+
 
 
 - - - -
