@@ -35,10 +35,17 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 [![Adaptive Cruise Control](https://res.cloudinary.com/marcomontalbano/image/upload/v1607909247/video_to_markdown/images/youtube--p0SfGsaEiwc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/p0SfGsaEiwc "Adaptive Cruise Control")
 
-The project that sparked a passion! As part of the introduction to ROS (Robot Operating System) course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control system that used individual feedback from an array of GNSS/GPS, LIDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming vehicle, while maintaining a vehicle separation distance set by the driver.
+The project that sparked a passion! As part of the introduction to ROS (Robot Operating System) course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control system that used individual feedback of the seperation distance between the two Audibot vehicles from an array of GNSS/GPS, LIDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming blue Audibot, while maintaining a vehicle separation distance set by the driver.
 
 <img src="/images/ACC_Audibot.png?raw=true" />
 
+**GNSS/GPS-Based Cruise Control**: the system relied on the communication between the GPS modules that were placed on each vehicle, creating a Vehicle-to-Vehicle (V2V) communication. After extracting the Universal Transverse Mercator (UTM) coordinates of each vehicle, we used the Pythagorean theorem to calculate the relative distance between the vehicles and fed this distance as the input to our PI controller to adjust the red Audibot's speed.
+
+**2D LiDAR-Based Cruise Control**: We simply extracted the positional data coming from the 2D LiDAR mounted on the red Audibot and used this distance in out PI controller to adjust the red Audibot's speed.
+
+
+
+**Monocular Camera-Based Cruise Control**: We were able to take advantage of the _OpenCV_ library to perform _Simple Blob Detection_ on the oncoming faced with the challenge of mapping the pixels to meters; however, we were faced with the challenge of determining distance based on pixels.. our solution was elegant and simple, using linear interpolation, we were able to map the distances from the 2D LiDAR to the Camera's pixels, and as a result, were able to use the same PI controller that we used on the previous systems and generate the same results!
 
 
 
