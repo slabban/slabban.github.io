@@ -43,9 +43,9 @@ The project that sparked a passion! As part of the introduction to ROS (Robot Op
 
 **2D LiDAR-Based Cruise Control**: We simply extracted the positional data coming from the 2D LiDAR mounted on the red Audibot and used this distance in out PI controller to adjust the red Audibot's speed.
 
+<img src="/images/ACC_juxtaposed_blob.png?raw=true" />
 
-
-**Monocular Camera-Based Cruise Control**: We were able to take advantage of the _OpenCV_ library to perform _Simple Blob Detection_ on the oncoming faced with the challenge of mapping the pixels to meters; however, we were faced with the challenge of determining distance based on pixels.. our solution was elegant and simple, using linear interpolation, we were able to map the distances from the 2D LiDAR to the Camera's pixels, and as a result, were able to use the same PI controller that we used on the previous systems and generate the same results!
+**Monocular Camera-Based Cruise Control**: We were able to take advantage of the _OpenCV_ library to perform _Simple Blob Detection_, as seen above, on the oncoming faced with the challenge of mapping the pixels to meters; however, we were faced with the challenge of determining distance based on pixels.. our solution was elegant and simple, using linear interpolation, we were able to map the distances from the 2D LiDAR to the Camera's pixels, and as a result, were able to use the same PI controller that we used on the previous systems and generate the same results!
 
 
 
