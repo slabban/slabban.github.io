@@ -15,6 +15,8 @@ All that has made me who I am as an Engineer is highlighted here.
 
 * [_Camera-LIDAR Sensor Fusion and State Estimation of LiDAR_](#Perception)
 
+* [_Point Cloud Processing on Cepton Vista 3D LIDAR_](#lidar)
+
 * [_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
 
 * [_Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_](#RCBOT)
@@ -33,20 +35,32 @@ All that has made me who I am as an Engineer is highlighted here.
 
 My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR!
 
-A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term Perception, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decision on how to react in that environment. That variety comes from different sensors that provide different information, and if those two sensors can communicate well, then they can work together to allow a higher level of Perception or Awareness.
-
-Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows us to use Computer Vision to classify objects around us
+A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decision on how to react in that environment. That variety comes from different sensors that provide different information, and if those two sensors can communicate well, then they can work together to allow a higher level of Perception or Awareness.
 
 
-<img src="/images/gazebo_simulation.png?raw=true" />
+<img src="/images/classified_object_img.png?raw=true" />
+
+
+Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using the YOLOv3 framework that was adopted for the Robot Operating System (ROS)
+
+
+<img src="/images/Lidar_ekf.png?raw=true" />
+
+
+The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting object position in a 3D frame of reference,
+
+
 
 
 
 - - - -
+<a name="lidar"></a>
+
 
 ### Point Cloud Processing on Cepton Vista 3D LIDAR
 
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
+
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS (Robot Operating System) and the results were visualized in Rviz.
 
