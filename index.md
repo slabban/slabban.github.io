@@ -1,6 +1,6 @@
 
 # Welcome to My Portfolio!
-All that has made me who I am as Engineer is highlighted here.
+All that has made me who I am as an Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
 
@@ -34,7 +34,7 @@ All that has made me who I am as Engineer is highlighted here.
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS (Robot Operating System) and the results were visualized in Rviz.
 
-Point cloud processing for 3D LIDARs is a huge deal as these sensors are data intensive, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LIDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
+Point cloud processing for 3D LIDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LIDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
 
 The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
 
