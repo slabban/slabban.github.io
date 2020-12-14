@@ -34,6 +34,8 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 ### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera
 
+<img src="/images/ACC_Audibot.png?raw=true" />
+
 
 - - - -
 
