@@ -1,7 +1,8 @@
 
 # Welcome to My Portfolio!
 
-##About Me
+## About Me
+
 I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems. In addition, I have a secondary focus on Electric Motor and PCB design. 
 Accompanied with an undergraduate degree in Mechanical Engineering, my skills shine when bridging the multi-disciplinary gap between hardware and software through strong teamwork and effective communication and presentation skills.
 
@@ -51,7 +52,7 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 ### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera 
 
-[![Adaptive Cruise Control](https://res.cloudinary.com/marcomontalbano/image/upload/v1607909247/video_to_markdown/images/youtube--p0SfGsaEiwc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/p0SfGsaEiwc "Adaptive Cruise Control")
+![Adaptive Cruise Control](https://media.giphy.com/media/ylOb7MNaYR277JFtJW/giphy.gif)
 
 
 The project that sparked a passion! As part of the introduction to ROS (Robot Operating System) course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control system that used individual feedback of the seperation distance between the two Audibot vehicles from an array of GNSS/GPS, LIDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming blue Audibot, while maintaining a vehicle separation distance set by the driver.
