@@ -1,4 +1,4 @@
-
+<a name="TOP"></a>
 # Welcome to My Portfolio!
 
 ## About Me
@@ -13,7 +13,7 @@ All that has made me who I am as an Engineer is highlighted here.
 #### For your ease of perusing, I've listed my projects as follows:
 
 
-* [_Camera-LIDAR Fusion and State Estimation of LIDAR_](#Perception)
+* [_Camera-LIDAR Sensor Fusion and State Estimation of LIDAR_](#Perception)
 
 * [_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
 
@@ -27,7 +27,13 @@ All that has made me who I am as an Engineer is highlighted here.
 <a name="Perception"></a>
 
 
-### Camera-LIDAR Fusion and State Estimation of LIDAR
+### Camera-LIDAR Sensor Fusion and State Estimation of LIDAR
+
+[![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
+
+My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR!
+
+A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term Perception, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions, and the more information there is about the environment
 
 
 <img src="/images/gazebo_simulation.png?raw=true" />
@@ -93,3 +99,4 @@ The project that sparked a passion! As part of the introduction to ROS (Robot Op
 
 
 
+[Return to TOP](#TOP)
