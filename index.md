@@ -41,13 +41,17 @@ A question that may come to mind is: what is sensor fusion and why is it importa
 <img src="/images/classified_object_img.png?raw=true" />
 
 
-Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using the YOLOv3 framework that was adopted for the Robot Operating System (ROS)
+Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using the YOLOv3 framework that was adopted for the Robot Operating System (ROS).
+
+However, the Monocular Camera is poor in performance when it comes to deducing distances to objects, which leads into the next sensor..
 
 
 <img src="/images/Lidar_ekf.png?raw=true" />
 
 
-The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting object position in a 3D frame of reference,
+The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting object position in a 3D frame of reference, furthermore, using state estimation algorithms, specifically the Estimated Kalman Filter, it is possible to estimate the future position and relative velocity of each detected object at five times the original rate, where the relative velocity to the vehicle is vizualized using the red arrows as seen in the image above.
+
+However, this current make/model does have any object classification capabilities.
 
 
 
