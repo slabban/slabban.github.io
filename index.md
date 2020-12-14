@@ -6,6 +6,7 @@ All that has made me who I am as Engineer is highlighted here.
 [Camera-LIDAR Fusion and State Estimation of LIDAR](#Camera-LIDAR "Goto Camera-LIDAR Fusion and State Estimation of LIDAR")
 * _Camera-LIDAR Fusion and State Estimation of LIDAR_
 * _Point Cloud Processing on Cepton LIDAR_
+[Point Cloud Processing on Cepton LIDAR](#Camera-LIDAR "Goto Point Cloud Processing on Cepton LIDAR]")
 * _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
 * _Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_
 * _Innovative Billboards Quarter Scale Prototype_
