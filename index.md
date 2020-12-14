@@ -3,11 +3,13 @@
 All that has made me who I am as Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
-[Camera-LIDAR Fusion and State Estimation of LIDAR](#Camera-LIDAR "Goto Camera-LIDAR Fusion and State Estimation of LIDAR")
+
+
+          
+
 * _Camera-LIDAR Fusion and State Estimation of LIDAR_
 * _Point Cloud Processing on Cepton LIDAR_
-[Point Cloud Processing on Cepton LIDAR](#Camera-LIDAR "Goto Point Cloud Processing on Cepton LIDAR]")
-* _Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_
+[_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
 * _Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_
 * _Innovative Billboards Quarter Scale Prototype_
 
@@ -33,7 +35,7 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 - - - -
 
-### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera
+### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera section_title<a name="Audibot_ACC"></a>
 
 [![Adaptive Cruise Control](https://res.cloudinary.com/marcomontalbano/image/upload/v1607909247/video_to_markdown/images/youtube--p0SfGsaEiwc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/p0SfGsaEiwc "Adaptive Cruise Control")
 
