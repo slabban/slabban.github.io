@@ -1,5 +1,12 @@
 
 # Welcome to My Portfolio!
+
+##About Me
+I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems. In addition, I have a secondary focus on Electric Motor and PCB design. 
+Accompanied with an undergraduate degree in Mechanical Engineering, my skills shine when bridging the multi-disciplinary gap between hardware and software through strong teamwork and effective communication and presentation skills.
+
+At heart, my dream is to make the indivdual life safer and more efficient through vehicle autonomy and robotic applications with the end goal of creating a global mindset that targets sustainability and safety for our current and future generations.
+
 All that has made me who I am as an Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
