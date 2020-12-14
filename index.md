@@ -31,7 +31,9 @@ All that has made me who I am as an Engineer is highlighted here.
 
 ### Camera-LiDAR Sensor Fusion and State Estimation of LiDAR
 
+
 [![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
+
 
 My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR!
 
@@ -53,6 +55,9 @@ The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes
 
 However, this current make/model does have any object classification capabilities.
 
+**The Fusion Strategy**
+
+The key to bringing these two sensor was simple yet effective mathmatical termed the _Jaccard Index_, or _Intersection Over Union_. 
 
 
 
