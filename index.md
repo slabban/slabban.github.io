@@ -30,6 +30,23 @@ Point cloud processing for 3D LIDARs is a huge deal as these sensors are data in
 
 The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
 
+- - - -
+
+### Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera
+
+
+- - - -
+
+### Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor
+
+
+
+[![Mechatronic Car](https://res.cloudinary.com/marcomontalbano/image/upload/v1607640464/video_to_markdown/images/youtube--EgaXYLZe98o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/EgaXYLZe98o "Mechatronic Car")
+
+- - - -
+
+Here 
+
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
