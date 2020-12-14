@@ -57,6 +57,8 @@ However, this current make/model does have any object classification capabilitie
 
 **The Fusion Strategy**
 
+<img src="/images/IoU figure.png?raw=true" />
+
 The key to bringing these two sensor was simple yet effective mathmatical termed the _Jaccard Index_, or _Intersection Over Union_. 
 
 
