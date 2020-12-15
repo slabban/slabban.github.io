@@ -43,7 +43,7 @@ A question that may come to mind is: what is sensor fusion and why is it importa
 <img src="/images/classified_object_img.png?raw=true" />
 
 
-Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using the YOLOv3 framework that was adopted for the Robot Operating System (ROS).
+Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using a [YOLOv3](https://github.com/slabban/darknet_ros "YOLOv3") framework that was adopted for the Robot Operating System (ROS).
 
 However, the Monocular Camera is poor in performance when it comes to deducing distances to objects, which leads into the next sensor..
 
@@ -62,6 +62,8 @@ However, this current make/model does have any object classification capabilitie
 
 
 The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the bounding box of the classified object from the Monocular Camera and the other rectangle is from the 3D bounding box of the LiDAR which is projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. intersected boxes with an IoU value of 50% or above can be percieved as cars.  
+
+For more detailed information on Intersection over Union, click this [link](https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/ "IoU").
 
 
 <img src="/images/Camera_LiDAR_IoU.png?raw=true" />
@@ -133,7 +135,8 @@ My role on this project was broken down into two main roles:
 ![RC_BOT](https://media.giphy.com/media/o8D44rIr8aQjwA1qTs/giphy.gif)
 
 
-In the above video, you can see me just starting to get the hang of the _Pixy2_ line detection API, here the position of the line in pixel is being used to control the steering of the RC Car via a built in servo motor.
+In the above video, you can see me just starting to get the hang of the _Pixy2_ line detection API, here the position of the line in pixel is being used to control the steering of the RC Car via a built in servo motor, notice the slow reposnse of the steering system..
+
 
 ```javascript
 // PID Controller function for Steering 
@@ -152,12 +155,20 @@ float PID_Controller_steer(float Kp, float Ki, float Kd, float r_value_steer, fl
   return(u_value_steer); 
 }
 ```
+
 The code block above represents the function that was written for the PID controller, this specific function controlled the duty cycle of the servo motor that would steer of the vehicle based on the , this approach led to a faster, smoother, and more refined response in the steering of the vehicle.
 
 
+<img src="/images/Adaptive Cruise Control Picture2.png?raw=true" />
 
 
+On to the simulation portion of the project. With access the powerful features of MATLAB and Simulink, I was able to create a system that used digitally filtered feedback from the Sharp IR Sensor to sense oncoming objects and deploy a PID control strategy that was facilitated by an Arduino microcontroller to slow down our mechatronic RC Car. Don't let the images fool you, while the system may seem trivial, each of these blocks comprises of complex subsystems and subfunctions that are were used to develop the plant dynamics, sensor input with a low-pass filtration, PID controlled Pulse Width Modulation (PWM).
 
+
+<img src="/images/filtered_ultrasonic.jpg?raw=true" />
+
+
+An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform obstacle avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the image above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
 
 
 
