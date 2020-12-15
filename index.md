@@ -118,8 +118,12 @@ The project that sparked a passion! As part of the introduction to ROS (Robot Op
 ### Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor
 
 
-
 [![Mechatronic Car](https://res.cloudinary.com/marcomontalbano/image/upload/v1607640464/video_to_markdown/images/youtube--EgaXYLZe98o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/EgaXYLZe98o "Mechatronic Car")
+
+
+Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it probably still does, but our team did it anyway.
+
+This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_. 
 
 
 
