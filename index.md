@@ -21,7 +21,7 @@ All that has made me who I am as an Engineer is highlighted here.
 
 * [_Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_](#RCBOT)
 
-* [_Innovative Billboards Quarter Scale Prototype_](#IBB)
+* [_Innovative Billboards LLC, Internship_](#IBB)
 
 
 
@@ -176,7 +176,19 @@ An interesting avenue explored during the initial stages of this project was the
 <a name="IBB"></a>
 
 
-### Innovative Billboards Quarter Scale Prototype
+### Innovative Billboards LLC, Internship
+
+
+[![IBB_Quarter_Scale](https://res.cloudinary.com/marcomontalbano/image/upload/v1608022524/video_to_markdown/images/youtube--Y56XGTr2FhU-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Y56XGTr2FhU&feature=youtu.be "IBB_Quarter_Scale")
+
+
+This experience deserves a higher slot in my portfolio as it has been instrumental to my foundation as a professional and an engineer; however, due to a signed NDA and a deep reverence for my ex-boss and mentor, Paul Angott, I will just use this section to reflect on the valuable experiences that I gained in my time as a Controls Engineer Intern. 
+
+I initally began my journey at Innovative Billboards as a Procurment Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way a single phase step down transformer. 
+I quickly established myself in this role due to my ability to communicate clearly and concisely to my colleagues and suppliers while quickly mastering each product's properties and standards to guide the project towards economoic and robust solutions; essentially, I was responsible for every purchase that made the prototype successful. 
+
+
+I also played a primary role in managing logistics of delivering the prototype to Innovative Billboards' local facility 
 
 <img src="/images/ibb_motorwork.png?raw=true" />
 
