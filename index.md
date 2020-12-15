@@ -125,6 +125,14 @@ Does a Master's degree in Mechatronics even count if you don't team up with an a
 
 This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_. 
 
+My role on this project was broken down into two main roles:
+1. Develop High level control implementation.
+2. Enable Lane Tracking through experimenting with the _Pixy2_ and understanding the Application Programming Interface (API)
+3. Develop the system dynamics of the vehicle on MATLAB and implement PID control to the motor to perform Adaptive Cruise Control
+
+![RC_BOT](https://media.giphy.com/media/o8D44rIr8aQjwA1qTs/giphy.gif)
+
+
 
 
 - - - -
