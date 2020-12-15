@@ -133,6 +133,30 @@ My role on this project was broken down into two main roles:
 ![RC_BOT](https://media.giphy.com/media/o8D44rIr8aQjwA1qTs/giphy.gif)
 
 
+In the above video, you can see me just starting to get the hang of the _Pixy2_ line detection API, here the position of the line in pixel is being used to control the steering of the RC Car via a built in servo motor.
+
+```javascript
+// PID Controller function for Steering 
+float PID_Controller_steer(float Kp, float Ki, float Kd, float r_value_steer, float y_value_steer) 
+{ 
+  float error_integ_steer; 
+  float error_derv_steer; 
+  float e_prev_steer; 
+  float u_value_steer; 
+  float deltaT = 0.01; 
+  float error_steer = r_value_steer - y_value_steer; 
+  error_integ_steer = error_integ_steer + error_steer*deltaT; 
+  error_derv_steer = (error_steer - e_prev_steer)/deltaT; 
+  e_prev_steer = error_steer; 
+  u_value_steer = Kp*error_steer + Ki*error_integ_steer + Kd*error_derv_steer; 
+  return(u_value_steer); 
+}
+```
+The code block above represents the function that was written for the PID controller, this specific function controlled the duty cycle of the servo motor that would steer of the vehicle based on the , this approach led to a faster, smoother, and more refined response in the steering of the vehicle.
+
+
+
+
 
 
 
