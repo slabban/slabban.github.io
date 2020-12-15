@@ -57,11 +57,11 @@ However, this current make/model does have any object classification capabilitie
 
 **The Fusion Strategy**
 
+
 <img src="/images/IoU figure.png?raw=true" />
 
-The key to bringing these two sensor was simple yet effective mathmatical termed the _Jaccard Index_, or _Intersection Over Union_. 
 
-
+The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the classified object from the Monocular Camera and the other rectangle is from the bounding box of the LiDAR which is projected as 2D pixels using transformations and   where the ratio is a value from 0 to 1. 
 
 
 - - - -
@@ -123,6 +123,7 @@ The project that sparked a passion! As part of the introduction to ROS (Robot Op
 
 ### Innovative Billboards Quarter Scale Prototype
 
+<img src="/images/ibb_motorwork.png?raw=true" />
 
 
 
