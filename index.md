@@ -64,7 +64,7 @@ However, this current make/model does have any object classification capabilitie
 The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the bounding box of the classified object from the Monocular Camera and the other rectangle is from the 3D bounding box of the LiDAR which is projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. intersected boxes with an IoU value of 50% or above can be percieved as cars.  
 
 
-
+<img src="/images/Camera_LiDAR_IoU.png?raw=true" />
 
 
 The image above drives the sensor fusion home, where the red rectangles in the left side of the figure above are the objects that have passed the IoU test of 50%, which are then filtered and re-published as can be seen on the right side of the figure above.
