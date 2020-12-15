@@ -35,7 +35,7 @@ All that has made me who I am as an Engineer is highlighted here.
 [![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
 
 
-My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR!
+My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars.
 
 A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decision on how to react in that environment. That variety comes from different sensors that provide different information, and if those two sensors can communicate well, then they can work together to allow a higher level of Perception or Awareness.
 
@@ -61,7 +61,13 @@ However, this current make/model does have any object classification capabilitie
 <img src="/images/IoU figure.png?raw=true" />
 
 
-The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the classified object from the Monocular Camera and the other rectangle is from the bounding box of the LiDAR which is projected as 2D pixels using transformations and   where the ratio is a value from 0 to 1. 
+The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the bounding box of the classified object from the Monocular Camera and the other rectangle is from the 3D bounding box of the LiDAR which is projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. intersected boxes with an IoU value of 50% or above can be percieved as cars.  
+
+
+<img src="/images/Camera_LiDAR_IoU.png?raw=true" />
+
+
+The image above drives the sensor fusion home, where the red rectangles in the left side of the figure above are the objects that have passed the IoU test of 50%, which are then filtered and re-published as can be seen on the right side of the figure above.
 
 
 - - - -
