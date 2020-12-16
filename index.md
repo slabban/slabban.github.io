@@ -6,7 +6,7 @@
 I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems (ADAS). In addition, I have a secondary focus on Electric Motor and PCB design. 
 Accompanied with an undergraduate degree in Mechanical Engineering, my skills shine when bridging the multi-disciplinary gap between hardware and software through strong teamwork and effective communication and presentation skills.
 
-At heart, my dream is to make the indivdual life safer and more efficient through vehicle autonomy and robotic applications with the end goal of creating a global mindset that targets sustainability and safety for our current and future generations.
+At heart, my dream is to make the individual life safer and more efficient through vehicle autonomy and robotic applications with the end goal of creating a global mindset that targets sustainability and safety for our current and future generations.
 
 All that has made me who I am as an Engineer is highlighted here.
 
@@ -54,7 +54,7 @@ However, the Monocular Camera is poor in performance when it comes to deducing d
 
 The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting the position of objects in a 3D frame of reference, furthermore, using state estimation algorithms, specifically the Estimated Kalman Filter, it was possible to estimate the future position and relative velocity of each detected object at five times the original frequency, where the relative velocity to the vehicle was vizualized using the red arrows as seen in the image above.
 
-However, this current make/model does have any object classification capabilities.
+However, this Cepton Vista does not have object classification capabilities, which leads to the fusion strategy..
 
 **The Fusion Strategy**
 
@@ -62,7 +62,7 @@ However, this current make/model does have any object classification capabilitie
 <img src="/images/IoU figure.png?raw=true" />
 
 
-The key to bringing these two sensors together was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation is best illustrated above, where one rectangle represents the bounding box of the classified object from the Monocular Camera and the other rectangle comes from the 3D bounding box of the LiDAR which was projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. Intersected boxes with an IoU value of 50% or above can be percieved as cars.  
+The key to bringing these two sensors together was simple yet effective mathematical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation is best illustrated above, where one rectangle represents the bounding box of the classified object from the Monocular Camera and the other rectangle comes from the 3D bounding box of the LiDAR which was projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. Intersected boxes with an IoU value of 50% or above can be percieved as cars.  
 
 For more detailed information on Intersection over Union, click this [link](https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/ "IoU").
 
@@ -98,7 +98,7 @@ The PCB seen in the image above is recognized as a _Digital Signal Processing Bo
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
 
-The following year, I had become the new President of the club, and with that I had the responsibilty of carrying on the great work was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
+The following year, I had become the new President of the club, and with that, I had the responsibilty of carrying on the great work that was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
 
@@ -151,13 +151,13 @@ This little fella was created for our Microcomputer-Based Control Systems course
 
 My role on this project was broken down into 3 main roles:
 1. Develop High level control implementation.
-2. Enable Lane Tracking through experimenting with the _Pixy2_ and understanding the Application Programming Interface (API)
-3. Develop the system dynamics of the vehicle on MATLAB and implement PID control to the motor to perform Adaptive Cruise Control
+2. Enable Lane Tracking through experimenting with the _Pixy2_ and understanding the Application Programming Interface (API).
+3. Develop the system dynamics of the vehicle on MATLAB/Simulink and implement PID control to the motor for smooth Adaptive Cruise Control performance.
 
 ![RC_BOT](https://media.giphy.com/media/o8D44rIr8aQjwA1qTs/giphy.gif)
 
 
-In the above video, you can see me just starting to get the hang of the _Pixy2_ line detection API, here the position of the line in pixel is being used to control the steering of the RC Car via a built in servo motor, notice the slow reposnse of the steering system..
+In the above video, you can see me just starting to get the hang of the _Pixy2_ line detection API, here the position of the line in pixel is being used to control the steering of the RC Car via a built in servo motor, notice the slow repsonse from the steering system..
 
 
 ```javascript
@@ -178,19 +178,19 @@ float PID_Controller_steer(float Kp, float Ki, float Kd, float r_value_steer, fl
 }
 ```
 
-The code block above represents the function that was written for the PID controller, this specific function controlled the duty cycle of the servo motor that would steer of the vehicle based on the , this approach led to a faster, smoother, and more refined response in the steering of the vehicle.
+The code block above represents the function that was written for the PID controller, this specific function controlled the duty cycle of the servo motor that would steer the vehicle based on the pixel coordinates of the line, this approach led to a faster, smoother, and more refined response in the steering of the vehicle.
 
 
 <img src="/images/Adaptive Cruise Control Picture2.png?raw=true" />
 
 
-On to the simulation portion of the project. With access the powerful features of _MATLAB_ and _Simulink_, I was able to create a system that used digitally filtered feedback from the Sharp IR Sensor to sense oncoming objects and deploy a PID control strategy that was facilitated by an Arduino microcontroller to slow down our mechatronic RC Car. Don't let the images fool you, while the system may look trivial, each of these blocks comprises of complex subsystems and subfunctions that were used to develop the plant dynamics, sensor input with a low-pass filtration, and PID controlled Pulse Width Modulation (PWM) to control the car's motor speed.
+On to the simulation portion of the project. With access to the powerful features of MATLAB/Simulink, I was able to create a system that used digitally filtered feedback from the Sharp IR Sensor to sense oncoming objects and deploy a PID control strategy that was facilitated by an Arduino microcontroller to slow down our mechatronic RC Car. Don't let the images fool you, while the system may look trivial, each of these blocks comprises of complex subsystems and subfunctions that were used to develop the plant dynamics, sensor input with a low-pass filtration, and PID controlled Pulse Width Modulation (PWM) to control the car's motor speed.
 
 
 <img src="/images/filtered_ultrasonic.jpg?raw=true" />
 
 
-An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform Obstacle Avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the graph above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
+An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform Obstacle Avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the graph above. The accuracy and performance of this sensor was improved significantly through using a digital low-pass filter. The significant effects of this approach can be seen when comparing the filtered output in the blue curve with the unfiltered output in the red curve.
 
 
 
@@ -208,7 +208,7 @@ This experience deserves a higher slot in my portfolio as it has been instrument
 
 **Procurement Engineer**
 
-I initally began my journey at Innovative Billboards as a Procurment Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way to a single phase step down transformer. 
+I initally began my journey at Innovative Billboards as a Procurement Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way to a single phase step down transformer. 
 I quickly established myself in this role due to my ability to communicate clearly and concisely to my colleagues and suppliers while quickly mastering each product's properties and standards to guide the project towards economoic and robust solutions; essentially, I was responsible for every purchase that made the prototype successful and played a primary role in managing the logistics of delivering the prototype to Innovative Billboards' local facility.
 
 
@@ -224,7 +224,7 @@ When I first joined Innovative Billboards, I had big aspirations to learn the tr
 
 Having gained substantial experience from my work on the prototype, and coupled with the vast knowledge on sensors and control system design gained throughout my Mechatronics degree, I undertook the heavy task of coordinating with numerous automation firms overseas to develop and draft an 80 page document on the entire control system of the Full Scale Billboard. Additionally, I had generated a detailed Instrument I/O list for the Billboard and communicated with vendors to select a tailored PLC solution for the system.
 
-The next line of achievements was motor selection and simulation, taking a deep dive into Electric Motor literature and having worked with seasoned proffesionals [Bill Young](https://www.linkedin.com/in/bill-young-8a2aa91/ "Bill Young") and [Dr. Ka C. Cheok](https://oakland.edu/secs/directory/cheok "Dr. Ka C. Cheok"), I was able to simulate the Billboard's scrolling mechanism on MATLAB/Simulink using the _Linear-quadratic regulator (LQR)_ and PID control strategies. Plotting and comparing the speed-torque curves of the simulation and the manufacturer in order to select the most suitable motors and gear reduction that would reduce motor cost and [Inertia Mismatch](https://www.motioncontrolonline.org/content-detail.cfm/Motion-Control-News/Understanding-the-Mysteries-of-Inertia-Mismatch/content_id/404 "Inertia Mismatch"). 
+The next line of achievements was motor selection and simulation, taking a deep dive into Electric Motor literature and having worked with seasoned professionals [Bill Young](https://www.linkedin.com/in/bill-young-8a2aa91/ "Bill Young") and [Dr. Ka C. Cheok](https://oakland.edu/secs/directory/cheok "Dr. Ka C. Cheok"), I was able to simulate the Billboard's scrolling mechanism on MATLAB/Simulink using the _Linear-quadratic regulator (LQR)_ and PID control strategies. Plotting and comparing the speed-torque curves of the simulation with those of the manufacturer in order to select the most suitable motors and gear reduction that would reduce motor cost and [Inertia Mismatch](https://www.motioncontrolonline.org/content-detail.cfm/Motion-Control-News/Understanding-the-Mysteries-of-Inertia-Mismatch/content_id/404 "Inertia Mismatch"). 
 
 I look back fondly on my memories working for Innovative Billboards LLC, and the great experiences long-lasting relationships that I have built.
 
