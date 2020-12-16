@@ -84,14 +84,15 @@ The image above drives the sensor fusion home, where the red rectangles in the l
 [![GEM_rundown](https://res.cloudinary.com/marcomontalbano/image/upload/v1608106627/video_to_markdown/images/youtube--k2_-BM4CIBk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=k2_-BM4CIBk "GEM_rundown")
 
 
-Early into my masters program, I realized that I had a passion for autonomous systems and robotics, but I did not know the first thing about them, that all changed when I became an active member of the Smart Vehicle Club (Autonomous Vehicle Club) in 2019. Led by [John Brooks](https://www.linkedin.com/in/jbrooks47/ "John Brooks") that year, our team had accomplished the phenomenal goal of developing the Drive-By-Wire system of the Polaris GEM vehicle, as demonstrated in the video clip above. 
+Early into my masters program, I realized that I had a passion for autonomous systems and robotics, but I did not know the first thing about them, that all changed when I became an active member of the Smart Vehicle Club (Autonomous Vehicle Club) in 2019. 
+Led by [John Brooks](https://www.linkedin.com/in/jbrooks47/ "John Brooks") that year, our team had accomplished the phenomenal goal of developing the Drive-By-Wire system of the Polaris GEM vehicle, as demonstrated in the video clip above. 
 
 
 <img src="/images/PCB.png?raw=true" />
 
 
-A large part of our experience at the club was electric circuit prototyping and Printed Circuit Board (PCB) Design. Part of our goal for that year was clean and well documented designs, which involved efficient and replicable circuits; and so we introduced the concept of the PCB as a logical solution.
-The PCB seen in the image above is recognized as a _Digital Signal Processing Board_, which plays the important role of conditioning signals going to and from the microcontroller to ensure that the board is communcating the the system and vice versa. Examples of sub-circuits in this board are Digital to Analog Converters (DACs) and Voltage Dividers.
+A large part of our experience at the club was electric circuit prototyping and Printed Circuit Board (PCB) Design. Part of our goal for that year was clean and well documented designs, which involved efficient and replicable circuits; and thus, we introduced the concept of the PCB as a logical solution.
+The PCB seen in the image above is recognized as a _Digital Signal Processing Board_, which plays the important role of conditioning signals going to and from the microcontroller to ensure that the board is communicating with the system and vice versa. Examples of sub-circuits in this board are Digital to Analog Converters (DACs) and Voltage Dividers.
 
 
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
@@ -99,7 +100,7 @@ The PCB seen in the image above is recognized as a _Digital Signal Processing Bo
 
 The following year, I had become the new President of the club, and with that I had the responsibilty of carrying on the great work was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
 
-The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
+The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
 
 Point cloud processing for 3D LiDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LiDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
 
@@ -146,9 +147,9 @@ The project that sparked a passion! As part of the introduction to the _Robot Op
 
 Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it still does, but our team did it anyway.
 
-This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_ and contolled by an _Arduino Uno_. 
+This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and a _Sharp GP2Y0A21YK Infrared Sensor_ that were contolled by an _Arduino Uno_. 
 
-My role on this project was broken down into two main roles:
+My role on this project was broken down into 3 main roles:
 1. Develop High level control implementation.
 2. Enable Lane Tracking through experimenting with the _Pixy2_ and understanding the Application Programming Interface (API)
 3. Develop the system dynamics of the vehicle on MATLAB and implement PID control to the motor to perform Adaptive Cruise Control
@@ -189,7 +190,7 @@ On to the simulation portion of the project. With access the powerful features o
 <img src="/images/filtered_ultrasonic.jpg?raw=true" />
 
 
-An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform obstacle avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the graph above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
+An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform Obstacle Avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the graph above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
 
 
 
@@ -219,11 +220,11 @@ Pressure forms diamonds, and we were under a lot of pressure, with two weeks to 
 
 **Controls Engineer**
 
-When I first joined Innovative Billboards, I had big aspirations to become learn the trade of a controls engineer through surrounding myself with distinguished professors and consultants with over 20 years of experience in the field of controls, and when Summer 2020 came around, I had the golden opportunity to apply myself as a Controls Engineer Intern. 
+When I first joined Innovative Billboards, I had big aspirations to learn the trade of a controls engineer through surrounding myself with distinguished professors and consultants with over 20 years of experience in the field of controls, and when Summer 2020 came around, I had the golden opportunity to apply myself as a Controls Engineer Intern. 
 
 Having gained substantial experience from my work on the prototype, and coupled with the vast knowledge on sensors and control system design gained throughout my Mechatronics degree, I undertook the heavy task of coordinating with numerous automation firms overseas to develop and draft an 80 page document on the entire control system of the Full Scale Billboard. Additionally, I had generated a detailed Instrument I/O list for the Billboard and communicated with vendors to select a tailored PLC solution for the system.
 
-The next line of achievements was motor selection and simulation, taking a deep dive into Electric Motor literature and having worked with seasoned [Bill Young](https://www.linkedin.com/in/bill-young-8a2aa91/ "Bill Young") and [Dr. Ka C. Cheok](https://oakland.edu/secs/directory/cheok "Dr. Ka C. Cheok"), I was able to simulate the Billboard's scrolling mechanism on MATLAB/Simulink using the _Linear-quadratic regulator (LQR)_ and PID control strategies. Plotting and comparing the speed-torque curves of the simulation and the manufacturer in order to select the most suitable motors and gear reduction that would reduce motor cost and [Inertia Mismatch](https://www.motioncontrolonline.org/content-detail.cfm/Motion-Control-News/Understanding-the-Mysteries-of-Inertia-Mismatch/content_id/404 "Inertia Mismatch"). 
+The next line of achievements was motor selection and simulation, taking a deep dive into Electric Motor literature and having worked with seasoned proffesionals [Bill Young](https://www.linkedin.com/in/bill-young-8a2aa91/ "Bill Young") and [Dr. Ka C. Cheok](https://oakland.edu/secs/directory/cheok "Dr. Ka C. Cheok"), I was able to simulate the Billboard's scrolling mechanism on MATLAB/Simulink using the _Linear-quadratic regulator (LQR)_ and PID control strategies. Plotting and comparing the speed-torque curves of the simulation and the manufacturer in order to select the most suitable motors and gear reduction that would reduce motor cost and [Inertia Mismatch](https://www.motioncontrolonline.org/content-detail.cfm/Motion-Control-News/Understanding-the-Mysteries-of-Inertia-Mismatch/content_id/404 "Inertia Mismatch"). 
 
 I look back fondly on my memories working for Innovative Billboards LLC, and the great experiences long-lasting relationships that I have built.
 
