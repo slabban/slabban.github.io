@@ -3,7 +3,7 @@
 
 ## About Me
 
-I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems. In addition, I have a secondary focus on Electric Motor and PCB design. 
+I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems (ADAS). In addition, I have a secondary focus on Electric Motor and PCB design. 
 Accompanied with an undergraduate degree in Mechanical Engineering, my skills shine when bridging the multi-disciplinary gap between hardware and software through strong teamwork and effective communication and presentation skills.
 
 At heart, my dream is to make the indivdual life safer and more efficient through vehicle autonomy and robotic applications with the end goal of creating a global mindset that targets sustainability and safety for our current and future generations.
@@ -35,9 +35,9 @@ All that has made me who I am as an Engineer is highlighted here.
 [![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
 
 
-My latest work and magnum opus. The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars.
+My latest work and magnum opus! The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. The algorithms were developed using a combination of _C++_ and _Python_ on the _Robot Operating System (ROS)_ and the results were visualized in _Rviz_ using the Lincoln MKZ [_DATASPEED_](https://www.dataspeedinc.com/adas-by-wire-system/ "_DATASPEED_") autonomous vehicle.
 
-A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decision on how to react in that environment. That variety comes from different sensors that provide different information, and if those two sensors can communicate well, then they can work together to allow a higher level of Perception or Awareness.
+A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decisions on how to react in that environment. That variety comes from different types of sensors that provide a variety of information, and if those two sensors can communicate well, then they can work together to allow a higher level of _Perception_ or _Awareness_.
 
 
 <img src="/images/classified_object_img.png?raw=true" />
@@ -51,7 +51,7 @@ However, the Monocular Camera is poor in performance when it comes to deducing d
 <img src="/images/Lidar_ekf.png?raw=true" />
 
 
-The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting object position in a 3D frame of reference, furthermore, using state estimation algorithms, specifically the Estimated Kalman Filter, it is possible to estimate the future position and relative velocity of each detected object at five times the original rate, where the relative velocity to the vehicle is vizualized using the red arrows as seen in the image above.
+The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting the position of objects in a 3D frame of reference, furthermore, using state estimation algorithms, specifically the Estimated Kalman Filter, it was possible to estimate the future position and relative velocity of each detected object at five times the original frequency, where the relative velocity to the vehicle was vizualized using the red arrows as seen in the image above.
 
 However, this current make/model does have any object classification capabilities.
 
@@ -61,7 +61,7 @@ However, this current make/model does have any object classification capabilitie
 <img src="/images/IoU figure.png?raw=true" />
 
 
-The key to bringing these two sensor was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation of best illustrated above, where one rectangle is the bounding box of the classified object from the Monocular Camera and the other rectangle is from the 3D bounding box of the LiDAR which is projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. intersected boxes with an IoU value of 50% or above can be percieved as cars.  
+The key to bringing these two sensors together was simple yet effective mathmatical principle termed the _Jaccard Index_, or _Intersection Over Union (IoU)_ . The implementation is best illustrated above, where one rectangle represents the bounding box of the classified object from the Monocular Camera and the other rectangle comes from the 3D bounding box of the LiDAR which was projected as 2D pixels using Transformation and Image Geometry packages/libraries that are available to ROS. Intersected boxes with an IoU value of 50% or above can be percieved as cars.  
 
 For more detailed information on Intersection over Union, click this [link](https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/ "IoU").
 
@@ -69,23 +69,26 @@ For more detailed information on Intersection over Union, click this [link](http
 <img src="/images/Camera_LiDAR_IoU.png?raw=true" />
 
 
-The image above drives the sensor fusion home, where the red rectangles in the left side of the figure above are the objects that have passed the IoU test of 50%, which are then filtered and re-published as can be seen on the right side of the figure above.
+The image above drives the sensor fusion home, where the red rectangles in the left side of the figure above are the objects that have passed the IoU test of 50%, which are then filtered and re-published as can be seen on the right side of the figure above. 
+
 
 
 - - - -
 <a name="lidar"></a>
 
 
-### Point Cloud Processing on Cepton Vista 3D LIDAR
+### Point Cloud Processing on Cepton Vista 3D LiDAR
 
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
 
-The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed in C++ on ROS (Robot Operating System) and the results were visualized in Rviz.
+The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
 
-Point cloud processing for 3D LIDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LIDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
+Point cloud processing for 3D LiDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LiDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
 
 The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
+
+
 
 - - - -
 <a name="Audibot_ACC"></a>
@@ -96,20 +99,21 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 ![Adaptive Cruise Control](https://media.giphy.com/media/ylOb7MNaYR277JFtJW/giphy.gif)
 
 
-The project that sparked a passion! As part of the introduction to ROS (Robot Operating System) course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control system that used individual feedback of the seperation distance between the two Audibot vehicles from an array of GNSS/GPS, LIDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming blue Audibot, while maintaining a vehicle separation distance set by the driver.
+The project that sparked a passion! As part of the introduction to the _Robot Operating System (ROS)_ course at Oakland University, my group undertook the task of developing an Adaptive Cruise Control (ACC) system that used feedback of the seperation distance between the two Audibot vehicles from an array of GNSS/GPS, LiDAR, and Monocular Camera sensors that was fed to a PI Controller to safely slow down the following vehicle from 70 to 45 mph and effectively avoid collision with the oncoming blue Audibot, while maintaining a vehicle separation distance set by the driver.
 
 
 <img src="/images/ACC_Audibot.png?raw=true" />
 
 
-**GNSS/GPS-Based Cruise Control**: the system relied on the communication between the GPS modules that were placed on each vehicle, creating a Vehicle-to-Vehicle (V2V) communication. After extracting the Universal Transverse Mercator (UTM) coordinates of each vehicle, we used the Pythagorean theorem to calculate the relative distance between the vehicles and fed this distance as the input to our PI controller to adjust the red Audibot's speed.
+**GNSS/GPS-Based Cruise Control**: The system relied on the communication between the GPS modules that were placed on each vehicle, creating a Vehicle-to-Vehicle (V2V) communication. After extracting the Universal Transverse Mercator (UTM) coordinates of each vehicle, we used the Pythagorean theorem to calculate the relative distance between the vehicles and feed this distance as the input to our PI controller to adjust the red Audibot's speed.
 
-**2D LiDAR-Based Cruise Control**: We simply extracted the positional data coming from the 2D LiDAR mounted on the red Audibot and used this distance in out PI controller to adjust the red Audibot's speed.
+**2D LiDAR-Based Cruise Control**: We simply extracted the positional data coming from the 2D LiDAR mounted on the red Audibot and used this distance in our PI controller to adjust the red Audibot's speed.
+
 
 <img src="/images/ACC_juxtaposed_blob.png?raw=true" />
 
 
-**Monocular Camera-Based Cruise Control**: We were able to take advantage of the _OpenCV_ library to perform _Simple Blob Detection_, as seen above, on the oncoming faced with the challenge of mapping the pixels to meters; however, we were faced with the challenge of determining distance based on pixels.. our solution was elegant and simple, using linear interpolation, we were able to map the distances from the 2D LiDAR to the Camera's pixels, and as a result, were able to use the same PI controller that we used on the previous systems and generate the same results!
+**Monocular Camera-Based Cruise Control**: We were able to take advantage of the _OpenCV_ library to perform _Simple Blob Detection_, on the oncoming vehicle. However, we were faced with the challenge of determining the seperation distance based on pixels.. our solution was elegant and simple, using linear interpolation, we were able to map the distances from the 2D LiDAR to the Camera's pixels, and as a result, were able to use the same PI controller that we used on the previous systems and generate the same results!
 
 
 
@@ -125,7 +129,7 @@ The project that sparked a passion! As part of the introduction to ROS (Robot Op
 
 Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it probably still does, but our team did it anyway.
 
-This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_. 
+This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_ and contolled by an _Arduino Uno_. 
 
 My role on this project was broken down into two main roles:
 1. Develop High level control implementation.
@@ -162,13 +166,13 @@ The code block above represents the function that was written for the PID contro
 <img src="/images/Adaptive Cruise Control Picture2.png?raw=true" />
 
 
-On to the simulation portion of the project. With access the powerful features of MATLAB and Simulink, I was able to create a system that used digitally filtered feedback from the Sharp IR Sensor to sense oncoming objects and deploy a PID control strategy that was facilitated by an Arduino microcontroller to slow down our mechatronic RC Car. Don't let the images fool you, while the system may seem trivial, each of these blocks comprises of complex subsystems and subfunctions that are were used to develop the plant dynamics, sensor input with a low-pass filtration, PID controlled Pulse Width Modulation (PWM).
+On to the simulation portion of the project. With access the powerful features of _MATLAB_ and _Simulink_, I was able to create a system that used digitally filtered feedback from the Sharp IR Sensor to sense oncoming objects and deploy a PID control strategy that was facilitated by an Arduino microcontroller to slow down our mechatronic RC Car. Don't let the images fool you, while the system may look trivial, each of these blocks comprises of complex subsystems and subfunctions that were used to develop the plant dynamics, sensor input with a low-pass filtration, and PID controlled Pulse Width Modulation (PWM) to control the car's motor speed.
 
 
 <img src="/images/filtered_ultrasonic.jpg?raw=true" />
 
 
-An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform obstacle avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the image above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
+An interesting avenue explored during the initial stages of this project was the use of Ultrasonic Sensors to perform obstacle avoidance, specifically the implementation of a [digital low-pass filter](https://youtu.be/KzdsOhwVtms?t=496 "Digital Filtration Methods"). Ultrasonic sensors are notorious for their high levels of noise, which can lead to unwanted spikes and false positive readings as seen in the red curve in the graph above. This accuracy and performance of this sensor was improved significantly through using a digtal low-pass filter, as shown in the blue curve.
 
 
 
@@ -182,16 +186,16 @@ An interesting avenue explored during the initial stages of this project was the
 [![IBB_Quarter_Scale](https://res.cloudinary.com/marcomontalbano/image/upload/v1608022524/video_to_markdown/images/youtube--Y56XGTr2FhU-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Y56XGTr2FhU&feature=youtu.be "IBB_Quarter_Scale")
 
 
-This experience deserves a higher slot in my portfolio as it has been instrumental to my foundation as a professional and an engineer; however, due to a signed NDA and a deep reverence for my ex-boss and mentor, Paul Angott, I will just use this section to reflect on the valuable experiences that I gained in my time as a Controls Engineer Intern. 
+This experience deserves a higher slot in my portfolio as it has been instrumental to my foundation as a professional and an engineer; however, due to a signed NDA, I will just use this section to reflect on my achievements as a Procurement & Controls Engineer Intern. 
 
-I initally began my journey at Innovative Billboards as a Procurment Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way a single phase step down transformer. 
-I quickly established myself in this role due to my ability to communicate clearly and concisely to my colleagues and suppliers while quickly mastering each product's properties and standards to guide the project towards economoic and robust solutions; essentially, I was responsible for every purchase that made the prototype successful. 
+I initally began my journey at Innovative Billboards as a Procurment Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way to a single phase step down transformer. 
+I quickly established myself in this role due to my ability to communicate clearly and concisely to my colleagues and suppliers while quickly mastering each product's properties and standards to guide the project towards economoic and robust solutions; essentially, I was responsible for every purchase that made the prototype successful and played a primary role in managing the logistics of delivering the prototype to Innovative Billboards' local facility.
 
-
-I also played a primary role in managing logistics of delivering the prototype to Innovative Billboards' local facility 
 
 <img src="/images/ibb_motorwork.png?raw=true" />
 
+
+Pressure forms diamonds, and we were under a lot of pressure, with two weeks to prepare for our initial investor meeting, we had to transform the structural skeleton of the billboard into the the electo-mechanical product seen in the video above. I took charge of routing and harnessing High Voltage breaker box, Delta motor drives, ABB AC induction motors in addition to the Low - Voltage box comprising of (Programmable Logic PLC of the billboard prototype and took the lead for on-site installation and safety management of these systems, which was successfully presented at stakeholder meetings.	
 
 
 [Return to TOP](#TOP)
