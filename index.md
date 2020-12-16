@@ -15,7 +15,7 @@ All that has made me who I am as an Engineer is highlighted here.
 
 * [_Camera-LIDAR Sensor Fusion and State Estimation of LiDAR_](#Perception)
 
-* [_Point Cloud Processing on Cepton Vista 3D LIDAR_](#lidar)
+* [_Autonomous Vehicles Club (Smart Vehicles Club)_](#SVC)
 
 * [_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
 
@@ -35,7 +35,8 @@ All that has made me who I am as an Engineer is highlighted here.
 [![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
 
 
-My latest work and magnum opus! The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. The algorithms were developed using a combination of _C++_ and _Python_ on the _Robot Operating System (ROS)_ and the results were visualized in _Rviz_ using the Lincoln MKZ [_DATASPEED_](https://www.dataspeedinc.com/adas-by-wire-system/ "_DATASPEED_") autonomous vehicle.
+My latest work and magnum opus! The succesfull sensor fusion of the Monocular Camera with the State Estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. 
+These algorithms were developed using a combination of _C++_ and _Python_ on the _Robot Operating System (ROS)_ and the results were visualized in _Rviz_ using the Lincoln MKZ [_DATASPEED_](https://www.dataspeedinc.com/adas-by-wire-system/ "_DATASPEED_") autonomous vehicle provided by [Dr. Micho Radovnikovich](https://www.linkedin.com/in/micho-radovnikovich-ph-d-186820b/ "Dr. Micho Radovnikovich").
 
 A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decisions on how to react in that environment. That variety comes from different types of sensors that provide a variety of information, and if those two sensors can communicate well, then they can work together to allow a higher level of _Perception_ or _Awareness_.
 
@@ -74,22 +75,29 @@ The image above drives the sensor fusion home, where the red rectangles in the l
 
 
 - - - -
-<a name="lidar"></a>
+<a name="SVC"></a>
 
 
-### Point Cloud Processing on Cepton Vista 3D LiDAR
+### Autonomous Vehicles Club (Smart Vehicles Club)
 
 
-[![GEM_rundown](https://res.cloudinary.com/marcomontalbano/image/upload/v1608022524/video_to_markdown/images/youtube--Y56XGTr2FhU-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Y56XGTr2FhU&feature=youtu.be "GEM_rundown")
-
-Early into my masters program, I realized that I had a passion for autonomous systems and robotics, but I did not know the first thing about them, that all changed when I became an active member of the Smart Vehicle Club (Autonomous Vehicle Club) in 2019. In that year, our team had accomplished the phenomenal goal of developing the Drive-By-Wire system of the Polaris GEM vehicle, as demonstrated in the video clip above. 
+[![GEM_rundown](https://res.cloudinary.com/marcomontalbano/image/upload/v1608106627/video_to_markdown/images/youtube--k2_-BM4CIBk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=k2_-BM4CIBk "GEM_rundown")
 
 
+Early into my masters program, I realized that I had a passion for autonomous systems and robotics, but I did not know the first thing about them, that all changed when I became an active member of the Smart Vehicle Club (Autonomous Vehicle Club) in 2019. Led by [John Brooks](https://www.linkedin.com/in/jbrooks47/ "John Brooks") that year, our team had accomplished the phenomenal goal of developing the Drive-By-Wire system of the Polaris GEM vehicle, as demonstrated in the video clip above. 
 
-A year had passed and I had become the president of the club
+
+<img src="/images/PCB.png?raw=true" />
+
+
+A large part of our experience at the club was electric circuit prototyping and Printed Circuit Board (PCB) Design. Part of our goal for that year was clean and well documented designs, which involved efficient and replicable circuits; and so we introduced the concept of the PCB as a logical solution.
+The PCB seen in the image above is recognized as a _Digital Signal Processing Board_, which plays the important role of conditioning signals going to and from the microcontroller to ensure that the board is communcating the the system and vice versa. Examples of sub-circuits in this board are Digital to Analog Converters (DACs) and Voltage Dividers.
+
 
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
+
+The following year, I had become the new President of the club, and with that I had the responsibilty of carrying on the great work was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LIDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
 
@@ -136,7 +144,7 @@ The project that sparked a passion! As part of the introduction to the _Robot Op
 [![Mechatronic Car](https://res.cloudinary.com/marcomontalbano/image/upload/v1607640464/video_to_markdown/images/youtube--EgaXYLZe98o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/EgaXYLZe98o "Mechatronic Car")
 
 
-Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it probably still does, but our team did it anyway.
+Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it still does, but our team did it anyway.
 
 This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and an _Sharp GP2Y0A21YK Infrared Sensor_ and contolled by an _Arduino Uno_. 
 
