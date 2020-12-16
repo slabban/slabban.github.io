@@ -79,6 +79,15 @@ The image above drives the sensor fusion home, where the red rectangles in the l
 
 ### Point Cloud Processing on Cepton Vista 3D LiDAR
 
+
+[![GEM_rundown](https://res.cloudinary.com/marcomontalbano/image/upload/v1608022524/video_to_markdown/images/youtube--Y56XGTr2FhU-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Y56XGTr2FhU&feature=youtu.be "GEM_rundown")
+
+Early into my masters program, I realized that I had a passion for autonomous systems and robotics, but I did not know the first thing about them, that all changed when I became an active member of the Smart Vehicle Club (Autonomous Vehicle Club) in 2019. In that year, our team had accomplished the phenomenal goal of developing the Drive-By-Wire system of the Polaris GEM vehicle, as demonstrated in the video clip above. 
+
+
+
+A year had passed and I had become the president of the club
+
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
 
