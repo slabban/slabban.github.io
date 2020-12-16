@@ -188,6 +188,8 @@ An interesting avenue explored during the initial stages of this project was the
 
 This experience deserves a higher slot in my portfolio as it has been instrumental to my foundation as a professional and an engineer; however, due to a signed NDA, I will just use this section to reflect on my achievements as a Procurement & Controls Engineer Intern. 
 
+**Procurement Engineer**
+
 I initally began my journey at Innovative Billboards as a Procurment Engineer Intern, where I was tasked with locating and contacting vendors locally and overseas to form long term relationships and purchase a variety of mechanical and electrical products that were needed for the Billboard in a Box quarter scale prototype shown in the video above, ranging from steel tubes and acrylic panels all the way to a single phase step down transformer. 
 I quickly established myself in this role due to my ability to communicate clearly and concisely to my colleagues and suppliers while quickly mastering each product's properties and standards to guide the project towards economoic and robust solutions; essentially, I was responsible for every purchase that made the prototype successful and played a primary role in managing the logistics of delivering the prototype to Innovative Billboards' local facility.
 
@@ -195,7 +197,12 @@ I quickly established myself in this role due to my ability to communicate clear
 <img src="/images/ibb_motorwork.png?raw=true" />
 
 
-Pressure forms diamonds, and we were under a lot of pressure, with two weeks to prepare for our initial investor meeting, we had to transform the structural skeleton of the billboard into the the electo-mechanical product seen in the video above. I took charge of routing and harnessing High Voltage breaker box, Delta motor drives, ABB AC induction motors in addition to the Low - Voltage box comprising of (Programmable Logic PLC of the billboard prototype and took the lead for on-site installation and safety management of these systems, which was successfully presented at stakeholder meetings.	
+Pressure forms diamonds, and we were under a lot of pressure, with two weeks to prepare for our initial investor meeting, we had to transform the structural skeleton of the billboard into the the electo-mechanical product seen in the video above. I took charge of routing and harnessing High-Voltage breaker box, Delta motor drives, ABB AC induction motors and a Low-Voltage box comprising of a Beckhoff Programmable Logic (PLC), Safety Lights, and Stop/Start Button to control the system of the billboard prototype, the picture above provides a little insight into that successful experience.
+
+
+**Controls Engineer**
+
+When I first joined Innovative Billboards, I had big aspirations to become learn the trade of a controls engineer through surrounding myself with distinguished professors and consultants with over 20 years of experience in the field of controls, and when Summer 2020 came around, I had the golden opportunity to apply myself as  controls engineer.. More to come on this soon! 
 
 
 [Return to TOP](#TOP)
