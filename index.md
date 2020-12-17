@@ -13,11 +13,11 @@ All that has made me who I am as an Engineer is highlighted here.
 #### For your ease of perusing, I've listed my projects as follows:
 
 
-* [_Camera-LIDAR Sensor Fusion and State Estimation of LiDAR_](#Perception)
+* [_Camera-LiDAR Sensor Fusion and State Estimation of LiDAR_](#Perception)
 
 * [_Autonomous Vehicles Club (Smart Vehicles Club)_](#SVC)
 
-* [_Adaptive Cruise Control using GPS/GNSS, 2D LIDAR, and Camera_](#Audibot_ACC)
+* [_Adaptive Cruise Control using GPS/GNSS, 2D LiDAR, and Camera_](#Audibot_ACC)
 
 * [_Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_](#RCBOT)
 
