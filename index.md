@@ -101,11 +101,19 @@ The PCB seen in the image above is recognized as a _Digital Signal Processing Bo
 
 The following year, I had become the new President of the club, and with that, I had the responsibilty of carrying on the great work that was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
 
-The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using _C++_ and  on the _Robot Operating System (ROS)_  and the results were visualized in _Rviz_.
+The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using the _Point Cloud Library (PCL)_ in _C++_ and realized in the _Robot Operating System (ROS)_ The results were visualized in _Rviz_.
 
-Point cloud processing for 3D LiDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LiDAR need to be processed in order to tune the performance based on the application, such as SLAM or Object Detection. 
+Point cloud processing for 3D LiDARs is a huge deal as these sensors are data heavy, and can be very taxing on our processors if handled poorly. Additionally, the raw points coming from the LiDAR need to be processed in order to tune the performance based on the application, such as SLAM or object segementation. 
 
 The key steps are: Constraining the range of the point cloud, applying a Voxel Grid Filter to downsample the data, filtering out the normal vectors to exclude the ground, implementing Euclidean Clustering, and bounding the clustered objects. 
+
+
+<img src="/images/Camera_Calibration.png?raw=true" />
+
+
+Monocular and Stereo Cameras are prevalent in the world of Autonomous Vehicles due to the awesome ability to pair them with computer vision systems that open the doors to object classification and geometric estimation. Naturally, we saw fit to include cameras on our vehicle.
+
+The picture above illustrates my successfull efforts to calibrate the intrinsic properties of the _Logitech C920 Pro Webcam_ using the popular checkerboard approach. Intrinsic calibration is extremely important, as it detemines and accounts for the distortion, focal length, and image center that is unique to each camera model. This allowed us to perform accurate geometric operations such as lane detection and projection of LiDAR objects into the camera's frame of reference for sensor fusion.
 
 
 
