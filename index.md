@@ -113,7 +113,7 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 
 Monocular and Stereo Cameras are prevalent in the world of Autonomous Vehicles due to the awesome ability to pair them with computer vision systems that open the doors to object classification and geometric estimation. Naturally, we saw fit to include cameras on our vehicle.
 
-The picture above illustrates my successfull efforts to calibrate the intrinsic properties of the _Logitech C920 Pro Webcam_ using the popular checkerboard approach. Intrinsic calibration is extremely important, as it detemines and accounts for the distortion, focal length, and image center that is unique to each camera model. This allowed us to perform accurate geometric operations such as lane detection and projection of LiDAR objects into the camera's frame of reference for sensor fusion.
+The picture above illustrates my successfull efforts to calibrate the intrinsic properties of the _Logitech C920 Pro Webcam_ using the popular checkerboard approach. Intrinsic calibration is extremely important, as it detemines and accounts for the distortion, focal length, and image center parameters that are unique for each camera model. This allowed us to perform accurate geometric operations such as lane detection and projection of LiDAR objects into the camera's frame of reference for sensor fusion.
 
 
 
