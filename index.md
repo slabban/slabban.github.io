@@ -3,11 +3,14 @@
 
 ## About Me
 
-I'm a Mechatronics Engineer with demonstrated experience regarding the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and a variety of sensors that are used in current Autonomous and Advanced Drive Assistance Systems (ADAS). 
-I also have a secondary focus on Electric Motor and PCB design. 
-Accompanied with an undergraduate degree in Mechanical Engineering, my skills shine when bridging the multi-disciplinary gap between hardware and software through strong teamwork and effective communication and presentation skills.
+I'm a Mechatronics Engineer with demonstrated experience on the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and other miscallaneous sensors that are popular in Autonomous and Advanced Drive Assistance Systems (ADAS). 
 
-At heart, my dream is to make the individual life safer and more efficient through vehicle autonomy and robotic applications with the end goal of creating a global mindset that targets sustainability and safety for our current and future generations.
+My developments exists on both simulated and real-life environments and are centered around my knowledge of the Linux operating system, which I have leveraged to containerize and build CI pipelines that revolve around the Robot Operating System Middleware.
+
+I also have experiences with PIC32 & SAM Microcontrollers, Electric Motors, PCB design, and have recently been working on Machine Learning as it pertains to classification and regression based tasks. 
+
+At heart, my dream is to make the individual life safer and more efficient through staying abreast of the latest developments in the Robotics and AI fields.
+My end goal is to play a key part in contributing to the global mindset that targets sustainability and safety for our current and future generations.
 
 All that has made me who I am as an Engineer is highlighted here.
 
