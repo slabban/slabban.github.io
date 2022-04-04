@@ -3,11 +3,11 @@
 
 ## About Me
 
-I'm a Mechatronics Engineer with demonstrated experience on the development of data processing, state estimation, and control algorithms for GPS/GNSS, LIDAR, Radar, Camera, and other miscallaneous sensors that are popular in Autonomous and Advanced Drive Assistance Systems (ADAS). 
+I'm a Mechatronics Engineer with demonstrated experience on the development of Perception and Localization Algorithms for GPS/GNSS, LIDAR, Radar, Camera, and other miscallaneous sensors that are popular in Autonomous and Advanced Drive Assistance Systems (ADAS). 
 
-My developments exists on both simulated and real-life environments and are centered around my knowledge of the Linux operating system, which I have leveraged to containerize and build CI pipelines that revolve around the Robot Operating System Middleware.
+My developments exist on both simulated and real-life environments and are centered around my knowledge of the Linux operating system and Robot Operating System Middleware.
 
-I also have experiences with PIC32 & SAM Microcontrollers, Electric Motors, PCB design, and have recently been working on Machine Learning as it pertains to classification and regression based tasks. 
+I also have experiences with Embedded Systems, Electric Motors, PCB design, and have recently been working on Machine Learning as it pertains to classification and regression based tasks. 
 
 At heart, my dream is to make the individual life safer and more efficient through staying abreast of the latest developments in the Robotics and AI fields.
 My end goal is to play a key part in contributing to the global mindset that targets sustainability and safety for our current and future generations.
@@ -117,6 +117,14 @@ The key steps are: Constraining the range of the point cloud, applying a Voxel G
 Monocular and Stereo Cameras are prevalent in the world of Autonomous Vehicles due to the awesome ability to pair them with computer vision systems that open the doors to object classification and geometric estimation. Naturally, we saw fit to include cameras on our vehicle.
 
 The picture above illustrates my successfull efforts to calibrate the intrinsic properties of the _Logitech C920 Pro Webcam_ using the popular checkerboard approach. Intrinsic calibration is extremely important, as it detemines and accounts for the distortion, focal length, and image center parameters that are unique for each camera model. This allowed us to perform accurate geometric operations such as lane detection and projection of LiDAR objects into the camera's frame of reference for sensor fusion.
+
+[![SVC Simulation](https://res.cloudinary.com/marcomontalbano/image/upload/v1649037959/video_to_markdown/images/youtube--G2TDP7dRkh0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/G2TDP7dRkh0 "SVC Simulation")
+
+The culmination of my contribution to the team was our first **offcial driving agent**. The video above illustrates our vehicle performing lane following, obstacle detection, and lane maneuvering within the simulated Gazebo environment. Here I played lead roles in ROS integration, Perception, Localization, and Systems Architecure. Taking in the simulated raw data from the GPS, Lidar, Camera, and Vehicle Speed and setting up the complete pipeline comprising of my camera-lidar segmentation & fusion algorithm, vehicle heading state estimation, and [Ali Irshayyid's](https://www.linkedin.com/in/ali-irshayyid-967378127/) control algorithm to successfully complete test F7 of the IGVC competition. The cool part is, this driving agent *impelementation independent*, which means that the entire agent can be ported on to the physical vehicle and should perform closely to the simulation with some system tuning!
+
+My last contribution to the team was the containerization of driving agent for both the real and simulated system using Docker. This allowed us to contribute and deploy the system across multiple machines with no discrepancies!
+
+With no exaggeration, my time at the Smart Vehicle Club was an experience that shaped my career and personal life for the better and landed me the job and passion that I have today and will carry for a long time.
 
 
 
