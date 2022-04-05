@@ -16,6 +16,7 @@ All that has made me who I am as an Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
 
+* [_Multiple Object Tracking Using YOLO_](#YoloMOT)
 
 * [_Camera-LiDAR Sensor Fusion and State Estimation of LiDAR_](#Perception)
 
@@ -27,7 +28,29 @@ All that has made me who I am as an Engineer is highlighted here.
 
 * [_Innovative Billboards LLC, Internship_](#IBB)
 
+- - - -
+<a name="YoloMOT"></a>
 
+### Multiple Object Tracking Using YOLO
+
+[![YOLO MOT](https://res.cloudinary.com/marcomontalbano/image/upload/v1649134272/video_to_markdown/images/youtube--ru_O9tgi5M4-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=ru_O9tgi5M4 "YOLO MOT")
+
+My latest project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association algorithm within the Robot Operating System (ROS) Middleware.
+
+My inspiration to take on this project came from this [article](https://thinkautonomous.medium.com/computer-vision-for-tracking-8220759eee85that) that Jeremy Cohen had written. I had come across it over a year ago and thought to myself: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot", and at last did!
+
+The fun part is I was able to try my algorithm on both the YOLOv3 and YOLOv4 and compare the results as seen in the video above. Overall YOLOv4 performed better with association since it was able to consistently detect and classify objects, but YOLOv3 was able to perform the detections at a quicker rate, and hence, produce smoother estimates. Using my current system, I was getting an detection output rate of 17 HZ, and was able to push the estimate rate to 50 HZ (0.02 seconds) for YOLOv3. The YOLOV4 model architecture is larger, which really impacted the detection rate, bringing it down to ~7.5 HZ, after some experimentation I found that a estimate rate of 25 HZ (0.04 seconds) to an OK number. But as you can see, the image quality being fed to the detector isn't all that great, so I'd be curious to compare the performance with a better quality input that has been intrinsically calibrated.
+
+My algorithm, and most MOTs, can be broken down into 5 steps:
+1. Detection
+2. Association
+3. Track Identity Creation
+4. Estimation
+5. Track Identity Destruction
+   
+My methodolgy has a few drawbacks that generally apply to these classical approaches, namely loss of tracking through ID swaps and object occlusion. Using the famous Hungarian Algorithm for association paired with the EKF is known as **SORT**, and may help reduce the frequency of ID swaps and improve the overall effciency, since that algorithm uses a linear assignment strategy; whereas my current approach associates using a 'first come first serve' method. But a better method is called **Deepsort**, which leverages feature maps from the RCNN for association. Deepsort elegantly solves the ID Swap and Occlusion problem, and is built on **SORT** and the classical approach that I took. You can get the full scoop on this [here](https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104).
+
+While my algorithm is not state of the art, I am extremely proud of this project. I've learnt so much from the open source community and would like to get to a point where I can give back with well documented and readable code. This is my first step in that direction [Github link here](https://github.com/slabban/yolo_tracking).
 
 - - - -
 <a name="Perception"></a>
