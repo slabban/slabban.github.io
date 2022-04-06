@@ -122,7 +122,7 @@ The PCB seen in the image above is recognized as a _Digital Signal Processing Bo
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
 
-The following year, I had become the new President of the club, and with that, I had the responsibilty of carrying on the great work that was accomplished in the previous year, I made sure to start that off on a high note.
+The following year, I had become the new President of the club, and with that, I had the responsibility of carrying on the great work that was accomplished in the previous year, I made sure to start that off on a high note.
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using the _Point Cloud Library (PCL)_ in _C++_ and realized in the _Robot Operating System (ROS)_ The results were visualized in _Rviz_.
 
