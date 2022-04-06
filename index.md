@@ -37,7 +37,7 @@ All that has made me who I am as an Engineer is highlighted here.
 
 My latest project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association algorithm within the Robot Operating System (ROS) Middleware.
 
-My inspiration to take on this project came from this [article](https://thinkautonomous.medium.com/computer-vision-for-tracking-8220759eee85that) that Jeremy Cohen had written. I had come across it over a year ago and thought to myself: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot", and at last did!
+My inspiration to take on this project came from this [article](https://thinkautonomous.medium.com/computer-vision-for-tracking-8220759eee85) that Jeremy Cohen had written. I had come across it over a year ago and thought to myself: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot", and at last did!
 
 The fun part is I was able to try my algorithm on both the YOLOv3 and YOLOv4 and compare the results as seen in the video above. Overall YOLOv4 performed better with association since it was able to consistently detect and classify objects, but YOLOv3 was able to perform the detections at a quicker rate, and hence, produce smoother estimates. Using my current system, I was getting an detection output rate of 17 HZ, and was able to push the estimate rate to 50 HZ (0.02 seconds) for YOLOv3. The YOLOV4 model architecture is larger, which really impacted the detection rate, bringing it down to ~7.5 HZ, after some experimentation I found that a estimate rate of 25 HZ (0.04 seconds) to an OK number. But as you can see, the image quality being fed to the detector isn't all that great, so I'd be curious to compare the performance with a better quality input that has been intrinsically calibrated.
 
@@ -62,7 +62,7 @@ While my algorithm is not state of the art, I am extremely proud of this project
 [![Camera-LiDAR fusion](https://res.cloudinary.com/marcomontalbano/image/upload/v1607930316/video_to_markdown/images/youtube--EbhIny5wWd8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=EbhIny5wWd8 "Camera-LiDAR fusion")
 
 
-My latest work and magnum opus! The succesfull sensor fusion of the Mobileye Monocular Camera with the state estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. 
+Successful sensor fusion of the Mobileye Monocular Camera with the state estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. 
 These algorithms were developed using a combination of _C++_ and _Python_ on the _Robot Operating System (ROS)_ and the results were visualized in _Rviz_ using the Lincoln MKZ [_DATASPEED_](https://www.dataspeedinc.com/adas-by-wire-system/ "_DATASPEED_") autonomous vehicle provided by [Dr. Micho Radovnikovich](https://www.linkedin.com/in/micho-radovnikovich-ph-d-186820b/ "Dr. Micho Radovnikovich").
 
 A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decisions on how to react in that environment. That variety comes from different types of sensors that provide a variety of information, and if those two sensors can communicate well, then they can work together to allow a higher level of _Perception_ or _Awareness_.
@@ -73,15 +73,12 @@ A question that may come to mind is: what is sensor fusion and why is it importa
 
 Back to the subject at hand, the Monocular Camera is a powerful and affordable sensor that allows the developers to use Computer Vision to classify objects in the streamed images; this was accomplished using a [YOLOv3](https://github.com/slabban/darknet_ros "YOLOv3") framework that was adopted for the Robot Operating System (ROS).
 
-However, the Monocular Camera is poor in performance when it comes to deducing distances to objects, which leads into the next sensor..
-
 
 <img src="/images/Lidar_ekf.png?raw=true" />
 
 
-The 3D LiDAR has a higher price, but is an extremely powerful tool when it comes to detecting the position of objects in a 3D frame of reference, furthermore, using state estimation algorithms, specifically the Estimated Kalman Filter, it was possible to estimate the future position and relative velocity of each detected object at five times the original frequency, where the relative velocity to the vehicle was vizualized using the red arrows as seen in the image above.
+The 3D LiDAR is quite expensive relative to monocular cameras, but is an extremely powerful tool when it comes to detecting the position of objects in a 3D frame of reference as a raw pointcloud input, furthermore, using state estimation algorithms, the Estimated Kalman Filter in this case, it wis possible to estimate the future position and relative velocity of each detected object at five times the original frequency, where the relative velocity to the vehicle is vizualized using the red arrows as seen in the image above.
 
-However, this Cepton Vista does not have object classification capabilities, which leads to the fusion strategy..
 
 **The Fusion Strategy**
 
@@ -125,7 +122,7 @@ The PCB seen in the image above is recognized as a _Digital Signal Processing Bo
 [![LIDAR Processing](https://res.cloudinary.com/marcomontalbano/image/upload/v1607592207/video_to_markdown/images/youtube--fvGX2Kw34n0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=fvGX2Kw34n0 "LIDAR Processing")
 
 
-The following year, I had become the new President of the club, and with that, I had the responsibilty of carrying on the great work that was accomplished in the previous year, the large body of my contributions came with the development of the Perception model of the vehicle, which can be found [here](#Perception).
+The following year, I had become the new President of the club, and with that, I had the responsibilty of carrying on the great work that was accomplished in the previous year, I made sure to start that off on a high note.
 
 The video above illustrates the successful results after processing the raw point cloud data coming from the Cepton Vista LiDAR to detect the cars in front of me. The algorithms were developed using the _Point Cloud Library (PCL)_ in _C++_ and realized in the _Robot Operating System (ROS)_ The results were visualized in _Rviz_.
 
@@ -144,6 +141,10 @@ The picture above illustrates my successfull efforts to calibrate the intrinsic 
 [![SVC Simulation](https://res.cloudinary.com/marcomontalbano/image/upload/v1649037959/video_to_markdown/images/youtube--G2TDP7dRkh0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/G2TDP7dRkh0 "SVC Simulation")
 
 The culmination of my contribution to the team was our first **official driving agent**. The video above illustrates our vehicle performing lane following, obstacle detection, and lane maneuvering within the simulated Gazebo environment. Here I played lead roles in ROS integration, Perception, Localization, and Systems Architecure. Taking in the simulated raw data from the GPS, Lidar, Camera, and Vehicle Speed and setting up the complete pipeline comprising of my camera-lidar segmentation & fusion algorithm, vehicle heading state estimation, and [Ali Irshayyid's](https://www.linkedin.com/in/ali-irshayyid-967378127/) control algorithm to successfully complete test F7 of the IGVC competition. The cool part is, this driving agent *impelementation independent*, which means that the entire agent can be ported on to the physical vehicle and should perform closely to the simulation with some system tuning!
+
+<img src="/images/SVC_Perception.png?raw=true" />
+
+The picture above is a close view of the output from obstacle detection portion of my perception pipeline using my camera-LiDAR fusion strategy outlined [here](#Perception). Each object of interest is is uniquely classified and tracked by it's uniquely numbered 3D Box. This valuable information allowed us to extract the distance of each object from the vehicle and subsequently perfom the adequate maneuvers to pass the test.
 
 My last contribution to the team was the containerization of driving agent for both the real and simulated system using Docker. This allowed us to contribute and deploy the system across multiple machines with no discrepancies!
 
