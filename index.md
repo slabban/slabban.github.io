@@ -3,18 +3,19 @@
 
 ## About Me
 
-I'm a Mechatronics Engineer with demonstrated experience on the development of Perception and Localization Algorithms for GPS/GNSS, LIDAR, Radar, Camera, and other miscallaneous sensors that are popular in Autonomous and Advanced Drive Assistance Systems (ADAS). 
+I'm a Senior Software Engineer with demonstrated experience in the architecture, development, and testing of Perception and Localization systems for Autonomous and Advanced Drive Assistance Systems (ADAS). 
 
-My developments exist on both simulated and real-life environments and are centered around my knowledge of the Linux operating system and Robot Operating System Middleware.
+As a roboticist I wear many hats, namely with Embedded Systems, Electric Motors, and Circuit Design.
 
-I also have experiences with Embedded Systems, Electric Motors, PCB design, and have recently been working on Machine Learning as it pertains to classification and regression based tasks. 
+At heart, my dream is to make our lives safer and cleaner through staying on top of the latest developments in the Robotics and AI fields so that I can inspire and teach those in my network.
 
-At heart, my dream is to make the individual life safer and more efficient through staying abreast of the latest developments in the Robotics and AI fields.
 My end goal is to play a key part in contributing to the global mindset that targets sustainability and safety for our current and future generations.
 
 All that has made me who I am as an Engineer is highlighted here.
 
 #### For your ease of perusing, I've listed my projects as follows:
+
+* [_Pytorch, Multi-Task Learning, Tracing, and Deployment in ROS2_](#MTL)
 
 * [_Multiple Object Tracking Using YOLO_](#YoloMOT)
 
@@ -24,22 +25,46 @@ All that has made me who I am as an Engineer is highlighted here.
 
 * [_Adaptive Cruise Control using GPS/GNSS, 2D LiDAR, and Camera_](#Audibot_ACC)
 
-* [_Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor_](#RCBOT)
+* [_Lane keeping & Collision Avoidance - Robot Car_](#RCBOT)
 
 * [_Innovative Billboards LLC, Internship_](#IBB)
 
 - - - -
+<a name="MTL"></a>
+
+### Pytorch, Multi-Task Learning, Tracing, and Deployment in ROS2
+
+[![hydranet_ROS2](https://res.cloudinary.com/marcomontalbano/image/upload/v1667016333/video_to_markdown/images/youtube--7NW-bPTts8U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=7NW-bPTts8U "hydranet_ROS2")
+
+This project gave me a sense of fullfillment that I had been dreaming of ever since I had graduated with my masters in 2020. Before I talk about that that project, I'd like to give some background as a lot has changed in my outlook and experience.
+
+I had gained a good breadth of knowledge in the robotics industry in my academic years and that knowledge was heavily accelerated with my current career as a Software Engineer at Accenture. Though I lacked expertise on a huge piece of the self driving puzzle: Deep Learning.
+
+Granted, it's quite easy to deploy an existing ROS package that some wonderful soul has created and enjoy the results, heck, that's all I knew how to do and it was easy! Though eventually, you will run into the same roadblocks as I did:
+
+1. How do I understand these crazy deep learning papers that are coming out?! I coudln't even get past the abstract without scratching my head.
+2. I had no idea how to integrate a new state-of-the-art model in my system.
+3. I didn't know how to correctly prepare my dataset and train the model to fit my use case.
+4. The model may not be performant with my current system. How can I accelerate that performance or viably select a better alternative? Perhaps a traditional methodology was my best bet all along?
+
+Knowing how to address these points is a big deal, it means that your foot is in the door and that you are enabled in the field of deep learning. 
+
+My deep learning journey started in the summer of 2021 with two amazing (and free) resources: fastai's [Practical Deep Learning for Coders](https://course.fast.ai/) and Deep Lizard's [Deep Learning Fundamentals](https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU) and [Pytorch-Python Deep Learning Neural Network API](https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG). These courses taught me the fundamentals of machine leanrning and deep learning and I would happily recommend them to those who are eager to get the ball rolling and motivated to go at their own pace.
+
+Having been equipped with the essential concepts of machine learning, I was ready to move on to my chosen specialized field of _Computer Vision_. Jeremy Cohen's [Think Autonomous](https://courses.thinkautonomous.ai/) was my immediate choice for that. I had come across Jeremy's blog a number of times and had gained so much insight from him that it was basically a no-brainer at that point, so I enrolled in his Hydranet course, which focused on studying and training the model implemented in the paper: https://arxiv.org/abs/1809.04766. Learning that complex architecture opened many doors in my mind and gave me the confidence to dive deep in the field. 
+
+- - - -
 <a name="YoloMOT"></a>
 
-### Multiple Object Tracking Using YOLO
+### Multiple Object Tracking with YOLOv3
 
 [![YOLO MOT](https://res.cloudinary.com/marcomontalbano/image/upload/v1649134272/video_to_markdown/images/youtube--ru_O9tgi5M4-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=ru_O9tgi5M4 "YOLO MOT")
 
-My latest project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association algorithm within the Robot Operating System (ROS) Middleware.
+This project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association algorithm within the Robot Operating System (ROS) Middleware.
 
-My inspiration to take on this project came from this [article](https://thinkautonomous.medium.com/computer-vision-for-tracking-8220759eee85) that Jeremy Cohen had written. I had come across it over a year ago and thought to myself: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot", and at last did!
+My inspiration to take on this project came from this [article](https://thinkautonomous.medium.com/computer-vision-for-tracking-8220759eee85) that Jeremy Cohen had written. I had come across it over a year ago and thought to myself: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot", and so I did!
 
-The fun part is I was able to try my algorithm on both the YOLOv3 and YOLOv4 and compare the results as seen in the video above. Overall YOLOv4 performed better with association since it was able to consistently detect and classify objects, but YOLOv3 was able to perform the detections at a quicker rate, and hence, produce smoother estimates. Using my current system, I was getting an detection output rate of 17 HZ, and was able to push the estimate rate to 50 HZ (0.02 seconds) for YOLOv3. The YOLOV4 model architecture is larger, which really impacted the detection rate, bringing it down to ~7.5 HZ, after some experimentation I found that a estimate rate of 25 HZ (0.04 seconds) to an OK number. But as you can see, the image quality being fed to the detector isn't all that great, so I'd be curious to compare the performance with a better quality input that has been intrinsically calibrated.
+The fun part is I was able to try my algorithm on both the YOLOv3 and YOLOv4 and compare the results as seen in the video above. Overall YOLOv4 performed better with association since it was able to consistently detect and classify objects, but YOLOv3 was able to perform the detections at a quicker rate, and hence, produce smoother estimates. Using my current system, I was getting an detection output rate of 17 HZ, and was able to push the estimate rate to 50 HZ (0.02 seconds) for YOLOv3. The YOLOV4 model architecture is more complex, which really impacted the detection rate, bringing it down to ~7.5 HZ, after some experimentation I found that a estimate rate of 25 HZ (0.04 seconds) to an OK number. But as you can see, the image quality being fed to the detector isn't all that great, so I'd be curious to compare the performance with a better quality input that has been intrinsically calibrated.
 
 My algorithm, and most MOTs, can be broken down into 5 steps:
 1. Detection
@@ -65,7 +90,7 @@ While my algorithm is not state of the art, I am extremely proud of this project
 Successful sensor fusion of the Mobileye Monocular Camera with the state estimated & processed data from the Cepton Vista 3D LiDAR, with a focus on the detection of cars. 
 These algorithms were developed using a combination of _C++_ and _Python_ on the _Robot Operating System (ROS)_ and the results were visualized in _Rviz_ using the Lincoln MKZ [_DATASPEED_](https://www.dataspeedinc.com/adas-by-wire-system/ "_DATASPEED_") autonomous vehicle provided by [Dr. Micho Radovnikovich](https://www.linkedin.com/in/micho-radovnikovich-ph-d-186820b/ "Dr. Micho Radovnikovich").
 
-A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or wait to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decisions on how to react in that environment. That variety comes from different types of sensors that provide a variety of information, and if those two sensors can communicate well, then they can work together to allow a higher level of _Perception_ or _Awareness_.
+A question that may come to mind is: what is sensor fusion and why is it important? To answer that, I would like to refresh on the meaning of the term _Perception_, as it is a commonly thrown around in autonomous sector. Perception is the ability to sense and interpret the surrounding environment in order to make, or prepare to make, controlled and effective decisions. With greater quality and variety of information percieved from the environment, comes greater ability to make informed and smart decisions on how to react in that environment. That variety comes from different types of sensors that provide a variety of information, and if those two sensors can communicate well, then they can work together to allow a higher level of _Perception_ or _Awareness_.
 
 
 <img src="/images/classified_object_img.png?raw=true" />
@@ -183,15 +208,15 @@ The project that sparked a passion! As part of the introduction to the _Robot Op
 <a name="RCBOT"></a>
 
 
-### Lane keeping & Obstacle Avoidance using the PixyCam and an Infrared Sensor
+### Lane keeping & Collision Avoidance - Robot Car
 
 
 [![Mechatronic Car](https://res.cloudinary.com/marcomontalbano/image/upload/v1607640464/video_to_markdown/images/youtube--EgaXYLZe98o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/EgaXYLZe98o "Mechatronic Car")
 
 
-Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Actually, it still does, but our team did it anyway.
+Does a Master's degree in Mechatronics even count if you don't team up with an awesome group and create a really cool robot? Yes it does, but our team did it anyway.
 
-This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Obstacle Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and a _Sharp GP2Y0A21YK Infrared Sensor_ that were contolled by an _Arduino Uno_. 
+This little fella was created for our Microcomputer-Based Control Systems course at Oakland University, where we successfully designed, simulated, and programmed it to perform Lane keeping, Collision Avoidance, and Adaptive Cruise Control (ACC) via sensor fusion of Computer Vision Systems of the _Pixy2 Smart Vision Sensor_ and a _Sharp GP2Y0A21YK Infrared Sensor_ that were contolled by an _Arduino Uno_ ECU. 
 
 My role on this project was broken down into 3 main roles:
 1. Develop High level control implementation.
