@@ -36,11 +36,13 @@ All that has made me who I am as an Engineer is highlighted here.
 
 [![hydranet_ROS2](https://res.cloudinary.com/marcomontalbano/image/upload/v1667016333/video_to_markdown/images/youtube--7NW-bPTts8U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=7NW-bPTts8U "hydranet_ROS2")
 
-This project gave me a sense of fullfillment that I had been dreaming of ever since I had graduated with my masters in 2020. Before I talk about that that project, I'd like to give some background as a lot has changed in my outlook and experience.
+The video above illustrates depth and semantic segmentation inferences from a hydranet model that is industrialized and ported to C++ to perform inferencing using the ROS2 middleware. The image stream is playback data from a recording taken while driving around the Oakland University Campus.
 
-I had gained a good breadth of knowledge in the robotics industry in my academic years and that knowledge was heavily accelerated with my current career as a Software Engineer at Accenture. Though I lacked expertise on a huge piece of the self driving puzzle: Deep Learning.
+By the time I had picked this project up in April 2022, I had accumulated a good breadth of knowledge in the robotics industry in my academic years and that knowledge was heavily accelerated with my current career as a Software Engineer at Accenture. Though I lacked expertise on a huge piece of the self driving puzzle: **Deep Learning**.
 
-Granted, it's quite easy to deploy an existing ROS package that some wonderful soul has created and enjoy the results, heck, that's all I knew how to do and it was easy! Though eventually, you will run into the same roadblocks as I did:
+Granted, it's quite easy to deploy an existing ROS package that some wonderful soul has created and enjoy the results, heck, that's all I knew how to do. 
+
+Though eventually, you will run into the same roadblocks as I did:
 
 1. How do I understand these crazy deep learning papers that are coming out?! I coudln't even get past the abstract without scratching my head.
 2. I had no idea how to integrate a new state-of-the-art model in my system.
@@ -51,7 +53,16 @@ Knowing how to address these points is a big deal, it means that your foot is in
 
 My deep learning journey started in the summer of 2021 with two amazing (and free) resources: fastai's [Practical Deep Learning for Coders](https://course.fast.ai/) and Deep Lizard's [Deep Learning Fundamentals](https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU) and [Pytorch-Python Deep Learning Neural Network API](https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG). These courses taught me the fundamentals of machine leanrning and deep learning and I would happily recommend them to those who are eager to get the ball rolling and motivated to go at their own pace.
 
-Having been equipped with the essential concepts of machine learning, I was ready to move on to my chosen specialized field of _Computer Vision_. Jeremy Cohen's [Think Autonomous](https://courses.thinkautonomous.ai/) was my immediate choice for that. I had come across Jeremy's blog a number of times and had gained so much insight from him that it was basically a no-brainer at that point, so I enrolled in his Hydranet course, which focused on studying and training the model implemented in the paper: https://arxiv.org/abs/1809.04766. Learning that complex architecture opened many doors in my mind and gave me the confidence to dive deep in the field. 
+Having been equipped with the essential concepts of machine learning, I was ready to move on to my chosen specialized field of _Computer Vision_. Jeremy Cohen's [Think Autonomous](https://courses.thinkautonomous.ai/) was my immediate choice for that. I had come across Jeremy's blog a number of times and had gained so much insight from him that it was basically a no-brainer at that point, so I enrolled in his Hydranet course, which focused on studying and training the popular multi-task learner concepts that were implemented in this paper: https://arxiv.org/abs/1809.04766. 
+
+My initial plan when I enrolled in Jeremy's course was to integrate the Hydranet into ROS2. That way I would pick up ROS2 and Deep Learning at the same time. So I had picked up ROS2 while taking that course.
+
+While planning the integration out, I came across the concept of industrialization in machine learning, which focuses on elevating a trained model from _eager mode_ to _producton mode_. Pytorch provided **Pytorch JIT** and **Libtorch**, which respectively give tracing/scripting capabilities to the model and a C++ API that enable further optimization to the model. I decided to adopt that as part of the integration knowing that this would add an extra layer of effort that came with C++, but that's the language of robotics, and I wanted to do it right.
+
+I traced the model and deployed it in a ros node that would prepare the image coming in from the camera, pass the image into the network for inferencing, and advertise the depth and segmentation outputs. 
+
+As of now, the repository for that project is private as I am currently evaluating a use case for it. Though I did create a [template repository](https://github.com/slabban/ros2_pytorch_cuda) for using Libtorch in ROS2 and have included a dockerized CUDA environment for a simpler setup.
+
 
 - - - -
 <a name="YoloMOT"></a>
