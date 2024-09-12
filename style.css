@@ -43,6 +43,7 @@ nav {
   gap: 2rem;
   list-style: none;
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 a {
@@ -158,6 +159,9 @@ section {
 
 .section-container {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
 /* PROFILE SECTION */
@@ -167,6 +171,14 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+}
+
+
+.profile_pic {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(85, 85, 85); 
 }
 
 .section__pic-container {
@@ -204,6 +216,8 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /* ICONS */
@@ -265,13 +279,19 @@ section {
 
 #about {
   position: relative;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  /* height: 50vh; */
+  /* margin: 0 10rem; */
+  /* box-sizing: border-box; */
 }
 
 .about-containers {
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
   margin-top: 2rem;
-}
+} 
 
 .about-details-container {
   justify-content: center;
@@ -283,9 +303,9 @@ section {
   display: flex;
 }
 
-.about-pic {
+/* .about-pic {
   border-radius: 2rem;
-}
+} */
 
 .arrow {
   position: absolute;
