@@ -346,6 +346,12 @@ section {
   flex-direction: column;
 }
 
+.projects-scroll-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
 .article-container {
   display: flex;
   text-align: initial;
