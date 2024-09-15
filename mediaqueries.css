@@ -1,7 +1,7 @@
 @media screen and (max-width: 3000px) {
   #profile {
     min-height: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
   }
   .about-containers {
     flex-wrap: wrap;
@@ -20,7 +20,7 @@
 @media screen and (max-width: 1400px) {
   #profile {
     min-height: auto;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
   }
   .about-containers {
     flex-wrap: wrap;
@@ -45,7 +45,7 @@
   }
 
   #profile,
-  .section-container {
+  .about-section-container {
     display: block;
   }
 
@@ -53,7 +53,7 @@
     display: none;
   }
   section,
-  .section-container {
+  .about-section-container {
     height: fit-content;
   }
 
@@ -63,16 +63,13 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
-  .about-containers {
-    margin-top: 0;
-  }
+
 
 
 }
 
 @media screen and (max-width: 800px) {
-  #contact,
-  footer {
+  #contact {
     height: 40vh;
   }
   #profile {
@@ -84,7 +81,6 @@
   }
   footer nav {
     height: fit-content;
-    margin-bottom: 2rem;
   }
   .about-containers,
   .contact-info-upper-container,
@@ -129,6 +125,7 @@
     justify-content: right;
     padding-right: 5rem;
   }
+
   
 
 }

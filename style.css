@@ -9,6 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: rgb(159, 211, 218);
 
 }
 
@@ -32,16 +33,15 @@ nav,
 }
 
 h1, h2, h3, p {
-  color: #02373c;
+  color: rgb(24,44,37);
+
 }
 
 nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
-  background-color: #076f7a;
-  border-bottom: 2px solid rgb(0, 0, 0);
-  /* box-shadow: 0 3px 3px -3px #06a0b1; */
+  background-color: rgb(67, 147, 153);
 }
 
 .nav-links {
@@ -60,7 +60,7 @@ a {
 a:hover {
   color: grey;
   text-decoration: underline;
-  text-underline-offset: 1rem;
+  text-underline-offset: 0.5rem;
   text-decoration-color: rgb(181, 181, 181);
 }
 
@@ -103,7 +103,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: rgb(123, 122, 170);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -158,8 +158,6 @@ section {
   padding-top: 4vh;
   padding-right: 5rem;
   padding-left: 5rem;
-  height: 96vh;
-  /* margin: 0 10rem; */
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -168,8 +166,8 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }
+
 
 /* PROFILE SECTION */
 
@@ -184,8 +182,6 @@ section {
 .profile_pic {
   border-radius: 50%;
   border-width: 2px;
-  border-style: solid;
-  border-color: rgb(85, 85, 85); 
 }
 
 .section__pic-container {
@@ -291,8 +287,7 @@ section {
   position: relative;
   align-items: center;
   justify-content: center;
-  background-color: #d17946;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  padding-bottom: 2rem;
 }
 
 .about-containers {
@@ -319,12 +314,15 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border-radius: 3rem;
+  border: rgb(53, 53, 53) 0.1rem thin;
   border-color:#02373c;
   text-align: center;
-  background-color: rgb(188, 221, 66);
+  background-color: rgb(121, 132, 167);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
+
+
 
 .section-container {
   gap: 4rem;
@@ -341,12 +339,9 @@ section {
 
 #experience {
   position: relative;
-  background-color: #2bb698;
-  border: #02373c 0.1rem solid;
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -360,8 +355,12 @@ section {
 }
 
 .projects-scroll-container {
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   overflow-y: hidden;
+  white-space: nowrap;
+  padding: 2rem;
 }
 
 .article-container {
@@ -387,20 +386,16 @@ article .icon {
 
 /* PROJECTS SECTION */
 
-#projects {
-  position: relative;
-  background-color: #06a0b1;
-  border: #02373c 0.1rem solid;
-}
 
 .color-container {
   border-color: rgb(0, 0, 0);
-  background: rgb(188, 221, 66);
-  transition: all 300ms ease;
+  background: rgb(121, 132, 167);
+  transition: all 200ms ease;
 }
 
 .color-container:hover {
-  background: rgb(232, 248, 4);
+  transform: scale(1.05);
+
 }
 
 
@@ -458,12 +453,13 @@ article .icon {
 
 /* FOOTER SECTION */
 
-footer {
-  height: 26vh;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  /* margin: 0 1rem; */
-}
 
 footer p {
   text-align: center;
+  background-color: rgb(67, 147, 153);
+}
+
+#copyright {
+  font-style: italic; 
+  font-size: 0.8rem;
 }
