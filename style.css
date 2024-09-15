@@ -39,7 +39,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
-  background-color: #06a0b1;
+  background-color: #076f7a;
   border-bottom: 2px solid rgb(0, 0, 0);
   /* box-shadow: 0 3px 3px -3px #06a0b1; */
 }
@@ -291,7 +291,7 @@ section {
   position: relative;
   align-items: center;
   justify-content: center;
-  background-color: #06a0b1;
+  background-color: #d17946;
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
@@ -323,7 +323,7 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color:#02373c;
   text-align: center;
-  background-color: rgb(201, 198, 30);
+  background-color: rgb(188, 221, 66);
 }
 
 .section-container {
@@ -341,7 +341,7 @@ section {
 
 #experience {
   position: relative;
-  background-color: #d5a3e6;
+  background-color: #2bb698;
   border: #02373c 0.1rem solid;
 }
 
@@ -362,7 +362,6 @@ section {
 .projects-scroll-container {
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
 }
 
 .article-container {
@@ -390,16 +389,18 @@ article .icon {
 
 #projects {
   position: relative;
+  background-color: #06a0b1;
+  border: #02373c 0.1rem solid;
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border-color: rgb(0, 0, 0);
+  background: rgb(188, 221, 66);
   transition: all 300ms ease;
 }
 
 .color-container:hover {
-  background: rgb(240, 240, 240);
+  background: rgb(232, 248, 4);
 }
 
 
@@ -459,7 +460,8 @@ article .icon {
 
 footer {
   height: 26vh;
-  margin: 0 1rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  /* margin: 0 1rem; */
 }
 
 footer p {
