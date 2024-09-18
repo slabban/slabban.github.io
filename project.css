@@ -1,0 +1,143 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #965ba1;
+    --bg-secondary: #4a4a88;
+    --transition-speed: 600ms;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: black;
+    background-color: rgb(159, 211, 218);
+
+    margin: 0;
+    padding: 0;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #4747a0;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  
+  main {
+    margin-left: 2rem;
+    padding: 1rem;
+  }
+  
+  .navbar {
+    overflow: scroll;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    display: flex;
+    background-color: var(--bg-secondary);
+  }
+  
+ 
+  
+
+  
+  .title {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+  }
+  
+  .title:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+
+  .project-img {
+    width: 10rem;
+    height: 10rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  
+
+  
+  .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+
+.youtube-thumbnail {
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  }
+  
+  /* Small screens */
+  /* @media only screen and (max-width: 600px) {
+    .navbar {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+  
+    main {
+      margin: 0;
+    }
+  } */
+  
+  /* Large screens */
+  /* @media only screen and (min-width: 600px) 
+  {
+    .navbar {
+      top: 0;
+    }
+  
+  
+    .navbar:hover .link-text {
+      display: inline;
+    }
+
+  }   */
+  
+  .dark {
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #54548d;
+    --bg-secondary: #4e3479;
+  }
+  
+  
