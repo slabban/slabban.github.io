@@ -2,64 +2,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="theme.js"></script>
     <link rel="stylesheet" href="project.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  
-  <body>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
     <nav class="navbar">
-      <ul class="navbar-nav">
-        <li class="logo">
-          <a class="title">
-            <img src="./assets/2d_tracking.png" alt="Project 3" class="project-img" />
-            <h1>Object Tracking With YOLO</h1>
-          </a>
-        </li>
-      </ul>
+        <ul class="navbar-nav">
+            <li class="logo">
+                <div class="title">
+                    <img src="./assets/2d_tracking.png" alt="Project 3" class="project-img" />
+                    <h1>Object Tracking With YOLO</h1>
+                </div>
+            </li>
+        </ul>
     </nav>
-  
+
     <main>
 
-    <!-- YouTube Video Thumbnail -->
-    <a href="https://www.youtube.com/watch?v=ru_O9tgi5M4" class="video-link">
-        <img src="https://img.youtube.com/vi/ru_O9tgi5M4/0.jpg" alt="YoloMOT" class="youtube-thumbnail"/>
-    </a>
 
-    <!-- Introduction Paragraph -->
-    <p class="intro">
-        This project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association approach within the Robot Operating System (ROS) Middleware.
-    </p>
+        <!-- Introduction Paragraph -->
+        <p class="intro">
+            This project was an deep dive into the world of Multi-Object Tracking (MOT) where I employed the powerful <i>Extended Kalman Filter</i>
+             (EKF) and an <i>Intersection Over Union</i> (IoU) association approach to track objects in a video stream. I was able to deploy the algorithm
+            in the Robot Operating System (ROS) Middleware, which allowed me to tap into the vast ecosystem of ROS packages and tools.
+        </p>
 
-    <!-- Inspiration Story -->
-    <p class="inspiration">
-        My inspiration for this project came from this <a href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a> by Jeremy Cohen. I came across it over a year ago and thought: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot." So, I did!
-    </p>
+        <!-- Inspiration Story -->
+        <p class="inspiration">
+            My inspiration for this project came from this <a
+                href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a> by Jeremy Cohen. I
+            came across it over a year ago and thought: "I know how to design a Kalman Filter and have worked on
+            Multiple Object Tracking, I should give this a shot." So, I did!
+        </p>
+        <!-- YouTube Video Thumbnail -->
+        <a href="https://www.youtube.com/watch?v=ru_O9tgi5M4" class="video-link">
+            <img src="https://img.youtube.com/vi/ru_O9tgi5M4/0.jpg" alt="YoloMOT" class="youtube-thumbnail" />
+        </a>
 
-    <!-- YOLO Model Comparison -->
-    <p class="model-comparison">
-        I experimented with both YOLOv3 and YOLOv4, comparing results as seen in the video above. YOLOv4 was better at association, but YOLOv3 performed detections faster, producing smoother estimates. Using YOLOv3, I achieved a detection output rate of 17 HZ and estimate rate of 50 HZ, while YOLOv4 brought the rate down to 7.5 HZ but produced more accurate results. I am curious about how better-calibrated input images could further improve performance.
-    </p>
+        <!-- YOLO Model Comparison -->
+        <p class="model-comparison">
+            I experimented with both <strong>YOLOv3</strong> and <strong>YOLOv4</strong>, comparing results as seen in the video above. <strong>YOLOv4</strong> was better
+            at association, but <strong>YOLOv3</strong> performed detections faster, which allowed the Kalman Filter to produce smoother estimates. Using <strong>YOLOv3</strong>, I
+            achieved a detection output rate of 17 HZ and estimate rate of 50 HZ on my dingy but reliable 2017 Laptop with a 1060 GPU, while <strong>YOLOv4</strong> brought the rate down to
+            7.5 HZ but produced more accurate results. I am curious about how better-calibrated input images could
+            further improve performance.
+        </p>
 
-    <!-- MOT Breakdown -->
-    <p class="method-breakdown">My algorithm, like most MOTs, follows these 5 steps:</p>
-    <ul class="algorithm-steps">
-        <li>Detection</li>
-        <li>Association</li>
-        <li>Track Identity Creation</li>
-        <li>Estimation</li>
-        <li>Track Identity Destruction</li>
-    </ul>
+        <!-- MOT Breakdown -->
+        <p class="method-breakdown">My algorithm, like most MOTs, follows these 5 steps:</p>
+        <ul class="algorithm-steps">
+            <li><strong>Detection</strong></li>
+            <li><strong>Association</strong></li>
+            <li><strong>Track Identity Creation</strong></li>
+            <li><strong>Estimation</strong></li>
+            <li><strong>Track Identity Destruction</strong></li>
+        </ul>
 
-    <!-- Methodology Drawbacks -->
-    <p class="drawbacks">
-        There are some drawbacks to classical approaches like mine, including tracking loss through ID swaps and occlusion. While <strong>SORT</strong>, using the Hungarian Algorithm for association, can reduce these issues, <strong>DeepSort</strong> offers a more robust solution by leveraging feature maps from RCNN for association. Learn more about DeepSort <a href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
-    </p>
+        <!-- Methodology Drawbacks -->
+        <p class="drawbacks">
+            There are some drawbacks to classical approaches like the Extended Kalman Filter sucha as tracking loss through ID swaps via
+            occlusion. <strong>SORT</strong>, uses the Hungarian Algorithm for association, and can reduce these
+            issues, <i>DeepSort</i> offers a more robust solution to the occlusion issue by leveraging feature maps from a Recurent Neural Network (RNN) for
+            association. Learn more about DeepSort <a
+                href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
+        </p>
 
-    <!-- Conclusion -->
-    <p class="conclusion">
-        Though my algorithm isn't state of the art, I am extremely proud of the results. I've learned so much from the open-source community, and I hope this project can contribute in return.
-    </p>
+        <!-- Conclusion -->
+        <p class="conclusion">
+            I had a great time with this project and learned so much from the open-source community. I hope this
+            project can contribute in return and inspire others to take on similar projects!
+        </p>
     </main>
-  </body>
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p id="copyright">Copyright &#169; 2023 Samer Labban. All Rights Reserved.</p>
+    </footer>
+
+</body>

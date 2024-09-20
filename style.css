@@ -8,7 +8,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Lato', sans-serif;
+
   background-color: rgb(159, 211, 218);
 
 }
@@ -34,13 +35,13 @@ nav,
 
 h1, h2, h3, p {
   color: rgb(24,44,37);
-
 }
+
 
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 7rem;
   background-color: rgb(67, 147, 153);
 }
 
@@ -219,7 +220,7 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
 
 }
@@ -406,6 +407,10 @@ article .icon {
 
 }
 
+.color-container:active {
+  transform: scale(0.95);
+}
+
 
 .project-img {
   border-radius: 2rem;
@@ -426,6 +431,11 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
+  transition: all 200ms ease;
+}
+
+#contact:active {
+  transform: scale(0.95);
 }
 
 .contact-info-upper-container {
@@ -461,8 +471,7 @@ article .icon {
 
 /* FOOTER SECTION */
 
-
-footer p {
+footer {
   text-align: center;
   background-color: rgb(67, 147, 153);
 }

@@ -47,7 +47,7 @@
   #profile,
   .about-section-container {
     display: block;
-  }
+    height: 25vh;}
 
   .arrow {
     display: none;
@@ -73,7 +73,7 @@
     height: 40vh;
   }
   #profile {
-    height: 83vh;
+    height: 30vh;
     margin-bottom: 20rem;
   }
   article {
