@@ -1,65 +1,152 @@
-<head></head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="theme.js"></script>
     <link rel="stylesheet" href="project.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  
-  <body>
+    <link rel="stylesheet" href="mtl_style.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
     <nav class="navbar">
-      <ul class="navbar-nav">
-        <li class="logo">
-          <div class="title">
-            <img src="./assets/2d_tracking.png" alt="Project 3" class="project-img" />
-            <h1>Object Tracking With YOLO</h1>
-          </div>
-        </li>
-      </ul>
+        <ul class="navbar-nav">
+            <li class="logo">
+                <img src="./assets/neural_net.png" alt="Project 2" class="project-img" />
+            </li>
+
+
+        </ul>
     </nav>
-  
+
+
     <main>
+        <div class="project-link-container">
+            <p class="sub-title">
+                <time datetime="2022-11-01">November 1, 2022</time>
+            </p>
+            <a href="https://github.com/slabban/ros_pytorch_hydranet/tree/main/ros2_pytorch">
+                <img src="./assets/github.png" alt="Repository" class="icon" />
+            </a>
+        </div>
 
-    <!-- YouTube Video Thumbnail -->
-    <a href="https://www.youtube.com/watch?v=ru_O9tgi5M4" class="video-link">
-        <img src="https://img.youtube.com/vi/ru_O9tgi5M4/0.jpg" alt="YoloMOT" class="youtube-thumbnail"/>
-    </a>
+        <h1 class="title">Hydranets in ROS2</h1>
 
-    <!-- Introduction Paragraph -->
-    <p class="intro">
-        This project was a classical approach to Multi-Object Tracking (MOT) using the popular Extended Kalman Filter (EKF) and an Intersection Over Union (IoU) association approach within the Robot Operating System (ROS) Middleware.
-    </p>
 
-    <!-- Inspiration Story -->
-    <p class="inspiration">
-        My inspiration for this project came from this <a href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a> by Jeremy Cohen. I came across it over a year ago and thought: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot." So, I did!
-    </p>
+        <p class="intro">
+            My interest in deep learning had grown throughout my engineering consulting career at Accenture, and I was
+            quickly
+            picking up the software engineering skills through my work on perception and automotive middleware.
+            Around the same time, deep learning had established it's place in the field of robotics, and was making it's
+            way into production vehicles. I was particularly drawn to the concept of <strong>Hydranets</strong>, which
+            seemed to hold a lot of promise. I wanted to explore how I could apply multi-task learning to my own
+            work in robotics, and so I decided to share my experience with <strong>Deep Learning</strong>.
+        </p>
 
-    <!-- YOLO Model Comparison -->
-    <p class="model-comparison">
-        I experimented with both YOLOv3 and YOLOv4, comparing results as seen in the video above. YOLOv4 was better at association, but YOLOv3 performed detections faster, producing smoother estimates. Using YOLOv3, I achieved a detection output rate of 17 HZ and estimate rate of 50 HZ, while YOLOv4 brought the rate down to 7.5 HZ but produced more accurate results. I am curious about how better-calibrated input images could further improve performance.
-    </p>
 
-    <!-- MOT Breakdown -->
-    <p class="method-breakdown">My algorithm, like most MOTs, follows these 5 steps:</p>
-    <ul class="algorithm-steps">
-        <li>Detection</li>
-        <li>Association</li>
-        <li>Track Identity Creation</li>
-        <li>Estimation</li>
-        <li>Track Identity Destruction</li>
-    </ul>
+        <a href="https://www.youtube.com/watch?v=7NW-bPTts8U" class="video-link">
+            <img src="https://img.youtube.com/vi/7NW-bPTts8U/0.jpg" alt="hydranet_ROS2" class="youtube-thumbnail" />
+        </a>
 
-    <!-- Methodology Drawbacks -->
-    <p class="drawbacks">
-        There are some drawbacks to classical approaches like mine, including tracking loss through ID swaps and occlusion. While <strong>SORT</strong>, using the Hungarian Algorithm for association, can reduce these issues, <strong>DeepSort</strong> offers a more robust solution by leveraging feature maps from RCNN for association. Learn more about DeepSort <a href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
-    </p>
 
-    <!-- Conclusion -->
-    <p class="conclusion">
-        Though my algorithm isn't state of the art, I am extremely proud of the results. I've learned so much from the open-source community, and I hope this project can contribute in return.
-    </p>
+        <p class="intro">
+            The video above illustrates depth and semantic segmentation inferences from a hydranet model that is
+            deployed in the ROS2 middleware.
+            The image stream is vehicle playback data that my friends and I took while driving around our university
+            campus. </p>
+
+        <p class="motivation">
+            Deep learning and AI in general is a rapidly evolving field where lots of research is going on. Its
+            important to understand how read the research papers and how they contribute to the state of the art.
+            The other side of the equation is deployment and integration, which in itself can be a harder task Than
+            model development. Most robotics applications demand high throughput and real-time performance, and that is
+            where the <strong>Hydranets</strong> come in.
+
+            <br><br>
+
+            I decided to set some goals that would alleviate my FOMO:
+        </p>
+
+
+        <ul class="list">
+            <li>Learn to understand and critically evaluate state of the art deep learning papers.</li>
+            <li>Understand to create multi-task learning models and train them.</li>
+            <li>Integrate a new state-of-the-art model in Robotic Middlware.</li>
+        </ul>
+
+
+        <p class="experience">
+            My deep learning journey started in the summer of 2021 with two amazing resources: fastai's <a
+                href="https://course.fast.ai/">Practical Deep Learning for Coders</a> and Deep Lizard's <a
+                href="https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU">Deep Learning
+                Fundamentals</a> and <a
+                href="https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG">Pytorch-Python Deep Learning
+                Neural Network API</a>. These courses taught me the the theoretical and practical fundamentals and I
+            set me up to go on to the deeper path of Computer Vision.
+        </p>
+
+        <p class="experience">
+            Having been equipped with the essential concepts of machine learning, I was ready to move on to my chosen
+            specialized field of <strong>Computer Vision</strong>. Jeremy Cohen's <a
+                href="https://courses.thinkautonomous.ai/">Think Autonomous</a> was my immediate choice for that. I had
+            come across Jeremy's blog a number of times and had gained so much insight from him that it was basically a
+            no-brainer at that point, so I enrolled in his Hydranet course, which focused on the theoretical and
+            practical concepts of Hydranets that were applied in this paper:
+            popular multi-task learner concepts that were implemented in this paper: <a
+                href="https://arxiv.org/abs/1809.04766">https://arxiv.org/abs/1809.04766</a>.
+        </p>
+
+
+        <img src="images/hydranet.png" class="hydranet" />
+
+        <p class="experience">
+            Much like the famous <strong>U-Net</strong>, this model takes on the popular
+            encoder-decoder architecture, where the encoder gradually reduces the spatial dimensions of the feature maps
+            to increase the number of feature channels, and the decoder gradually increases the spatial dimensions of
+            the feature maps in addition to skip connections from the encoder to the decoder, which allows the model to retain 
+            spatial features while still leveraging the feature extraction capabilities of the encoder.
+            
+            <br><br>
+            The authors of the paper placed a strong emphasis on real-time applications through using the Mobilenet V2
+            as the encoder, a lightweight RefineNet as the decoder, and using depthwise separable convolutions to reduce
+            the number of parameters and floating-point operations.
+        </p>
+        <p class="experience"></p>
+            For those who are new to robotics, <strong>ROS2</strong> (Robot Operating System 2) is an open-source
+            middleware that enables roboticists to create flexible, reusable code for a wide variety of robot
+            applications.Middleware is a layer of software that enables communication between different processes and devices and allows them to
+            share data. 
+
+            <br><br>
+
+            My initial plan when I enrolled in Jeremy's course was to integrate the Hydranet into ROS2. That way I would
+            pick up ROS2 and Deep Learning at the same time. So I had picked up ROS2 while taking that course.
+
+
+        <p class="experience">
+            On my journey, I discovered that I could integrate a trained model from <strong>eager mode</strong> to <strong>producton
+                mode</strong>. Pytorch provided <strong>Pytorch JIT</strong> and <strong>Libtorch</strong>, which
+            respectively give tracing/scripting capabilities to the model and a C++ API that enable further optimization
+            to the model. I decided to adopt that as part of the integration knowing that this would add an extra layer
+            of effort that came with C++, but that's the language of robotics, and I wanted to do it right.
+        </p>
+        <p class="experience">
+            I traced the model and deployed it in a ros node that would prepare the image coming in from the camera,
+            pass the image into the network for inferencing, and advertise the depth and segmentation outputs.
+        </p>
+
     </main>
-  </body>
+
+
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="./index.html">About Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p id="copyright">Copyright &#169; 2023 Samer Labban. All Rights Reserved.</p>
+    </footer>
+
+</body>

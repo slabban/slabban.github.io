@@ -4,7 +4,7 @@
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     --bg-primary: #965ba1;
-    --bg-secondary: #4a4a88;
+    --bg-secondary: rgb(95, 142, 185);
     --transition-speed: 600ms;
 }
 
@@ -85,12 +85,13 @@ main {
     margin-top: 0;
   }
 
-  .project-link {
+  .sub-title {
     font-family: italic;
     font-size: small;
     margin: 0;
-    transition: transform 0.3s ease-in-out;
+    transform: translateY(0.5rem);
   }
+  
   
   .icon {
       cursor: pointer;
@@ -110,8 +111,6 @@ main {
     padding-left: 1rem;
     animation: bobAndWeave 2s ease-in-out forwards;
 }
-
-
 
 @keyframes bobAndWeave {
     0% {
@@ -136,9 +135,6 @@ main {
 }
 
 
-
-
-
 .logo {
     font-weight: bold;
     text-transform: uppercase;
@@ -151,12 +147,24 @@ main {
     width: 100%;
 }
 
+/*************  ✨ Codeium Command 🌟  *************/
 .youtube-thumbnail {
     display: block;
+    margin: 1rem auto;
     margin: auto;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 50rem;
 }
+
+.video-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/******  c93537e6-e03e-4434-b733-ab737ac0495b  *******/
 
 /* General styling */
 body {
@@ -205,8 +213,6 @@ strong {
     color: #333;
     font-weight: bold;
 }
-
-
 
 footer {
 
