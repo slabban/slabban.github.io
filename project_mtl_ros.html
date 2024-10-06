@@ -32,107 +32,110 @@
         <h1 class="title">Hydranets in ROS2</h1>
 
 
-        <p class="intro">
-            My interest in deep learning had grown throughout my engineering consulting career at Accenture, and I was
-            quickly
-            picking up the software engineering skills through my work on perception and automotive middleware.
-            Around the same time, deep learning had established it's place in the field of robotics, and was making it's
-            way into production vehicles. I was particularly drawn to the concept of <strong>Hydranets</strong>, which
-            seemed to hold a lot of promise. I wanted to explore how I could apply multi-task learning to my own
-            work in robotics, and so I decided to share my experience with <strong>Deep Learning</strong>.
-        </p>
+        <section>
+            <p>
+                My interest in deep learning had grown throughout my engineering consulting career at Accenture. I was
+                quickly picking up software engineering skills through my work on perception and automotive middleware.
+                Around the same time, deep learning established its place in robotics and started making its way into
+                production vehicles.
+            </p>
+            <p>
+                I was particularly drawn to the concept of <strong>Hydranets</strong>, which seemed promising for
+                multi-task learning in robotics. I decided to explore how I could apply it to my work, and I'm excited
+                to share my experience with <strong>Deep Learning</strong>.
+            </p>
+        </section>
 
+        <section>
+            <h2>Hydranets in Action</h2>
+            <figure>
+                <a href="https://www.youtube.com/watch?v=7NW-bPTts8U" class="video-link">
+                    <img src="./images/mtl.png"
+                        alt="Video illustration of Hydranet in ROS2 middleware" class="youtube-thumbnail">
+                </a>
 
-        <a href="https://www.youtube.com/watch?v=7NW-bPTts8U" class="video-link">
-            <img src="https://img.youtube.com/vi/7NW-bPTts8U/0.jpg" alt="hydranet_ROS2" class="youtube-thumbnail" />
-        </a>
+            </figure>
 
+            <p>
+                The video above illustrates depth and semantic segmentation inferences from a Hydranet model deployed in
+                ROS2 middleware. The image stream is vehicle playback data that my friends and I collected while driving
+                around our university campus.
+            </p>
+        </section>
 
-        <p class="intro">
-            The video above illustrates depth and semantic segmentation inferences from a hydranet model that is
-            deployed in the ROS2 middleware.
-            The image stream is vehicle playback data that my friends and I took while driving around our university
-            campus. </p>
+        <section>
+            <h2>Setting Learning Goals</h2>
+            <p>
+                Deep learning and AI are rapidly evolving fields with constant research pushing the boundaries. While
+                understanding and evaluating research papers is key, deployment and integration can be an even more
+                challenging task, especially in robotics where high throughput and real-time performance are critical.
+            </p>
+            <p>
+                To mitigate my FOMO, I set the following goals:
+            </p>
+            <ul>
+                <li>Learn to understand and critically evaluate state-of-the-art deep learning papers.</li>
+                <li>Learn to create multi-task learning models and train them.</li>
+                <li>Integrate new state-of-the-art models in robotic middleware.</li>
+            </ul>
+        </section>
 
-        <p class="motivation">
-            Deep learning and AI in general is a rapidly evolving field where lots of research is going on. Its
-            important to understand how read the research papers and how they contribute to the state of the art.
-            The other side of the equation is deployment and integration, which in itself can be a harder task Than
-            model development. Most robotics applications demand high throughput and real-time performance, and that is
-            where the <strong>Hydranets</strong> come in.
+        <section>
+            <h2>Deep Learning Journey</h2>
+            <p>
+                My deep learning journey started in the summer of 2021, with two amazing resources: fastai's <a
+                    href="https://course.fast.ai/">Practical Deep Learning for Coders</a> and Deep Lizard's <a
+                    href="https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU">Deep Learning
+                    Fundamentals</a> and <a
+                    href="https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG">PyTorch-Python Deep
+                    Learning API</a>. These courses equipped me with the theoretical and practical fundamentals to
+                explore deeper into Computer Vision.
+            </p>
+            <p>
+                To specialize further, I enrolled in Jeremy Cohen's <a href="https://courses.thinkautonomous.ai/">Think
+                    Autonomous</a> course. It covered theoretical and practical aspects of Hydranets and multi-task
+                learning, based on concepts from <a href="https://arxiv.org/abs/1809.04766">this paper</a>.
+            </p>
+        </section>
 
-            <br><br>
+        <section>
+            <h2>Hydranet Architecture</h2>
+            <figure>
+                <img src="images/hydranet.png"
+                    alt="Diagram of the Hydranet architecture, including encoder and decoder structure" class="hydranet">
+            </figure>
+            <p>
+                Much like the well-known <strong>U-Net</strong>, Hydranet follows an encoder-decoder architecture. The
+                encoder reduces the spatial dimensions while increasing feature channels, and the decoder restores
+                spatial dimensions with skip connections from the encoder. This enables the model to retain spatial
+                features while leveraging the encoder’s feature extraction power.
+            </p>
+            <p>
+                For real-time applications, the authors of the paper focused on efficiency, using <strong>Mobilenet
+                    V2</strong> as the encoder and a lightweight <strong>RefineNet</strong> as the decoder. They also
+                incorporated depthwise separable convolutions to reduce the number of parameters and floating-point
+                operations.
+            </p>
+        </section>
 
-            I decided to set some goals that would alleviate my FOMO:
-        </p>
-
-
-        <ul class="list">
-            <li>Learn to understand and critically evaluate state of the art deep learning papers.</li>
-            <li>Understand to create multi-task learning models and train them.</li>
-            <li>Integrate a new state-of-the-art model in Robotic Middlware.</li>
-        </ul>
-
-
-        <p class="experience">
-            My deep learning journey started in the summer of 2021 with two amazing resources: fastai's <a
-                href="https://course.fast.ai/">Practical Deep Learning for Coders</a> and Deep Lizard's <a
-                href="https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU">Deep Learning
-                Fundamentals</a> and <a
-                href="https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG">Pytorch-Python Deep Learning
-                Neural Network API</a>. These courses taught me the the theoretical and practical fundamentals and I
-            set me up to go on to the deeper path of Computer Vision.
-        </p>
-
-        <p class="experience">
-            Having been equipped with the essential concepts of machine learning, I was ready to move on to my chosen
-            specialized field of <strong>Computer Vision</strong>. Jeremy Cohen's <a
-                href="https://courses.thinkautonomous.ai/">Think Autonomous</a> was my immediate choice for that. I had
-            come across Jeremy's blog a number of times and had gained so much insight from him that it was basically a
-            no-brainer at that point, so I enrolled in his Hydranet course, which focused on the theoretical and
-            practical concepts of Hydranets that were applied in this paper:
-            popular multi-task learner concepts that were implemented in this paper: <a
-                href="https://arxiv.org/abs/1809.04766">https://arxiv.org/abs/1809.04766</a>.
-        </p>
-
-
-        <img src="images/hydranet.png" class="hydranet" />
-
-        <p class="experience">
-            Much like the famous <strong>U-Net</strong>, this model takes on the popular
-            encoder-decoder architecture, where the encoder gradually reduces the spatial dimensions of the feature maps
-            to increase the number of feature channels, and the decoder gradually increases the spatial dimensions of
-            the feature maps in addition to skip connections from the encoder to the decoder, which allows the model to retain 
-            spatial features while still leveraging the feature extraction capabilities of the encoder.
-            
-            <br><br>
-            The authors of the paper placed a strong emphasis on real-time applications through using the Mobilenet V2
-            as the encoder, a lightweight RefineNet as the decoder, and using depthwise separable convolutions to reduce
-            the number of parameters and floating-point operations.
-        </p>
-        <p class="experience"></p>
-            For those who are new to robotics, <strong>ROS2</strong> (Robot Operating System 2) is an open-source
-            middleware that enables roboticists to create flexible, reusable code for a wide variety of robot
-            applications.Middleware is a layer of software that enables communication between different processes and devices and allows them to
-            share data. 
-
-            <br><br>
-
-            My initial plan when I enrolled in Jeremy's course was to integrate the Hydranet into ROS2. That way I would
-            pick up ROS2 and Deep Learning at the same time. So I had picked up ROS2 while taking that course.
-
-
-        <p class="experience">
-            On my journey, I discovered that I could integrate a trained model from <strong>eager mode</strong> to <strong>producton
-                mode</strong>. Pytorch provided <strong>Pytorch JIT</strong> and <strong>Libtorch</strong>, which
-            respectively give tracing/scripting capabilities to the model and a C++ API that enable further optimization
-            to the model. I decided to adopt that as part of the integration knowing that this would add an extra layer
-            of effort that came with C++, but that's the language of robotics, and I wanted to do it right.
-        </p>
-        <p class="experience">
-            I traced the model and deployed it in a ros node that would prepare the image coming in from the camera,
-            pass the image into the network for inferencing, and advertise the depth and segmentation outputs.
-        </p>
+        <section>
+            <h2>Integrating Hydranet into ROS2</h2>
+            <p>
+                For those new to robotics, <strong>ROS2</strong> (Robot Operating System 2) is an open-source middleware
+                that enables roboticists to create reusable, flexible code for a variety of robot applications.
+                Middleware facilitates communication between different processes and devices, enabling data sharing.
+            </p>
+            <p>
+                My goal was to integrate the Hydranet model into ROS2, learning both ROS2 and Deep Learning
+                simultaneously. The integration journey involved learning about <strong>PyTorch JIT</strong> for tracing
+                models and <strong>Libtorch</strong> for C++ API integration. This enabled me to take a trained model
+                from eager mode to production mode.
+            </p>
+            <p>
+                I deployed the model in a ROS2 node, processing camera images and passing them through the network for
+                inference, producing depth and segmentation outputs.
+            </p>
+        </section>
 
     </main>
 
