@@ -1,0 +1,146 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="theme.js"></script>
+    <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="mtl_style.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="logo">
+                <img src="./assets/birds_eye_view.png" alt="Project 1" class="project-img" />
+            </li>
+
+
+        </ul>
+    </nav>
+
+
+    <main>
+        <div class="project-link-container">
+            <p class="sub-title">
+                <time datetime="2023-03-15">March 15, 2023</time>
+            </p>
+            <a href="https://github.com/slabban/mindmaps">
+                <img src="./assets/github.png" alt="Repository" class="icon" />
+            </a>
+        </div>
+
+        <h1 class="title">A Perspective on Birds Eye View (BEV) Networks</h1>
+
+
+        <section>
+            <h2>Why BEV Networks?</h2>
+            <p>If you’ve been following advancements in 3D perception for autonomous driving, you’ve likely come across
+                Bird’s Eye View (BEV) networks. They’re becoming a go-to method for enhancing how self-driving cars
+                “see” the world. One of the pioneering approaches in this space, <strong>Lift-Splat-Shoot</strong>,
+                showcases why BEV networks shine. It compares BEV with the older method of applying single-image
+                detectors to each camera and then translating the outputs (like depth and semantic segmentation) into
+                the ego frame.</p>
+
+            <p>What makes BEV so attractive? It handles three crucial symmetries:</p>
+            <ul>
+                <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.</li>
+                <li><strong>Permutation Invariance</strong>: The camera order doesn’t matter; the results are the same.
+                </li>
+                <li><strong>Ego-Frame Isometry Equivariance</strong>: No matter where the camera is placed, it’ll detect
+                    the same objects in the ego frame.</li>
+            </ul>
+            <p>By preserving these properties and being fully end-to-end differentiable, BEV networks streamline the
+                perception process.</p>
+
+            <p>Tesla has also embraced BEV networks.
+                    Unprojecting depth directly into 3D space with just one camera produces noisy results, but when you
+                    do it in BEV space, things get much clearer. Check out their thoughts <a
+                        href="https://youtu.be/hx7BXih7zx8?si=n3QKq2c5a_eE783b&t=1205">here</a>.</p>
+        </section>
+
+        <section>
+            <h2>Datasets That Power BEV</h2>
+            <p>To get BEV networks to work, we rely on some heavyweight datasets offering diverse scenes for training
+                and testing. Three of the big names are:</p>
+            <ul>
+                <li><strong>KITTI</strong>: A well-known benchmark with over 7,500 samples for testing with both 2D and
+                    3D annotations.</li>
+                <li><strong>nuScenes</strong>: A massive dataset with 1,000 scenes, each lasting 20 seconds, offering a
+                    360-degree field of view.</li>
+                <li><strong>Waymo Open Dataset (WOD)</strong>: One of the largest autonomous driving datasets with
+                    nearly 800 sequences for training.</li>
+            </ul>
+            <p>Other datasets worth mentioning include <strong>Argoverse</strong>, <strong>H3D</strong>, and
+                <strong>Lyft L5</strong>, which are also popular for testing BEV models.</p>
+        </section>
+
+        <section>
+            <h2>Different BEV Approaches</h2>
+            <p>There’s no single “right” way to transform images from regular perspective view (PV) into BEV.
+                Researchers have explored several approaches, but they generally fall into two main categories:</p>
+
+            <h3>Geometric-Based PV2BEV</h3>
+            <ul>
+                <li><strong>Homography-Based</strong>: Applies simple geometric transformations to get a BEV-like view.
+                    It’s more of an approximation.</li>
+                <li><strong>Depth-Based</strong>: Uses depth info to project 2D images into 3D space, creating voxels to
+                    handle the transformation.</li>
+            </ul>
+            <p>Notable works include <strong>Lift-Splat-Shoot</strong>, <strong>Fiery</strong>, and
+                <strong>BEVDepth</strong>.</p>
+
+            <h3>Network-Based PV2BEV</h3>
+            <ul>
+                <li><strong>MLP-Based</strong>: These models use multilayer perceptrons (MLPs) to map PV images into BEV
+                    space, learning the transformation through data.</li>
+                <li><strong>Transformer-Based</strong>: Transformers are becoming more popular due to their ability to
+                    handle relationships between features in a data-driven way.</li>
+            </ul>
+            <p>Notable works include <strong>BEVFormer</strong> and <strong>PanopticBEV</strong>.</p>
+        </section>
+
+        <section>
+            <h2>How Do We Compare These Methods?</h2>
+            <p>Comparing BEV methods isn’t easy. Each approach has its strengths and weaknesses. That’s where
+                <strong>Simple-BEV</strong> comes in—a benchmark designed to level the playing field for various BEV
+                methodologies. By simplifying the comparison, it helps researchers evaluate models more fairly.</p>
+        </section>
+
+        <section>
+            <h2>Multi-Task Learning with BEV Networks</h2>
+            <p>BEV networks often deal with multiple tasks like object detection and segmentation. Multi-task learning
+                is a popular way to handle this, and one method that stands out is <strong>Uncertainty
+                    Weighting</strong>, where tasks are prioritized dynamically based on their difficulty or importance.
+            </p>
+            <p>Other methods include <strong>GradNorm</strong> and <strong>Meta-Learning Task Weighting</strong>, which
+                adjust task weights to balance performance across different objectives.</p>
+        </section>
+
+        <section>
+            <h2>Tools of the Trade</h2>
+            <p>Thankfully, we’re not starting from scratch. A couple of fantastic tools make working with BEV networks
+                easier:</p>
+            <ul>
+                <li><strong>OpenMM</strong>: A modular and scalable framework for tasks like object detection and
+                    segmentation, offering the popular <strong>mmdetection3d</strong> toolkit for BEV networks.</li>
+                <li><strong>PyTorch Lightning</strong>: A framework for organizing PyTorch models, helping with
+                    modularization and providing support for visualizers, profilers, and more.</li>
+            </ul>
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="./index.html">About Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p id="copyright">Copyright &#169; 2023 Samer Labban. All Rights Reserved.</p>
+    </footer>
+
+</body>
