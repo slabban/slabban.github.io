@@ -292,7 +292,7 @@ section {
   position: relative;
   align-items: center;
   justify-content: center;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 .about-containers {
@@ -353,6 +353,7 @@ section {
 
 #experience {
   position: relative;
+  padding-bottom: 5rem;
 }
 
 .experience-sub-title {
@@ -400,7 +401,8 @@ article .icon {
 }
 
 .text-container {
-  text-align: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 /* PROJECTS SECTION */
