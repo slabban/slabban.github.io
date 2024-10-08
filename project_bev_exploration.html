@@ -35,12 +35,16 @@
         <section>
             <h2>Why BEV Networks?</h2>
             <p>If you’ve been following advancements in 3D perception for autonomous driving, you’ve likely come across
-                Bird’s Eye View (BEV) networks. They’re becoming a go-to method for enhancing how self-driving cars
-                “see” the world. One of the pioneering approaches in this space, <strong>Lift-Splat-Shoot</strong>,
-                showcases why BEV networks shine. It compares BEV with the older method of applying single-image
-                detectors to each camera and then translating the outputs (like depth and semantic segmentation) into
-                the ego frame.</p>
+                Bird’s Eye View (BEV) networks. But what are they? There are many different approaches these days, but to put it simply, a BEV network is a type of deep
+                learning model that takes in sensor input such as images form a camera and outputs a representation of the
+                scene from a top-down perspective. They’re becoming a go-to method for enhancing how self-driving cars
+                “see” the world. </p>
 
+            <img src="./images/bev_lps.gif" alt="Lift-Splat-Shoot Process" class="youtube-thumbnail"   />
+            
+            <p>Shown above is one of the pioneering papers in this space, <a href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a>. Using inputs from six cameras of around the driving vehicle, this BEV network
+            is able to generate a single unified representation of the surrounding vehicles.</p>
+            
             <p>What makes BEV so attractive? It handles three crucial symmetries:</p>
             <ul>
                 <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.</li>
@@ -52,10 +56,6 @@
             <p>By preserving these properties and being fully end-to-end differentiable, BEV networks streamline the
                 perception process.</p>
 
-            <p>Tesla has also embraced BEV networks.
-                    Unprojecting depth directly into 3D space with just one camera produces noisy results, but when you
-                    do it in BEV space, things get much clearer. Check out their thoughts <a
-                        href="https://youtu.be/hx7BXih7zx8?si=n3QKq2c5a_eE783b&t=1205">here</a>.</p>
         </section>
 
         <section>
