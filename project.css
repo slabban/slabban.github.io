@@ -106,7 +106,7 @@ nav {
   }
 
 
-.project-img {
+.project-logo {
     width: 10rem;
     height: 10rem;
     padding-right: 1rem;
@@ -182,6 +182,15 @@ body {
     display: block;
     margin-bottom: 2rem;
     margin-top: 2rem;
+}
+
+.project-image {
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Paragraph styles */

@@ -11,7 +11,7 @@
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
-                <img src="./assets/birds_eye_view.png" alt="Project 1" class="project-img" />
+                <img src="./assets/birds_eye_view.png" alt="Project 1" class="project-logo" />
             </li>
 
 
@@ -35,19 +35,25 @@
         <section>
             <h2>Why BEV Networks?</h2>
             <p>If you’ve been following advancements in 3D perception for autonomous driving, you’ve likely come across
-                Bird’s Eye View (BEV) networks. But what are they? There are many different approaches these days, but to put it simply, a BEV network is a type of deep
-                learning model that takes in sensor input such as images form a camera and outputs a representation of the
+                Bird’s Eye View (BEV) networks. But what are they? There are many different approaches these days, but
+                to put it simply, a BEV network is a type of deep
+                learning model that takes in sensor input such as images form a camera and outputs a representation of
+                the
                 scene from a top-down perspective. They’re becoming a go-to method for enhancing how self-driving cars
                 “see” the world. </p>
 
-            <img src="./images/bev_lps.gif" alt="Lift-Splat-Shoot Process" class="youtube-thumbnail"   />
-            
-            <p>Shown above is one of the pioneering papers in this space, <a href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a>. Using inputs from six cameras of around the driving vehicle, this BEV network
-            is able to generate a single unified representation of the surrounding vehicles.</p>
-            
+            <img src="./images/bev_lps.gif" alt="Lift-Splat-Shoot Process" class="project-image" />
+
+            <p>Shown above is one of the pioneering papers in this space, <a
+                    href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a>. Using inputs from six
+                cameras of around the driving vehicle, this BEV network
+                is able to generate a single unified representation of the surrounding vehicles.</p>
+
             <p>What makes BEV so attractive? It handles three crucial symmetries:</p>
             <ul>
-                <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.</li>
+                <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.
+                    Fully convolutional single-
+                    image object detectors roughly have this property and the BEV Nets inherits this from them.</li>
                 <li><strong>Permutation Invariance</strong>: The camera order doesn’t matter; the results are the same.
                 </li>
                 <li><strong>Ego-Frame Isometry Equivariance</strong>: No matter where the camera is placed, it’ll detect
@@ -60,6 +66,8 @@
 
         <section>
             <h2>Datasets That Power BEV</h2>
+            <img src="./images/BEV_Datasets.png" alt="bev lift strategies" class="project-image" />
+
             <p>To get BEV networks to work, we rely on some heavyweight datasets offering diverse scenes for training
                 and testing. Three of the big names are:</p>
             <ul>
@@ -71,23 +79,42 @@
                     nearly 800 sequences for training.</li>
             </ul>
             <p>Other datasets worth mentioning include <strong>Argoverse</strong>, <strong>H3D</strong>, and
-                <strong>Lyft L5</strong>, which are also popular for testing BEV models.</p>
+                <strong>Lyft L5</strong>, which are also popular for testing BEV models.
+            </p>
         </section>
 
         <section>
             <h2>Different BEV Approaches</h2>
+
+            <img src="./images/lift_strategies.png" alt="bev lift strategies" class="project-image" />
+            <figcaption>
+                <p>Shown above is an illustration of four different approaches to transforming perspective view (PV)
+                    images into bird's eye view (BEV) representations. The four quadrants demonstrate (clockwise from
+                    top-left): <i>MLP-Based, Depth-based, Learning-based</i></p>
+
+            </figcaption>
+
             <p>There’s no single “right” way to transform images from regular perspective view (PV) into BEV.
                 Researchers have explored several approaches, but they generally fall into two main categories:</p>
 
             <h3>Geometric-Based PV2BEV</h3>
             <ul>
-                <li><strong>Homography-Based</strong>: Applies simple geometric transformations to get a BEV-like view.
-                    It’s more of an approximation.</li>
-                <li><strong>Depth-Based</strong>: Uses depth info to project 2D images into 3D space, creating voxels to
-                    handle the transformation.</li>
+                <li><strong>Homography-Based</strong>: Also known as <strong>Invese Perspective Mapping</strong>. Most
+                    applications of this actually don't use neural networks, but instead applies simple
+                    geometric transformations on the sensor intrinsics and extrinsics to get a BEV-like view. This falls
+                    in the traditional realm of Robotics algorithms and has been used extensively in perception
+                    pipelines. However, this technique falls short due to the assumption that the ground is flat. While
+                    that may align to certain individuals beliefs, it can lead to inaccurate results for more advanced
+                    driving functionalities.
+                </li>
+                <li><strong>Depth-Based</strong>: As the name eludes, depth based networks rely on extracting depth from
+                    image features to project 2D images into 3D space. Starting in 2019 with single image detection from
+                    <a href="https://arxiv.org/pdf/1811.08188">OFT</a>, depth networks had seen major developments
+                </li>
             </ul>
             <p>Notable works include <strong>Lift-Splat-Shoot</strong>, <strong>Fiery</strong>, and
-                <strong>BEVDepth</strong>.</p>
+                <strong>BEVDepth</strong>.
+            </p>
 
             <h3>Network-Based PV2BEV</h3>
             <ul>
@@ -103,7 +130,8 @@
             <h2>How Do We Compare These Methods?</h2>
             <p>Comparing BEV methods isn’t easy. Each approach has its strengths and weaknesses. That’s where
                 <strong>Simple-BEV</strong> comes in—a benchmark designed to level the playing field for various BEV
-                methodologies. By simplifying the comparison, it helps researchers evaluate models more fairly.</p>
+                methodologies. By simplifying the comparison, it helps researchers evaluate models more fairly.
+            </p>
         </section>
 
         <section>
