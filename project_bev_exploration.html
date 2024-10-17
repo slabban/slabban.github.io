@@ -104,15 +104,16 @@
         </section>
 
         <section>
-            <h2>Different BEV Approaches</h2>
+            <h2>Lifting Strategies</h2>
 
             <img src="./images/lift_strategies.png" alt="bev lift strategies" class="project-image" />
-            <figcaption>
-                <p>Shown above is an illustration of four different approaches to transforming perspective view (PV)
-                    images into bird's eye view (BEV) representations. The four quadrants demonstrate (clockwise from
-                    top-left): <i>MLP-Based, Depth-based, Learning-based</i></p>
 
-            </figcaption>
+            <p>Shown above is an illustration of four different approaches to transforming perspective view (PV)
+                images into bird's eye view (BEV) representations. The four quadrants demonstrate (clockwise from
+                top-left): <i>MLP-Based, Depth-Based, Transformer-Based (Scanline), Transformer-Based (Deformable
+                    Attention)</i></p>
+
+
 
             <p>There’s no single “right” way to transform images from regular perspective view (PV) into BEV.
                 Researchers have explored several approaches, but they generally fall into two main categories:</p>
@@ -127,23 +128,33 @@
                     that may align to certain individuals beliefs, it can lead to inaccurate results for more advanced
                     driving functionalities.
                 </li>
-                <li><strong>Depth-Based</strong>: As the name eludes, depth based networks rely on extracting depth from
-                    image features to project 2D images into 3D space. Starting in 2019 with single image detection from
-                    <a href="https://arxiv.org/pdf/1811.08188">OFT</a>, depth networks had seen major developments
+                <li><strong>Depth-Based</strong>: The networks rely on geometric priors such sensor intrinsics and
+                    extrinsics to extract depth from
+                    image features, enabling them to project 2D images into 3D space and then to a BEV plane.
+                    Starting
+                    in
+                    2019 with single image detection, depth networks had seen a major boom. Early approaches focused on
+                    a <a href="https://arxiv.org/pdf/1812.07179">pseudo-LiDAR</a> strategy, which extracts a depth map
+                    and the back-projects this map into a 3D point-cloud; however, voxel-based approaches, such as <a
+                        href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a> and <a
+                        href="https://arxiv.org/pdf/2104.10490">Fiery</a>, took the lead due to their reduced complexity
+                    and flexbilty.
                 </li>
             </ul>
-            <p>Notable works include <strong>Lift-Splat-Shoot</strong>, <strong>Fiery</strong>, and
-                <strong>BEVDepth</strong>.
-            </p>
+
 
             <h3>Network-Based PV2BEV</h3>
             <ul>
                 <li><strong>MLP-Based</strong>: These models use multilayer perceptrons (MLPs) to map PV images into BEV
-                    space, learning the transformation through data.</li>
-                <li><strong>Transformer-Based</strong>: Transformers are becoming more popular due to their ability to
-                    handle relationships between features in a data-driven way.</li>
+                    space; ignoring the geometric priors of calibrated cameras. This avenue was not explored deeply
+                    since the <i>Transformer-Based</i> methods have generally outperformed them, but notable works such
+                    as <a href="https://arxiv.org/abs/2003.13402">Pyramid Occupancy Networks</a> (Shown Above) and <a
+                        href="https://arxiv.org/abs/2006.09917">FishingNet</a> are notable examples.</li>
+                <li><strong>Transformer-Based</strong>: Transformers made their name in the <i>Natural Language
+                        Processing</i> scene and are the cornerstone of the AI boom at the end of 2022. They are
+                    popular due to their ability to
+                    model relationships between features in a data-driven way.</li>
             </ul>
-            <p>Notable works include <strong>BEVFormer</strong> and <strong>PanopticBEV</strong>.</p>
         </section>
 
         <section>
