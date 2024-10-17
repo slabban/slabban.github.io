@@ -117,6 +117,8 @@
 
   .text-container {
     text-align: justify;
+    padding: 0 1rem;
+    hyphens: auto;
   }
 
   #hamburger-nav {

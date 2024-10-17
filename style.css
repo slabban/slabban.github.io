@@ -33,11 +33,14 @@ nav,
   display: flex;
 }
 
-h1, h2, h3, p {
-  color: rgb(24,44,37);
+h1,
+h2,
+h3,
+p {
+  color: rgb(24, 44, 37);
 }
 
-h1{
+h1 {
   margin-bottom: 1rem;
 }
 
@@ -297,8 +300,8 @@ section {
 
 .about-containers {
   gap: 2rem;
-  margin-bottom: 2rem; 
-} 
+  margin-bottom: 2rem;
+}
 
 .about-details-container {
   justify-content: center;
@@ -360,7 +363,7 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
-  
+
 }
 
 .experience-details-container {
@@ -401,6 +404,7 @@ article .icon {
 }
 
 .text-container {
+  text-align: center;
   padding-left: 5rem;
   padding-right: 5rem;
 }
@@ -491,7 +495,6 @@ footer {
 }
 
 #copyright {
-  font-style: italic; 
+  font-style: italic;
   font-size: 0.8rem;
 }
-
