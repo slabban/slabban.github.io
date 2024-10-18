@@ -2,7 +2,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="theme.js"></script>
     <link rel="stylesheet" href="project.css" />
-    <link rel="stylesheet" href="mtl_style.css" />
+    <link rel="stylesheet" href="bev_exploration.css" />
+
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
 </head>
@@ -106,17 +107,52 @@
         <section>
             <h2>Lifting Strategies</h2>
 
+            <p>A <i>lifting strategy</i> is the process of transforming 2D image features from a perspective view (PV)
+                into a bird's eye view (BEV) representation. This can be thought of as the core mechanism of BEV
+                methodologies.</p>
+
             <img src="./images/lift_strategies.png" alt="bev lift strategies" class="project-image" />
 
-            <p>Shown above is an illustration of four different approaches to transforming perspective view (PV)
+            <p>Shown above is an illustration of popular approaches to transforming perspective view (PV)
                 images into bird's eye view (BEV) representations. The four quadrants demonstrate (clockwise from
-                top-left): <i>MLP-Based, Depth-Based, Transformer-Based (Scanline), Transformer-Based (Deformable
-                    Attention)</i></p>
+                top-left):
+            <table class="bev-table">
+                <tr>
+                    <th>Category</th>
+                    <th>Architecture</th>
+
+                </tr>
+                <tr>
+                    <td>MLP-Based</td>
+                    <td><a href="https://arxiv.org/abs/2003.13402">Pyramid Occupancy Networks</a> </td>
+
+                </tr>
+                <tr>
+                    <td>Depth-Based</td>
+                    <td><a href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a></td>
+                </tr>
+                <tr>
+                    <td>Transformer-Based (Scanline)</td>
+                    <td><a href="https://arxiv.org/abs/2110.00966">Image2Map</a></td>
+                </tr>
+                <tr>
+                    <td>Transformer-Based (Deformable Attention)</td>
+                    <td><a href="https://arxiv.org/abs/2203.17270">BEVFormer</a></td>
+                </tr>
+            </table>
+            </p>
+
+            <p>It's a good idea to establish common ground before diving into each approach. Each approach uses what is
+                called a <strong>backbone</strong>. This backbone encoder is generally a fully convolutional neural
+                network (CNN) that takes in an image and outputs
+                a
+                feature map that are passed to the lifting strategies. Once these features are translated into the
+                unified BEV space, the network may then
+                feed these BEV features into a single, or set of task heads to produce the final predictions.
+            </p>
 
 
-
-            <p>There’s no single “right” way to transform images from regular perspective view (PV) into BEV.
-                Researchers have explored several approaches, but they generally fall into two main categories:</p>
+            <p>Let's now focus on the lifting strategies:</p>
 
             <h3>Geometric-Based PV2BEV</h3>
             <ul>
@@ -124,9 +160,9 @@
                     applications of this actually don't use neural networks, but instead applies simple
                     geometric transformations on the sensor intrinsics and extrinsics to get a BEV-like view. This falls
                     in the traditional realm of Robotics algorithms and has been used extensively in perception
-                    pipelines. However, this technique falls short due to the assumption that the ground is flat. While
-                    that may align to certain individuals beliefs, it can lead to inaccurate results for more advanced
-                    driving functionalities.
+                    pipelines. However, this technique falls short due to the assumption that the ground is flat, which
+                    can Lead
+                    to poor results
                 </li>
                 <li><strong>Depth-Based</strong>: The networks rely on geometric priors such sensor intrinsics and
                     extrinsics to extract depth from
@@ -150,10 +186,32 @@
                     since the <i>Transformer-Based</i> methods have generally outperformed them, but notable works such
                     as <a href="https://arxiv.org/abs/2003.13402">Pyramid Occupancy Networks</a> (Shown Above) and <a
                         href="https://arxiv.org/abs/2006.09917">FishingNet</a> are notable examples.</li>
-                <li><strong>Transformer-Based</strong>: Transformers made their name in the <i>Natural Language
-                        Processing</i> scene and are the cornerstone of the AI boom at the end of 2022. They are
-                    popular due to their ability to
-                    model relationships between features in a data-driven way.</li>
+                <li><strong>Transformer-Based</strong>: <a href="https://arxiv.org/abs/1706.03762">Transformers</a> made
+                    their name in the <i>Natural Language
+                        Processing</i> scene and are the cornerstone of the AI boom at the end of 2022. What's amazing
+                    is that adapting them to learn BEV representations is conceptually straightforward, and they work
+                    <i>really well</i>. Not only are they an effective lifting strategy, but transformers can also be
+                    switched out in place of backbone encoders or one of the task head(s) that the network is
+                    predicting, which can lead to improved accuracy and reduced model complexity.
+
+                    <br /><br />
+
+                    Transformer architectures may fall into two categories: <i>sparse</i> and <i>dense</i> query-based.
+                    Inspired by <a href="https://arxiv.org/abs/1706.03762">DETR</a>, <i>sparse query-based</i> methods
+                    directly produce perception results
+                    and avoid the dense transformation of image features. These methods excel at detection tasks such as
+                    3D
+                    object detection, but fall short at segmentation tasks.
+
+                    On the other hand, <i>dense query-based</i> methods, such as <a
+                        href="https://arxiv.org/abs/2203.17270">BEVFormer</a> (shown above), methods are designed to
+                    learn BEV
+                    representations my mapping the queries into a pre-defined 3D volumetric or BEV space, which can be
+                    ported to perception tasks such as 3D object detection and segmentation; however, these models
+                    suffer in computational performance due to the dense queries which has lead to more research into
+                    efficient transformer architectures.
+
+                </li>
             </ul>
         </section>
 
