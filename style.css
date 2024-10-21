@@ -21,8 +21,7 @@ html {
 
 /* TRANSITION */
 
-a,
-.btn {
+a {
   transition: all 300ms ease;
 }
 
@@ -72,13 +71,6 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2rem;
-}
-
-.logo:hover {
-  cursor: default;
-}
 
 /* HAMBURGER MENU */
 
@@ -164,8 +156,8 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  padding-right: 5rem;
-  padding-left: 5rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -239,55 +231,6 @@ section {
   height: 2rem;
 }
 
-/* BUTTONS */
-
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-  gap: 1rem;
-}
 
 /* ABOUT SECTION */
 
@@ -313,11 +256,6 @@ section {
   display: flex;
 }
 
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
 
 .details-container {
   padding: 1.5rem;
@@ -341,16 +279,6 @@ section {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
 
 /* EXPERIENCE SECTION */
 
@@ -452,9 +380,6 @@ article .icon {
   transition: all 200ms ease;
 }
 
-#contact:active {
-  transform: scale(0.95);
-}
 
 .contact-info-upper-container {
   display: flex;
@@ -488,11 +413,6 @@ article .icon {
 }
 
 /* FOOTER SECTION */
-
-footer {
-  text-align: center;
-  background-color: rgb(67, 147, 153);
-}
 
 #copyright {
   font-style: italic;
