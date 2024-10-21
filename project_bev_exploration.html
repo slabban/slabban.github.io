@@ -37,10 +37,9 @@
 
             <p>If you’ve been following advancements in 3D perception for autonomous driving, you’ve likely come across
                 Bird’s Eye View (BEV) networks. But what are they? There are many different approaches these days, but
-                to put it simply, a BEV network is a type of deep
-                learning model that takes in sensor input such as images form a camera and outputs a representation of
-                the
-                scene from a top-down perspective. They’re becoming a go-to method for enhancing how self-driving cars
+                to put it simply, a BEV network is a type of deep learning model that takes in sensor input, such as
+                images from a camera, and outputs a representation of the scene from a top-down perspective. They’re
+                becoming a go-to method for enhancing how self-driving cars
                 “see” the world. </p>
 
             <img src="./images/bev_lps.gif" alt="Lift-Splat-Shoot Process" class="project-image" />
@@ -51,11 +50,20 @@
                 is able to generate a single unified representation of the surrounding vehicles.</p>
 
 
+
+            <img src="./images/bev_mindmap.png" alt="bev lift strategies" class="mindmap-image" />
+
+            <p>Above was my personal journey exploring the BEV research space, created with <a
+                    href="https://obsidian.md/">Obsidian</a>. In this article we explore such BEV applications, their
+                architectures, and how they fit in modern
+                and upcoming autonomous stacks.</p>
+
         </section>
 
         <section>
             <h2>Motivation to Understand The BEV Landscape</h2>
 
+            <h3>Evolution of the Autonomous Vehicle Stack</h3>
             <p>
                 Landing on the scene in the late 1980s, classical methods like Canny edge detection and
                 homeography-based techniques were key
@@ -67,42 +75,65 @@
                 accurate and robust top-down scene interpretation directly from multi-sensor data.
             </p>
 
-            <p><a href="https://wayve.ai/">Wayve</a> is player in the autonomous driving space, and they show a
-                indicative vision of where traditional modular autonomy stacks of Perception, Localization, and
-                Planning, and
-                Control are are completely driven by new end-to-end architectures:
+            <p>In their paper <a href="https://arxiv.org/abs/2108.05805">Reimagining an Autonomus Vehicle</a>, <a
+                    href="https://wayve.ai/">Wayve</a> show a
+                indicative vision of where traditional rule-based autonomy stacks and their evolution to
+                end-to-end architectures.
             </p>
 
             <img src="./images/wayve_av1.png" alt="Wayve Autonomous Vehicle" class="project-image" />
 
 
-            <p>Shown above it what is considered the modern or traditional autonomous stack consisting of Perception,
-                Planning, and Control. Which Wayve terms <i>AV1.0</i>.
+            <p>Shown above is what is considered the modern or traditional autonomous stack, consisting of Perception,
+                Planning, and Control. Which Wayve terms <strong>AV1.0</strong>.
 
                 The perception pipeline takes the raw sensor input from the various sources, and feeds them through
                 various
-                scene understanding pipelines, which are then fed to planning pipelines to assemble into path planning
+                scene understanding pipelines, which are then fed to planning pipelines to assemble into path
+                planning
                 tasks and sent to controls for actuation commands.
 
-                Wayve makes their case that these traditional hand-coded architectures have merit, but are are
-                ultimately brittle
-                and and prone to
-                flaws and edge case gaps when faced the goal of achieving true autonomous driving.
+                Wayve makes their case that these traditional hand-coded architectures have merit, but are ultimately
+                brittle and prone to flaws and edge case gaps when faced with the goal of achieving true autonomous
+                driving.
             </p>
 
             <img src="./images/wayve_av2.png" alt="Wayve Autonomous Vehicle" class="project-image" />
 
-            <p> This <i>AV2.0</i> architecture takes the processed sensor input directly into an end to end network to
+            <p> This <strong>AV2.0</strong> architecture takes the processed sensor input directly into an end to end
+                network to
                 generate a motion plan for the controller to follow.
 
                 Wayve proposes this architecture with the position that the autonomous driving future will-be be
                 completely data-driven, and that having this system would lend itself to a clean and robust learning
-                pipeline that is generalizable to different vehicles.
+                pipeline that is generalizable to different vehicles.</p>
 
 
-                Looking at <a href="https://arxiv.org/abs/2212.10156">UniAD</a>,
-                the winner of the CVPR 2023, is a cool
-                example of this.
+            <h3>Where BEV fits</h3>
+
+            <p>
+                Bird’s Eye View networks can fit into both AV1.0 and AV2.0 stacks, sitting at the
+                perception portion of the stack since the nature BEV directly works with multi-sensor
+                features.
+            </p>
+
+            <img src="./images/bevformer_arch.png" alt="bevformer" class="project-image" />
+
+            <p>
+                Above is an example of the original <a href="https://arxiv.org/abs/2203.17270">BEVFormer</a>
+                architecture. In this paper, the authors train the network to perform segmentation and 3D object
+                detection, which are some outputs of the perception pipeline in AV1.0.
+            </p>
+
+            <img src="./images/UniAD.png" alt="UniAD Autonomous Vehicle" class="project-image" />
+
+            <p>
+                A powerful illustration of BEV in AV2.0 comes from the winning paper of CVPR 2023, <a
+                    href="https://arxiv.org/abs/2212.10156">UniAD</a>,
+                focuses on the end-to-end architecture. The authors integrate the BEVFormer as the backbone of their
+                End-to-End
+                architecture, which
+                provides a unified basis for downstream processing.
             </p>
 
 
@@ -110,7 +141,7 @@
             <ul>
                 <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.
                     Fully convolutional single-
-                    image object detectors roughly have this property and the BEV Nets inherits this from them.</li>
+                    image object detectors roughly have this property and the BEV Nets inherit this from them.</li>
                 <li><strong>Permutation Invariance</strong>: The camera order doesn’t matter; the results are the same.
                 </li>
                 <li><strong>Ego-Frame Isometry Equivariance</strong>: No matter where the camera is placed, it’ll detect
@@ -118,42 +149,9 @@
             </ul>
             <p>By preserving these properties and being fully end-to-end differentiable, BEV networks streamline the
                 perception process.</p>
-
-            <p>Here’s the thing—I don’t have a PhD from Carnegie Mellon or MIT. For a long time, I thought breaking into
-                such a complex field without one was intimidating. But as I progressed in my career and became more
-                established in the automated driving industry, I realized something: being passionate about learning and
-                sharing that journey has been my greatest asset. With this project, my goal is to show everyone,
-                regardless of skill level, my unique perspective on BEV with the hope to inspire others to do the same.
-            </p>
-
-
-            <img src="./images/bev_mindmap.png" alt="bev lift strategies" class="project-image" />
-
-            <p>Above is a snapshot into my BEV mind map, created with <a href="https://obsidian.md/">Obsidian</a>. Using
-                this app, I was able to gradually expand my knowledge in
-                BEV networks, starting with the <i>depth-based</i> <a href="https://arxiv.org/abs/2104.10490">Fiery</a>
-                and eventually going across the main approaches discussed in this project.
-            </p>
         </section>
 
-        <section>
-            <h2>Datasets That Power BEV</h2>
-            <img src="./images/BEV_Datasets.png" alt="bev lift strategies" class="project-image" />
 
-            <p>To get BEV networks to work, we rely on some heavyweight datasets offering diverse scenes for training
-                and testing. Three of the big names are:</p>
-            <ul>
-                <li><strong>KITTI</strong>: A well-known benchmark with over 7,500 samples for testing with both 2D and
-                    3D annotations.</li>
-                <li><strong>nuScenes</strong>: A massive dataset with 1,000 scenes, each lasting 20 seconds, offering a
-                    360-degree field of view.</li>
-                <li><strong>Waymo Open Dataset (WOD)</strong>: One of the largest autonomous driving datasets with
-                    nearly 800 sequences for training.</li>
-            </ul>
-            <p>Other datasets worth mentioning include <strong>Argoverse</strong>, <strong>H3D</strong>, and
-                <strong>Lyft L5</strong>, which are also popular for testing BEV models.
-            </p>
-        </section>
 
         <section>
             <h2>Lifting Strategies</h2>
@@ -195,8 +193,8 @@
             </table>
             </p>
 
-            <p>It's a good idea to establish common ground before diving into each approach. Each approach uses what is
-                called a <strong>backbone</strong>. This backbone encoder is generally a fully convolutional neural
+            <p>It's a good idea to establish the flow before diving into the details. Each approach uses what is
+                called a <strong>backbone</strong>. This backbone, or encoder, is generally a fully convolutional neural
                 network (CNN) that takes in an image and outputs
                 a
                 feature map that are passed to the lifting strategies. Once these features are translated into the
@@ -211,11 +209,11 @@
             <ul>
                 <li><strong>Homography-Based</strong>: Also known as <strong>Invese Perspective Mapping</strong>. This
                     concept has actually existed since the 90s, and applications of this traditionally haven't used
-                    neural networks. Homeography applies simple
-                    geometric transformations on the sensor intrinsics and extrinsics to get a BEV-like view. This falls
-                    in the traditional realm of Robotics algorithms and has been used extensively in perception
-                    pipelines. However, this technique falls short due to the assumption that the ground is flat, which
-                    tend to fall short in more demanding automated driving applications.
+                    neural networks. Homography applies simple geometric transformations on the sensor intrinsics and
+                    extrinsics to get a BEV-like view. This falls in the traditional realm of robotics algorithms and
+                    has been used extensively in perception pipelines. However, this technique falls short due to the
+                    assumption that the ground is flat, which can be inadequate in more demanding automated driving
+                    applications.
                 </li>
                 <li><strong>Depth-Based</strong>: These networks use geometric priors such sensor intrinsics and
                     extrinsics to extract depth from
@@ -226,7 +224,7 @@
                     and the back-projects this map into a 3D point-cloud; however, voxel-based approaches, such as <a
                         href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a> and <a
                         href="https://arxiv.org/pdf/2104.10490">Fiery</a>, took the lead due to their reduced complexity
-                    and flexbilty.
+                    and flexibility.
                 </li>
             </ul>
 
@@ -272,36 +270,85 @@
 
         <section>
             <h2>How Do We Compare These Methods?</h2>
-            <p>Comparing BEV methods isn’t easy. Each approach has its strengths and weaknesses. That’s where
-                <strong>Simple-BEV</strong> comes in—a benchmark designed to level the playing field for various BEV
-                methodologies. By simplifying the comparison, it helps researchers evaluate models more fairly.
+            <img src="./images/BEV_Datasets.png" alt="bev lift strategies" class="project-image" />
+
+            <p> Datasets offering diverse scenes for
+                training
+                and testing are crucial for researchers to benchmark BEV models. Three of the big names are:</p>
+            <ul>
+                <li><strong>KITTI</strong>: A well-known benchmark with over 7,500 samples for testing with both 2D
+                    and
+                    3D annotations.</li>
+                <li><strong>nuScenes</strong>: A massive dataset with 1,000 scenes, each lasting 20 seconds,
+                    offering a
+                    360-degree field of view.</li>
+                <li><strong>Waymo Open Dataset (WOD)</strong>: One of the largest autonomous driving datasets with
+                    nearly 800 sequences for training.</li>
+            </ul>
+            <p>Other datasets worth mentioning include <strong>Argoverse</strong>, <strong>H3D</strong>, and
+                <strong>Lyft L5</strong>, which are also popular for testing BEV models.
             </p>
+
+            <p> For evaluation metrics, the most commonly
+                used criterion for BEV Detection is average precision (AP)
+                and the mean average precision (mAP) over different classes
+                or difficulty levels. For BEV Segmentation, intersection over union (IoU) is used for each class
+                and mIoU over all classes are frequently used as the metrics.</p>
         </section>
 
         <section>
             <h2>Final Thoughts</h2>
             <p>
                 Following the timeline of the evolution of autonomous driving, we can see a clear pattern
-                of of replacement of traditional techniques with network-based approaches. New research
-                aims to
+                of classical rule-based techniques being replaced with network-based approaches. New research
+                explores how to
                 expand these networks to handle the entire end-to-end, from sensor input to planning of the automated
                 vehicle.
 
+
                 <br /><br />
 
-            <p> So, what does this mean for the traditional software engineering teams that worked on developing
-                perception, localization, and planning pipelines? Should we be in fear of losing our jobs due to
-                the seeming eventuality of this future? Well, not <i>yet</i>. While modern network-based architectures
-                dominate cutting-edge autonomous systems <a href="https://wayve.ai/">Wayve</a> and <a
-                    href="https://waymo.com/">Waymo</a>, traditional algorithms still play a vital role
+                <strong>What does this mean for the automotive industry and software engineering teams that
+                    have been developing perception, localization, and planning pipelines using rule-based
+                    techniques?</strong>
+
+
+                <br /><br />
+
+                I don't have a magic crystal ball, but after being on the field as an ADAS engineer for a few years, I
+                can give an informed perspective.
+
+                <br /><br />
+                Modern network-based
+                architectures will continue to grow and
+                dominate cutting-edge autonomous systems that we see in robotaxis like <a
+                    href="https://wayve.ai/">Wayve</a> and <a href="https://waymo.com/">Waymo</a>, but traditional
+                algorithms still play a vital role
                 due to their
-                compatability & efficiency in resource-constrained systems that the majority of current cars use.
-                Moreover, these well-established methods are critical in safety verification processes, where
-                deterministic behavior and explainability are required for regulatory approval. Lastly, and most
-                importantly,
-                is fulfilling customer's needs. In the end, autonomous driving is a feature of a product, and not the
-                end goal of desigining a car, and automakers have to understand how to choose the features that will
-                give the most value without shoehorning an undesired feature. </p>
+                compatibility & efficiency in resource-constrained systems that the majority of current cars use. It's
+                likely that the roadmap to end-to-end adoption will be a slow burn that will naturally build as
+                vehicle hardware architectures evolve. Organizational shifts will also need time to transition from
+                rule-based develpment to network-based applications, which will be drive upskill from traditional
+                software development
+                methodologies to the AI centric data-driven paradigm.
+
+
+                <br /><br />
+
+                In my view, the real challenge lies in addressing the external factors. Regulatory approval for
+                autonomous driving has evolved from minimal oversight during early experimental testing to rigorous
+                safety and explainability requirements, now focusing on functional safety, liability, and cybersecurity.
+                As AV technology matures, international regulations emphasize level-specific testing, data-driven
+                validation, and public trust to ensure safe deployment.
+
+                <br /><br />
+                Automakers must remain attuned to the needs and expectations of their customers. Autonomous driving is
+                ultimately a feature of the vehicle, not the sole purpose of its design. While the allure of
+                cutting-edge, fully autonomous systems is undeniable, manufacturers must strike a balance between
+                technological advancements and the practical benefits they deliver to the consumer. It’s essential for
+                automakers to focus on features that provide real value to drivers, rather than forcing innovations that
+                may not align with consumer desires.
+            </p>
         </section>
 
 
