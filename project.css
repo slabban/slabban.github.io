@@ -1,5 +1,5 @@
 :root {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Lato', sans-serif;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
@@ -261,7 +261,7 @@ footer {
     --bg-secondary: #4e3479;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     figure {
         margin: 0;
     }
@@ -269,5 +269,40 @@ footer {
     main {
         padding: 0;
         max-width: 90%;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        /* 24px */
+    }
+
+    h2 {
+        font-size: 1.2em;
+        /* 19.2px */
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1800px) {
+    body {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 48px;
     }
 }
