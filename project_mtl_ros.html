@@ -28,21 +28,24 @@
             </a>
         </div>
 
-        <h1 class="title">Hydranets in ROS2</h1>
+        <h1 class="title">Multi-Task Learning and Deployment</h1>
 
 
         <section>
             <p>
-                My interest in deep learning had grown throughout my engineering consulting career at Accenture. I was
-                quickly picking up software engineering skills through my work on perception and automotive middleware.
-                Around the same time, deep learning established its place in robotics and started making its way into
-                production vehicles.
+                Deep Learning was a fascinating but elusive field to me during my time as a masters student.
+                By the time I graduated in 2020, I was too busy breaking into the software development scene and landing
+                my first job to explore its depths. Back then, landing a machine engineering role was rare, with an
+                intimidatingly high bar for entry. It seemed like a moonshot for someone with my
+                experience, so I put it on hold.
+
+                <br><br>
+
+                Fast forward to today, I get to work on cutting-edge perception-centered features in production
+                autonomous driving applications, and my software engineering skills have been accelerating. With a
+                clearer vision of the engineering and cross-team workflows, I figured it was time to dive in.
             </p>
-            <p>
-                I was particularly drawn to the concept of <strong>Hydranets</strong>, which seemed promising for
-                multi-task learning in robotics. I decided to explore how I could apply it to my work, and I'm excited
-                to share my experience with <strong>Deep Learning</strong>.
-            </p>
+
         </section>
 
         <section>
@@ -57,94 +60,217 @@
 
             <p>
                 The video above illustrates depth and semantic segmentation inferences from a Hydranet model deployed in
-                ROS2 middleware. The image stream is vehicle playback data that my friends and I collected while driving
-                around our university campus.
+                ROS2 middleware. The image stream is vehicle sensor data that my friends and I collected while driving
+                around my university campus.
+
+                <br><br>
+
+                Coined by <strong>Tesla</strong>, the term <i>Hydranet</i> is single deep learning model that is capable
+                of
+                inferencing multiple tasks, as opposed to the convention of deploying models that perform a single task,
+                which would place needless memory constraints on the hardware. Hydranets have been an interal concept
+                in autonomous driving applications due to this efficiency.
+
             </p>
         </section>
 
         <section>
             <h2>Setting Learning Goals</h2>
             <p>
-                Deep learning and AI are rapidly evolving fields with constant research pushing the boundaries. While
-                understanding and evaluating research papers is key, deployment and integration can be an even more
-                challenging task, especially in robotics where high throughput and real-time performance are critical.
-            </p>
-            <p>
-                To mitigate my FOMO, I set the following goals:
+                Deep learning is an ever-evolving field, making it challenging to know where to begin and how to
+                effectively advance towards cutting-edge techniques.
+                In addition, deploying and integrating these models can be particularly complex in robotics, where high
+                throughput
+                and real-time performance are essential.
+
+                <br><br>
+
+                Aiming for a balance between research and deployment, I set the following objectives:
             </p>
             <ul>
-                <li>Learn to understand and critically evaluate state-of-the-art deep learning papers.</li>
-                <li>Learn to create multi-task learning models and train them.</li>
-                <li>Integrate new state-of-the-art models in robotic middleware.</li>
+                <li>Develop the ability to understand and critically assess state-of-the-art deep learning papers.</li>
+                <li>Gain hands-on experience in building and training deep learning models.</li>
+                <li>Learn to deploy machine learning models within robotic systems.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Deep Learning Journey</h2>
+            <h2>Deep Learning Path</h2>
+
+            <h3>Fundamentals</h3>
             <p>
-                My deep learning journey started in the summer of 2021, with two amazing resources: fastai's <a
-                    href="https://course.fast.ai/">Practical Deep Learning for Coders</a> and Deep Lizard's <a
+                Having just graduated with my second engineering degree, I wasn't too keen on shelling out more cash for
+                education. I chose the
+                cost-effective, scenic route picking up the basics.
+
+                <br><br>
+
+                I started with a miniseries on <a
                     href="https://youtube.com/playlist?list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU">Deep Learning
-                    Fundamentals</a> and <a
+                    Fundamentals</a>, which taught me the basics of deep learning. I then graduated to fastai's <a
+                    href="https://course.fast.ai/">Practical Deep
+                    Learning
+                    for Coders</a>. This course did <i>wonders</i> for me as it gave me hands-on experience on a breadth
+                of machine learning avenues,
+                from classical concepts such <strong>Random Forests</strong>, to <strong>Convolutional Neural
+                    Networks</strong> and <strong>Natural Language Processing</strong> using Transformers.
+
+                My last venture on fundamentals was Deep Lizard's <a
                     href="https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG">PyTorch-Python Deep
-                    Learning API</a>. These courses equipped me with the theoretical and practical fundamentals to
-                explore deeper into Computer Vision.
+                    Learning API</a>, which further drove down on my practical experience, but with a tailored focus to
+                the popular Pytorch framework.
             </p>
+
+            <h3>Automated Driving</h3>
             <p>
-                To specialize further, I enrolled in Jeremy Cohen's <a href="https://courses.thinkautonomous.ai/">Think
-                    Autonomous</a> course. It covered theoretical and practical aspects of Hydranets and multi-task
-                learning, based on concepts from <a href="https://arxiv.org/abs/1809.04766">this paper</a>.
+                My next move was to specialize in deep learning for autonomous driving, I enrolled in Jeremy Cohen's <a
+                    href="https://courses.thinkautonomous.ai/">Think
+                    Autonomous</a> courses for Hydranets and Neural Net Optimization. These courses were very helpful in
+                getting a intuitive understanding more advanced concepts and techniques, some of which we will discuss
+                in the next sections.
             </p>
         </section>
 
         <section>
             <h2>Hydranet Architecture</h2>
+            <p> Simply put, a Hydranet, officially termed as <i>Multi-Task Learning</i>, is a deep learning model
+                that is designed and trained to inference multiple outputs. They're popular due to their efficiency and
+                low latency,
+                as they allow multiple tasks to share a common feature extraction backbone, reducing the overall
+                computational load. This shared representation not only conserves resources but often improves the
+                performance of each task by leveraging the complementary nature of shared features.
+            </p>
+
             <figure>
                 <img src="images/hydranet.png"
                     alt="Diagram of the Hydranet architecture, including encoder and decoder structure"
                     class="project-image">
             </figure>
+
             <p>
-                Much like the well-known <strong>U-Net</strong>, Hydranet follows an encoder-decoder architecture. The
-                encoder reduces the spatial dimensions while increasing feature channels, and the decoder restores
+
+                The Hydranet architecture we studied was from <a href="https://arxiv.org/abs/1809.04766">this paper</a>.
+                Much like the well-known <strong>U-Net</strong>, this model follows an encoder-decoder architecture. The
+                encoder takes in a single image and reduces the spatial dimensions while increasing feature channels,
+                and the decoder restores
                 spatial dimensions with skip connections from the encoder. This enables the model to retain spatial
                 features while leveraging the encoder’s feature extraction power.
             </p>
             <p>
                 For real-time applications, the authors of the paper focused on efficiency, using <strong>Mobilenet
-                    V2</strong> as the encoder and a lightweight <strong>RefineNet</strong> as the decoder. They also
-                incorporated depthwise separable convolutions to reduce the number of parameters and floating-point
-                operations.
+                    V2</strong> as the encoder and a lightweight <strong>RefineNet</strong> as the decoder. They authors
+                also
+                incorporated techniques like depthwise separable convolutions to reduce the number of parameters and
+                floating-point
+                operations of the model during inference
             </p>
         </section>
 
         <section>
-            <h2>Multi-Task Learning</h2>
-            <p>BEV networks often deal with multiple tasks like object detection and segmentation. Multi-task learning
-                is a popular way to handle this, and one method that stands out is <strong>Uncertainty
-                    Weighting</strong>, where tasks are prioritized dynamically based on their difficulty or importance.
+            <h2>Considerations for Multi-Task Learning</h2>
+
+            <p>We looked at a thin slice of Multi-Task Learning, but I think it's worth sharing these
+                considerations.</p>
+
+            <h3>Loss Weighting</h3>
+            <p>A loss function is a mathematical function that measures the difference between the model's predictions
+                and the ground truth labels, which are applied to the model during the training phase. So how do we
+                handle
+                multiple loss functions from different tasks? </p>
+            <p> <strong>Uncertainty weighting</strong> is a early approach that allows the model to capture the complex
+                interplay between tasks and balance performance across them by weighting each loss function by the
+                uncertainty of each task. These uncertainties are parameters that are aim to balance the learning of the
+                model.
             </p>
-            <p>Other methods include <strong>GradNorm</strong> and <strong>Meta-Learning Task Weighting</strong>, which
-                adjust task weights to balance performance across different objectives.</p>
+            <p>Another approach is <strong>GradNorm</strong>, which is a gradient-based method that dynamically
+                adjusts the learning rate of each task based on its relative importance. By normalizing the gradients
+                of each task, GradNorm ensures that the model is updated in a way that is proportional to the
+                importance of each task. This helps to balance performance across tasks and improve overall
+                performance.
+            </p>
+            <p><strong>Meta-Learning Task Weighting</strong> is a method that uses meta-learning to
+                automatically adjust the weights of each task based on the performance of the model. This approach
+                involves training a meta-model to predict the optimal weights for each task, given the current
+                performance of the model. By using the meta-model to adjust the weights of each task, this approach
+                can improve overall performance and balance performance across tasks.</p>
+
+            <h3>Task Dependence</h3>
+            <p>Deciding which tasks to learn is a crucial consideration.
+                Some tasks may be inherently related, where learning one task can benefit the learning of another, and
+                improve the model's accuracy,
+                while certain pairings of tasks may negatively impact model learning and convergence.
+            </p>
+
+            <figure>
+                <img src="./images/task_dependency.png"
+                    alt="Diagram of the Hydranet architecture, including encoder and decoder structure"
+                    class="project-image">
+            </figure>
+
+            <p> The snippet above comes from this <a href="https://arxiv.org/abs/1905.07553" Paper>paper</a>. Here the
+                authors highlight results from pairing tasks. We see that including the normals task gave a generous
+                boost in peformance, whereas
+                synergies between semantic and depth did not provide much benefit. You can actually improve the
+                performance of
+                the model by including extra tasks such as normals, even if they are not relevant to the task at hand.
+            </p>
+
         </section>
 
         <section>
-            <h2>Integrating Hydranet into ROS2</h2>
+            <h2>Model Deployment</h2>
             <p>
-                For those new to robotics, <strong>ROS2</strong> (Robot Operating System 2) is an open-source middleware
-                that enables roboticists to create reusable, flexible code for a variety of robot applications.
-                Middleware facilitates communication between different processes and devices, enabling data sharing.
+                <strong>ROS2</strong> (Robot Operating System 2) is an open-source middleware that
+                acts
+                as a communication layer between different processes and hardware devices, enabling efficient data
+                exchange while providing a modular design.
             </p>
             <p>
-                My goal was to integrate the Hydranet model into ROS2, learning both ROS2 and Deep Learning
-                simultaneously. The integration journey involved learning about <strong>PyTorch JIT</strong> for tracing
-                models and <strong>Libtorch</strong> for C++ API integration. This enabled me to take a trained model
-                from eager mode to production mode.
+                When it comes to deploying deep learning models, the process typically involves
+                converting
+                the model from a development environment to a production-ready format that can run efficiently in
+                real-time applications.
+                In my case, I wanted to integrate the Hydranet model into ROS2, aiming to learn both ROS2 and deep
+                learning together. Initially, I used <strong>JIT</strong> to trace the model and
+                the <strong>Libtorch</strong> C++ API,
+                to handle, import and inferecing in ROS2. This allowed me to take a model from eager mode and deploy it
+                into production mode.
             </p>
             <p>
-                I deployed the model in a ROS2 node, processing camera images and passing them through the network for
-                inference, producing depth and segmentation outputs.
+                However, there are more official ways to deploy machine learning models in ROS2 or similar systems. For
+                instance, <strong>ONNX</strong> (Open Neural Network Exchange) allows for easy model export and
+                cross-platform
+                deployment. ONNX models can be used across frameworks and hardware, ensuring compatibility with
+                performance-optimized libraries.
             </p>
+            <p>
+                For even more performance gains, specialized tools like <strong>Intel's OpenVINO</strong> or NVIDIA’s
+                suite of optimization
+                technologies can be employed. OpenVINO is designed to speed up inferencing on Intel hardware, allowing
+                you to optimize your
+                ONNX models and deploy them across CPU, GPU, and even FPGAs. NVIDIA's <strong>TensorRT</strong> is
+                another powerful tool
+                that provides optimizations for NVIDIA GPUs, turning ONNX models into highly optimized runtime engines.
+            </p>
+            <p>
+                In the ROS2 ecosystem, NVIDIA offers <strong>Isaac ROS</strong> for seamless integration of TensorRT
+                models into ROS nodes.
+                This allows for faster inference and better performance in tasks such as object detection, segmentation,
+                and other
+                perception tasks within the robotics system. Using these tools, you can not only deploy your models but
+                also
+                benefit from hardware-accelerated inferencing, making the integration process much more efficient and
+                suitable for
+                real-time applications.
+            </p>
+            <p>
+                In my case, after training the Hydranet model, I converted it to ONNX and used TensorRT for
+                optimization. This
+                allowed me to deploy it in a ROS2 node, where it processes camera images, runs inferences, and outputs
+                depth
+                and segmentation data efficiently in real-time.
+            </p>
+
         </section>
 
     </main>

@@ -9,18 +9,18 @@
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
-                    <img src="./assets/2d_tracking.png" alt="Project 3" class="project-logo" />
+                <img src="./assets/2d_tracking.png" alt="Project 3" class="project-logo" />
             </li>
 
 
         </ul>
     </nav>
 
-    
+
     <main>
         <div class="project-link-container">
             <p class="sub-title">
-                 <time datetime="2022-05-05">April 5, 2022</time>
+                <time datetime="2022-05-05">April 5, 2022</time>
             </p>
             <a href="https://github.com/slabban/yolo_tracking">
                 <img src="./assets/github.png" alt="Repository" class="icon" />
@@ -32,14 +32,21 @@
         <section>
             <h2>Project Overview</h2>
             <p>
-                This project was a deep dive into the world of Multi-Object Tracking (MOT) where I employed the powerful <strong>Extended Kalman Filter (EKF)</strong> and an <strong>Intersection Over Union (IoU)</strong> association approach to track objects in a video stream. I deployed the algorithm in the <strong>Robot Operating System (ROS)</strong> middleware, which allowed me to tap into the vast ecosystem of ROS packages and tools.
+                This project was a deep dive into the world of Multi-Object Tracking (MOT) where I employed the powerful
+                <strong>Extended Kalman Filter (EKF)</strong> and an <strong>Intersection Over Union (IoU)</strong>
+                association approach to track objects in a video stream. I deployed the algorithm in the <strong>Robot
+                    Operating System (ROS)</strong> middleware, which allowed me to tap into the vast ecosystem of ROS
+                packages and tools.
             </p>
         </section>
 
         <section>
             <h2>Inspiration</h2>
             <p>
-                My inspiration for this project came from this <a href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a> by Jeremy Cohen. I had come across it over a year ago and thought: "I know how to design a Kalman Filter and have worked on Multiple Object Tracking, I should give this a shot." So, I did!
+                My inspiration for this project came from this <a
+                    href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a>. I had come
+                across it over a year ago and thought: "I know how to design a Kalman Filter and have
+                worked on Multiple Object Tracking, I should give this a shot." So, I did!
             </p>
         </section>
 
@@ -52,10 +59,15 @@
             </figure>
 
             <p>
-                I experimented with both <strong>YOLOv3</strong> and <strong>YOLOv4</strong>, comparing results as seen in the video above. While <strong>YOLOv4</strong> was better at association, <strong>YOLOv3</strong> performed detections faster, which allowed the Kalman Filter to produce smoother estimates.
+                I experimented with both <strong>YOLOv3</strong> and <strong>YOLOv4</strong>, comparing results as seen
+                in the video above. While <strong>YOLOv4</strong> was better at association, <strong>YOLOv3</strong>
+                performed detections faster, which allowed the Kalman Filter to produce smoother estimates.
             </p>
             <p>
-                Using <strong>YOLOv3</strong>, I achieved a detection output rate of 17 HZ and an estimate rate of 50 HZ on my trusty 2017 laptop with a 1060 GPU. Meanwhile, <strong>YOLOv4</strong> reduced the rate to 7.5 HZ but produced more accurate results. I’m curious how better-calibrated input images could improve performance further.
+                Using <strong>YOLOv3</strong>, I achieved a detection output rate of 17 HZ and an estimate rate of 50 HZ
+                on my trusty 2017 laptop with a 1060 GPU. Meanwhile, <strong>YOLOv4</strong> reduced the rate to 7.5 HZ
+                but produced more accurate results. I’m curious how better-calibrated input images could improve
+                performance further.
             </p>
         </section>
 
@@ -75,14 +87,20 @@
         <section>
             <h2>Challenges and Alternatives</h2>
             <p>
-                There are some drawbacks to classical approaches like the Extended Kalman Filter, such as tracking loss through ID swaps during occlusion. Approaches like <strong>SORT</strong>, which use the Hungarian Algorithm for association, can mitigate these issues. For even more robust solutions, <i>DeepSort</i> leverages feature maps from a <strong>Recurrent Neural Network (RNN)</strong> for association. You can learn more about DeepSort <a href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
+                There are some drawbacks to classical approaches like the Extended Kalman Filter, such as tracking loss
+                through ID swaps during occlusion. Approaches like <strong>SORT</strong>, which use the Hungarian
+                Algorithm for association, can mitigate these issues. For even more robust solutions, <i>DeepSort</i>
+                leverages feature maps from a <strong>Recurrent Neural Network (RNN)</strong> for association. You can
+                learn more about DeepSort <a
+                    href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
             </p>
         </section>
 
         <section>
             <h2>Conclusion</h2>
             <p>
-                This project was a fantastic learning experience. The open-source community has taught me a lot, and I hope this project can contribute in return and inspire others to take on similar challenges!
+                This project was a fantastic learning experience. The open-source community has taught me a lot, and I
+                hope this project can contribute in return and inspire others to take on similar challenges!
             </p>
         </section>
     </main>
