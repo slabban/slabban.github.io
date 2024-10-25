@@ -30,79 +30,165 @@
         <h1 class="title">State Estimation with YOLO</h1>
 
         <section>
-            <h2>Project Overview</h2>
-            <p>
-                This project was a deep dive into the world of Multi-Object Tracking (MOT) where I employed the powerful
-                <strong>Extended Kalman Filter (EKF)</strong> and an <strong>Intersection Over Union (IoU)</strong>
-                association approach to track objects in a video stream. I deployed the algorithm in the <strong>Robot
-                    Operating System (ROS)</strong> middleware, which allowed me to tap into the vast ecosystem of ROS
-                packages and tools.
-            </p>
-        </section>
 
-        <section>
-            <h2>Inspiration</h2>
             <p>
-                My inspiration for this project came from this <a
-                    href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a>. I had come
-                across it over a year ago and thought: "I know how to design a Kalman Filter and have
-                worked on Multiple Object Tracking, I should give this a shot." So, I did!
+                In this project, I built an MOT pipeline using <strong>YOLO</strong> models, a powerful
+                <strong>Extended Kalman Filter (EKF)</strong>, and an <strong>Intersection Over Union (IoU)</strong>
+                association approach to track objects using public driving data. I deployed the algorithm in the
+                <strong>Robot
+                    Operating System (ROS)</strong> middleware, leveraging its extensive ecosystem of packages and
+                tools as an off-the-shelf C++ solution.
             </p>
-        </section>
 
-        <section>
-            <h2>Results and Comparisons</h2>
             <figure>
                 <a href="https://www.youtube.com/watch?v=ru_O9tgi5M4" class="video-link">
                     <img src="./images/yolo_ekf.png" alt="YOLO MOT Comparison Video" class="youtube-thumbnail">
                 </a>
             </figure>
 
-            <p>
-                I experimented with both <strong>YOLOv3</strong> and <strong>YOLOv4</strong>, comparing results as seen
-                in the video above. While <strong>YOLOv4</strong> was better at association, <strong>YOLOv3</strong>
-                performed detections faster, which allowed the Kalman Filter to produce smoother estimates.
-            </p>
-            <p>
-                Using <strong>YOLOv3</strong>, I achieved a detection output rate of 17 HZ and an estimate rate of 50 HZ
-                on my trusty 2017 laptop with a 1060 GPU. Meanwhile, <strong>YOLOv4</strong> reduced the rate to 7.5 HZ
-                but produced more accurate results. I’m curious how better-calibrated input images could improve
-                performance further.
-            </p>
+
+            <p> Check out the video above to see the working demonstration! </p>
+
         </section>
 
         <section>
-            <h2>Multi-Object Tracking Algorithm Breakdown</h2>
+            <h2>Background & Motivation</h2>
+            <h3>Where Kalman Filters Shine</h3>
+            <figure>
+                <img src="./images/Camera_LiDAR_IoU.png" alt="YOLO MOT" class="project-image" />
+            </figure>
             <p>
-                My algorithm, like most MOTs, follows these five key steps:
+                In <strong>Multi-Object Tracking (MOT)</strong>, we often deal with data from multiple sources, such as
+                camera feeds or LiDAR scans shown above, where each object needs a unique identifier to be tracked
+                across frames.
+                <em>However, using raw sensor data directly for tracking has several limitations:</em>
             </p>
+
             <ul>
-                <li><strong>Detection</strong></li>
-                <li><strong>Association</strong></li>
-                <li><strong>Track Identity Creation & Destruction</strong></li>
-                <li><strong>Estimation</strong></li>
+                <li><strong>Noise:</strong> Sensor data is often noisy, which can result in inaccurate detections.</li>
+                <li><strong>False Positives:</strong> Misidentifications can lead to tracking errors and identity
+                    switches.</li>
+                <li><strong>Momentary Occlusions:</strong> Objects can temporarily disappear from view, especially in
+                    cluttered environments, leading to gaps in tracking.
+                </li>
+                <li><strong>High Computational Load:</strong> Processing raw sensor data requires significant
+                    computational
+                    resources, particularly in dense scenes or with high-resolution inputs.
+                </li>
             </ul>
-        </section>
 
-        <section>
-            <h2>Challenges and Alternatives</h2>
             <p>
-                There are some drawbacks to classical approaches like the Extended Kalman Filter, such as tracking loss
-                through ID swaps during occlusion. Approaches like <strong>SORT</strong>, which use the Hungarian
-                Algorithm for association, can mitigate these issues. For even more robust solutions, <i>DeepSort</i>
-                leverages feature maps from a <strong>Recurrent Neural Network (RNN)</strong> for association. You can
-                learn more about DeepSort <a
-                    href="https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104">here</a>.
+                To address these challenges, we introduce the <strong>Kalman Filter</strong>. This filter maintains a
+                state
+                (e.g., location, speed) for each tracked object and continuously updates this state as new detections
+                are
+                received. Here’s how the Kalman Filter enhances MOT:
+            </p>
+
+            <ul>
+                <li><strong>Smoothing:</strong> The Kalman Filter smooths over inconsistencies in detections, providing
+                    a
+                    stable estimate of an object’s position even when detection quality fluctuates.
+                </li>
+                <li><strong>Handling Occlusions:</strong> By predicting an object’s future state, the Kalman Filter can
+                    “fill in” missing detections, maintaining a coherent track even when objects are briefly occluded.
+                </li>
+                <li><strong>Improved Identity Consistency:</strong> The filter’s predictive capabilities reduce the
+                    likelihood of ID switches, which are common with simpler tracking methods.
+                </li>
+                <li><strong>Early-Stage Sensor Fusion:</strong> Kalman filters can leverage multiple sensor inputs to
+                    provide
+                    a more
+                    robust and timely estimate. For example, a GPS on a car offers accurate location information but may
+                    update slowly or drop updates in tunnels. By fusing GPS data with faster sensor inputs, such as IMU
+                    (Inertial Measurement Unit) data and Wheel Speed Sensors, the Kalman filter can fill in gaps during
+                    GPS dropouts and
+                    maintain a continuous, accurate track.</li>
+
+            </ul>
+
+            <h3>MOT in Late-Stage Track Fusion</h3>
+
+            <p>
+                Late fusion, in the context of Multi-Object Tracking (MOT), is a technique for combining information
+                from various tracks after each sensor has independently processed its data.
+            </p>
+
+            <figure>
+                <img src="./images/SVC_Perception.png" alt="Late Fusion" class="project-image" />
+            </figure>
+
+            <p>Above is an example from my previous work. I used YOLO to detect and classify objects in video feeds and
+                fused these with 3D tracks from LiDAR. By
+                combining the tracks of each sensor we get a more refined understanding of the objects in the scene to
+                allow
+                for more complex decision
+                making.
+            </p>
+
+            <p>
+                An advantage of late fusion is that it enables flexibility and adaptability, allowing each detection
+                system to
+                operate optimally in specific conditions.
             </p>
         </section>
 
+
         <section>
-            <h2>Conclusion</h2>
-            <p>
-                This project was a fantastic learning experience. The open-source community has taught me a lot, and I
-                hope this project can contribute in return and inspire others to take on similar challenges!
+            <h2>Multi-Object Tracking Pipeline</h2>
+            <p>Here’s a breakdown of the key steps in my MOT pipeline:</p>
+            <ul>
+                <li><strong>Detection:</strong> YOLO detects objects in each frame, providing bounding box coordinates.
+                </li>
+
+                <li><strong>Association:</strong> Matches new detections to existing tracks based on IoU, ensuring
+                    consistency over frames.</li>
+                <li><strong>Track Identity Creation & Destruction:</strong> Initiates a new track for unseen objects and
+                    removes tracks when objects are lost or occluded.</li>
+                <li><strong>Estimation:</strong> EKF predicts object motion, smoothing detected positions and mitigating
+                    sudden movement changes, I used the formulas from <a
+                        href="https://www.thinkautonomous.ai/blog/computer-vision-for-tracking/">article</a>.</li>
+            </ul>
+
+            <figure>
+                <img src="./images/yolo_ekf_rqt.png" alt="Tuning" class="project-image" />
+            </figure>
+
+            <p>A big advantage of integrating this system in ROS is that it allows developers to tune parameters on the
+                fly using playback or live data.
+                The picture above highlights the crucial configurations that were needed to tune the MOT system. I
+                explain these
+                in more detail in the <a
+                    href="https://github.com/slabban/yolo_tracking?tab=readme-ov-file#tuning-the-ekf-and-association-algorithm-parameters">
+                    relevant section</a> of my project Github page.
             </p>
         </section>
+
+
+        <section>
+            <h2>Challenges, Alternatives, and Final Thoughts</h2>
+            <p>
+                Building a Multi-Object Tracking (MOT) pipeline with the Extended Kalman Filter (EKF) and YOLO was both
+                rewarding and challenging. While the Kalman Filter provides robust tracking capabilities, it has
+                limitations, particularly during extended occlusions or situations where objects exhibit irregular
+                motion. These
+                can lead to issues like ID swaps, where object identities are lost or confused during tracking.
+            </p>
+            <p>
+                Alternatives to classical methods like EKF include approaches such as <strong>SORT (Simple Online and
+                    Realtime Tracking)</strong>, which leverages the Hungarian Algorithm for better association,
+                reducing the likelihood of ID swaps. For a more resilient solution, <i>DeepSORT</i> incorporates
+                feature embeddings from a <strong>Recurrent Neural Network (RNN)</strong>, significantly enhancing
+                tracking accuracy, especially in dense and complex scenes. You can learn more about DeepSORT <a
+                    href="https://arxiv.org/abs/1703.07402">here</a>.
+            </p>
+            <p>
+                Implementing and refining these techniques gave me a deep appreciation for the challenges of real-world
+                tracking and the powerful open-source tools that support innovation in this field. I hope my project can
+                inspire others!
+            </p>
+        </section>
+
     </main>
 
 
