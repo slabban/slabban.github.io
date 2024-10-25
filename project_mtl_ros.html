@@ -33,7 +33,7 @@
 
         <section>
             <p>
-                Deep Learning was a fascinating but elusive field to me during my time as a masters student.
+                Deep learning was a fascinating but elusive field to me during my time as a masters student.
                 By the time I graduated in 2020, I was too busy breaking into the software development scene and landing
                 my first job to explore its depths. Back then, landing a machine engineering role was rare, with an
                 intimidatingly high bar for entry. It seemed like a moonshot for someone with my
@@ -49,7 +49,7 @@
         </section>
 
         <section>
-            <h2>Hydranets in Action</h2>
+            <h2>Multi-Task Learning in Action</h2>
             <figure>
                 <a href="https://www.youtube.com/watch?v=7NW-bPTts8U" class="video-link">
                     <img src="./images/mtl.png" alt="Video illustration of Hydranet in ROS2 middleware"
@@ -68,7 +68,8 @@
                 Coined by <strong>Tesla</strong>, the term <i>Hydranet</i> is single deep learning model that is capable
                 of
                 inferencing multiple tasks, as opposed to the convention of deploying models that perform a single task,
-                which would place needless memory constraints on the hardware. Hydranets have been an interal concept
+                which would place needless memory constraints on the hardware. Hydranets have been an integral
+                optimization tool
                 in autonomous driving applications due to this efficiency.
 
             </p>
@@ -118,7 +119,7 @@
                 My last venture on fundamentals was Deep Lizard's <a
                     href="https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG">PyTorch-Python Deep
                     Learning API</a>, which further drove down on my practical experience, but with a tailored focus to
-                the popular Pytorch framework.
+                the popular PyTorch framework.
             </p>
 
             <h3>Automated Driving</h3>
@@ -126,7 +127,7 @@
                 My next move was to specialize in deep learning for autonomous driving, I enrolled in Jeremy Cohen's <a
                     href="https://courses.thinkautonomous.ai/">Think
                     Autonomous</a> courses for Hydranets and Neural Net Optimization. These courses were very helpful in
-                getting a intuitive understanding more advanced concepts and techniques, some of which we will discuss
+                getting an intuitive understanding more advanced concepts and techniques, some of which we will discuss
                 in the next sections.
             </p>
         </section>
@@ -209,7 +210,7 @@
 
             <p> The snippet above comes from this <a href="https://arxiv.org/abs/1905.07553" Paper>paper</a>. Here the
                 authors highlight results from pairing tasks. We see that including the normals task gave a generous
-                boost in peformance, whereas
+                boost in performance, whereas
                 synergies between semantic and depth did not provide much benefit. You can actually improve the
                 performance of
                 the model by including extra tasks such as normals, even if they are not relevant to the task at hand.
@@ -233,45 +234,79 @@
                 In my case, I wanted to integrate the Hydranet model into ROS2, aiming to learn both ROS2 and deep
                 learning together. Initially, I used <strong>JIT</strong> to trace the model and
                 the <strong>Libtorch</strong> C++ API,
-                to handle, import and inferecing in ROS2. This allowed me to take a model from eager mode and deploy it
+                to handle, import and inferencing in ROS2. This allowed me to take a model from eager mode and deploy it
                 into production mode.
             </p>
             <p>
                 However, there are more official ways to deploy machine learning models in ROS2 or similar systems. For
-                instance, <strong>ONNX</strong> (Open Neural Network Exchange) allows for easy model export and
+                instance, <a href="https://onnx.ai/">ONNX</a> (Open Neural Network Exchange) allows for easy model
+                export and
                 cross-platform
                 deployment. ONNX models can be used across frameworks and hardware, ensuring compatibility with
                 performance-optimized libraries.
             </p>
+
+            <figure>
+                <img src="images/isaac.png" alt="Isaac ROS" class="project-image">
+            </figure>
+
             <p>
-                For even more performance gains, specialized tools like <strong>Intel's OpenVINO</strong> or NVIDIA’s
-                suite of optimization
-                technologies can be employed. OpenVINO is designed to speed up inferencing on Intel hardware, allowing
-                you to optimize your
-                ONNX models and deploy them across CPU, GPU, and even FPGAs. NVIDIA's <strong>TensorRT</strong> is
-                another powerful tool
-                that provides optimizations for NVIDIA GPUs, turning ONNX models into highly optimized runtime engines.
-            </p>
-            <p>
-                In the ROS2 ecosystem, NVIDIA offers <strong>Isaac ROS</strong> for seamless integration of TensorRT
-                models into ROS nodes.
+                In the robotic ecosystem, <strong>NVIDIA</strong> offers <a
+                    href="https://developer.nvidia.com/isaac/ros">Isaac ROS</a>
+                for
+                seamless integration of
+                models into ROS nodes with hardware acceleration.
                 This allows for faster inference and better performance in tasks such as object detection, segmentation,
                 and other
-                perception tasks within the robotics system. Using these tools, you can not only deploy your models but
+                autonomous tasks within the robotics system. Using these tools, you can not only deploy your models but
                 also
                 benefit from hardware-accelerated inferencing, making the integration process much more efficient and
                 suitable for
                 real-time applications.
             </p>
+
             <p>
-                In my case, after training the Hydranet model, I converted it to ONNX and used TensorRT for
-                optimization. This
-                allowed me to deploy it in a ROS2 node, where it processes camera images, runs inferences, and outputs
-                depth
-                and segmentation data efficiently in real-time.
+                Solutions exist outside of robotic middleware for edge or on-premise systems. Specialized stacks
+                like
+                <a href="https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html?cid=sem&source=sa360&campid=2024_ao_cbu_us_gmocoma_gmocrbu_awa_text-link_brand_exact_cd_HQ-ai-openvino_3500268603_google_b2b_is_non-pbm_intel&ad_group=AI_Brand-Openvino_Openvino_Exact&intel_term=openvino&sa360id=43700079820169420&gad_source=1&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0csnk5aAx0bUUpWvQbGiHoGrhJFz88x9WmyyCPj8bnoGnmh-FXVCGf_0aArvrEALw_wcB&gclsrc=aw.ds"
+                    target="_blank">Intel's OpenVINO</a> or <a
+                    href="https://developer.nvidia.com/deepstream-sdk">NVIDIA's DeepStream</a> can be employed for
+                applications such as video
+                surveillance systems.
             </p>
 
-        </section>
+
+
+            <section>
+                <h2>Reflection on Learning Goals</h2>
+                <p>
+                    Reflecting on my learning goals, it’s clear how each one contributed to my
+                    growth, not just as an engineer but as a learner. The ability to critically assess
+                    state-of-the-art deep learning papers seemed daunting at first, but over time, I got the hang of
+                    it and it became a
+                    rewarding challenge. Learning to navigate the complex language of academic research has deepened
+                    my understanding of the field and allowed me to implement cutting-edge ideas into practical
+                    systems.
+                </p>
+
+                <p>
+                    Gaining hands-on experience with <strong>Multi-Task Learning</strong> to build and train
+                    deep learning models was both fulfilling
+                    and humbling. Each project was an opportunity to test my skills, learn from mistakes, and
+                    celebrate the small victories that came with a functioning model.
+                </p>
+
+                <p>
+                    Deploying the Hydranet model into <strong>ROS</strong> systems was where everything came
+                    together. It allowed me to gain hands-on experience from understanding
+                    model architectures to integrating them into real-world environments and understanding the
+                    landscape
+                    of model deployment.
+                </p>
+
+            </section>
+
+
 
     </main>
 
