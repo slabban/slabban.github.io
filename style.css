@@ -2,6 +2,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root {
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: rgb(159, 211, 218);
+  --bg-secondary: rgb(67, 147, 153);
+  --transition-speed: 600ms;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +20,7 @@
 body {
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
-  background-color: rgb(159, 211, 218);
+  background-color: var(--bg-primary);
 
 }
 
@@ -48,7 +58,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 7rem;
-  background-color: rgb(67, 147, 153);
+  background-color: var(--bg-secondary);
 }
 
 .nav-links {
@@ -65,8 +75,7 @@ a {
 }
 
 a:hover {
-  color: grey;
-  text-decoration: underline;
+  color: var(--bg-primary);
   text-underline-offset: 0.5rem;
   text-decoration-color: rgb(181, 181, 181);
 }
@@ -156,8 +165,10 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  padding-bottom: 5rem;
+
   box-sizing: border-box;
   min-height: fit-content;
 }
