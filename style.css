@@ -9,6 +9,7 @@
   --text-secondary: #ececec;
   --bg-primary: rgb(159, 211, 218);
   --bg-secondary: rgb(67, 147, 153);
+  --bg-project-primary: rgb(95, 142, 185);
   --transition-speed: 600ms;
 }
 
@@ -112,11 +113,18 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgb(123, 122, 170);
+  background-color: rgba(95, 142, 185, 0.75);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  border-radius: 10px;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.menu-links.open {
+  max-height: 300px;
+  opacity: 1;
 }
 
 .menu-links a {
@@ -285,7 +293,7 @@ section {
   border-radius: 3rem;
   border: rgb(53, 53, 53) 0.1rem thin;
   text-align: center;
-  background-color: rgb(95, 142, 185);
+  background-color: var(--bg-project-primary);
 
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
