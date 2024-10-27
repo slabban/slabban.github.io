@@ -12,6 +12,11 @@
     height: fit-content;
   }
 
+
+  section {
+    padding-bottom: 5rem;
+  }
+
   #contact,
   #projects {
     height: fit-content;
@@ -41,6 +46,10 @@
   section,
   .about-section-container {
     height: fit-content;
+  }
+
+  section {
+    padding-bottom: 5rem;
   }
 
   .section__pic-container {

@@ -238,7 +238,7 @@ section {
   position: relative;
   align-items: center;
   justify-content: center;
-  padding-bottom: 5rem;
+  /* padding-bottom: 5rem; */
 }
 
 .about-containers {
@@ -284,7 +284,7 @@ section {
 
 #experience {
   position: relative;
-  padding-bottom: 5rem;
+  /* padding-bottom: 5rem; */
 }
 
 .experience-sub-title {
@@ -376,7 +376,7 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  /* height: 70vh; */
   transition: all 200ms ease;
 }
 
@@ -413,8 +413,13 @@ article .icon {
 }
 
 /* FOOTER SECTION */
+footer {
+  background-color: var(--bg-secondary);
+}
 
 #copyright {
   font-style: italic;
   font-size: 0.8rem;
+  margin: 0 auto;
+  text-align: center;
 }
