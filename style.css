@@ -290,7 +290,7 @@ section {
 }
 
 .projects-container {
-  padding: 1.5rem;
+  padding: 0.75rem;
   flex: wrap;
   border-radius: 3rem;
   border: rgb(53, 53, 53) 0.1rem thin;
@@ -384,9 +384,8 @@ article .icon {
 
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: auto;
 }
 
 .project-title {
