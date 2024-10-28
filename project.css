@@ -238,12 +238,24 @@ footer {
 
 }
 
+.footer-icons-container {
+    border-left: 1px solid #ccc;
+    padding-left: 1rem;
+}
+
+.footer-icon {
+    height: 2rem;
+}
+
+
+
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
     font-size: 1.5rem;
     font-weight: 500;
+    align-items: center;
 }
 
 #copyright {
@@ -277,13 +289,18 @@ footer {
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.4em;
         /* 24px */
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
         /* 19.2px */
+    }
+
+    h3 {
+        font-size: 1.1em;
+        /* 16px */
     }
 }
 
