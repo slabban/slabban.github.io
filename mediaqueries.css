@@ -135,9 +135,14 @@
     font-size: 2rem;
   }
 
+  .about-details-container {
+    padding-left: 2rem;
+    padding-right: 2rem
+  }
+
   .text-container {
     text-align: justify;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     hyphens: auto;
   }
 
