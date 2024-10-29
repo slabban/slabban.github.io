@@ -47,7 +47,7 @@
             </figure>
 
             <p>Shown above is one of the pioneering papers in this space, <a
-                    href="https://github.com/nv-tlabs/lift-splat-shoot">Lift-Splat-Shoot</a>. Using inputs from six
+                    href="https://arxiv.org/abs/2008.05711">Lift-Splat-Shoot</a>. Using inputs from six
                 cameras of around the driving vehicle, this BEV network
                 is able to generate a single unified representation of the surrounding vehicles.</p>
 
@@ -69,7 +69,7 @@
             <h3>Evolution of the Autonomous Vehicle Stack</h3>
             <p>
                 Landing on the scene in the late 1980s, classical methods like Canny edge detection and
-                homeography-based techniques were key
+                homography-based techniques were key
                 components of early autonomous driving systems, helping
                 to identify lane boundaries and transform camera perspectives for better road understanding. Over time,
                 these classical techniques were modularly replaced by deep learning-based systems, as modern CNN-based
@@ -78,8 +78,8 @@
                 accurate and robust top-down scene interpretation directly from multi-sensor data.
             </p>
 
-            <p>In their paper <a href="https://arxiv.org/abs/2108.05805">Reimagining an Autonomus Vehicle</a>, <a
-                    href="https://wayve.ai/">Wayve</a> show a
+            <p>In their paper <a href="https://arxiv.org/abs/2108.05805">Reimagining an Autonomus Vehicle</a>,
+                researchers from <a href="https://wayve.ai/">Wayve</a> show a
                 indicative vision of where traditional rule-based autonomy stacks and their evolution to
                 end-to-end architectures.
             </p>
@@ -148,7 +148,9 @@
             </p>
 
 
-            <p>What makes BEV so attractive? It handles three crucial symmetries:</p>
+            <p>What makes BEV so attractive? My favorite techincal explanation comes from the <i>lift, splat, shoot</i>
+                authors:
+            </p>
             <ul>
                 <li><strong>Translation Equivariance</strong>: Shift an image, and the output shifts along with it.
                     Fully convolutional single-
@@ -166,6 +168,8 @@
 
         <section>
             <h2>Lifting Strategies</h2>
+
+            <h3>Overview</h3>
 
             <p>The <i>lifting strategy</i> is the process of transforming 2D image features and other sensing inputs
                 from a perspective view (PV)
@@ -215,8 +219,14 @@
                 feed these BEV features into a single, or set of task heads to produce the final predictions.
             </p>
 
+            <h3>Strategies Breakdown</h3>
+            <figure>
+                <img src="./images/bev_graph.png" alt="bev graph" class="project-image" />
+            </figure>
 
-            <p>Let's now focus on the lifting strategies:</p>
+            <p>I really like how this <a href="https://arxiv.org/pdf/2208.02797">survey paper</a> architecture breaks it
+                down. Folowing their topology, we will go through the big four fom left to right.
+            </p>
 
             <h3>Geometric-Based PV2BEV</h3>
             <ul>
@@ -267,12 +277,12 @@
                     object detection, but fall short at segmentation tasks.
 
                     On the other hand, <i>dense query-based</i> methods, such as <a
-                        href="https://arxiv.org/abs/2203.17270">BEVFormer</a> (shown above), methods are designed to
+                        href="https://arxiv.org/abs/2203.17270">BEVFormer</a>, methods are designed to
                     learn BEV
                     representations my mapping the queries into a pre-defined 3D volumetric or BEV space, which can be
                     ported to perception tasks such as 3D object detection and segmentation; however, these models
                     suffer in computational performance due to the dense queries which has inspired more research into
-                    efficient transformer architectures. A popular approach that is figure above is the
+                    efficient transformer architectures. A notable approach is
                     <a href="https://arxiv.org/abs/2110.00966">Image2Map</a>, which assumes a 1:1 relationship between
                     vertical scanlines of an image and the camera rays in the BEV space, which avoids the dense query
                     problem.
@@ -292,13 +302,17 @@
                 training
                 and testing are crucial for researchers to benchmark BEV models. Three of the big names are:</p>
             <ul>
-                <li><strong>KITTI</strong>: A well-known benchmark with over 7,500 samples for testing with both 2D
+                <li><strong><a
+                            href="https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d">KITTI</a></strong>:
+                    A well-known benchmark with over 7,500 samples for testing with both 2D
                     and
                     3D annotations.</li>
-                <li><strong>nuScenes</strong>: A massive dataset with 1,000 scenes, each lasting 20 seconds,
+                <li><strong><a href="https://www.nuscenes.org/nuscenes">nuScenes</a></strong>: A massive dataset with
+                    1,000 scenes, each lasting 20 seconds,
                     offering a
                     360-degree field of view.</li>
-                <li><strong>Waymo Open Dataset (WOD)</strong>: One of the largest autonomous driving datasets with
+                <li><strong><a href="https://waymo.com/open/">Waymo Open Dataset (WOD)</a></strong>: One of the largest
+                    autonomous driving datasets with
                     nearly 800 sequences for training.</li>
             </ul>
             <p>Other datasets worth mentioning include <strong>Argoverse</strong>, <strong>H3D</strong>, and
@@ -306,9 +320,11 @@
             </p>
 
             <p> For perception evaluation metrics, the most commonly
-                used criterion for BEV Detection is average precision (AP)
-                and the mean average precision (mAP) over different classes
-                or difficulty levels. For BEV Segmentation, intersection over union (IoU) is used for each class
+                used criterion for BEV Detection is <strong>Average Precision (AP)</strong>
+                and the <strong>mean Average Precision (mAP)</strong> over different
+                classes
+                or difficulty levels. For BEV Segmentation, <strong>Intersection over Union (IoU)</strong> is used for
+                each class
                 and mIoU over all classes are frequently used as the metrics.</p>
         </section>
 
