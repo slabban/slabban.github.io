@@ -357,9 +357,8 @@ article .icon {
 }
 
 .text-container {
-  text-align: center;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /* PROJECTS SECTION */
